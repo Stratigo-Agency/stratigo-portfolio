@@ -138,9 +138,7 @@
           <div class="about-text fade-in" :class="{ 'visible': aboutVisible }">
             <h2 class="section-title">Tentang Stratigo</h2>
             <p class="about-description">
-              Stratigo didirikan oleh Bryan, seorang mahasiswa Indonesia yang menempuh pendidikan Computer Science dan Artificial Intelligence di Jerman. 
-              Berkomitmen untuk berkontribusi kembali kepada Indonesia, ia membangun perusahaan software untuk membantu perusahaan menerbitkan website, 
-              memanfaatkan software dan AI secara efisien.
+              Stratigo berkomitmen untuk mengembangkan digitalisasi bisnis Anda dengan solusi website dan software AI terdepan.
             </p>
             <div class="stats">
               <div class="stat-item">
@@ -218,9 +216,9 @@
               <div class="form-group">
                 <select v-model="form.service" required>
                   <option value="" disabled>Pilih Layanan yang Diinginkan</option>
-                  <option value="website">Pembuatan Website</option>
-                  <option value="ai-software">Software AI</option>
-                  <option value="ai-automation">Otomatisasi AI</option>
+                  <option value="custom-website">Custom Website</option>
+                  <option value="ai-chatbot">AI Chatbot</option>
+                  <option value="custom-software">Custom Software</option>
                 </select>
               </div>
               <div class="form-group">
@@ -245,9 +243,9 @@
             <div class="footer-section">
               <h4>Layanan</h4>
               <ul>
-                <li><a href="#layanan">Website Perusahaan</a></li>
-                <li><a href="#layanan">Software AI</a></li>
-                <li><a href="#layanan">Otomasi AI</a></li>
+                <li><a href="#layanan">Custom Website</a></li>
+                <li><a href="#layanan">AI Chatbot</a></li>
+                <li><a href="#layanan">Custom Software</a></li>
               </ul>
             </div>
             <div class="footer-section">
@@ -296,49 +294,51 @@ const form = ref({
 
 const services = ref([
   {
-    title: 'Website Perusahaan',
-    description: 'Website modern dan responsif yang dipersonalisasi sesuai identitas perusahaan Anda.',
+    title: 'Custom Website',
+    description: 'Website modern dan responsif yang dipersonalisasi untuk berbagai kebutuhan bisnis Anda.',
     icon: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
              <line x1="8" y1="21" x2="16" y2="21"/>
              <line x1="12" y1="17" x2="12" y2="21"/>
            </svg>`,
     features: [
+      'Portfolio Website',
+      'E-commerce Website',
+      'Company Website',
       'Desain Modern & Responsif',
-      'SEO Optimized',
-      'Pembuatan Logo Gratis',
-      'Foto Produk Profesional',
-      'Integrasi Media Sosial'
+      'SEO Optimized'
     ]
   },
   {
-    title: 'Software AI',
-    description: 'Solusi software berbasis AI untuk meningkatkan efisiensi dan produktivitas bisnis.',
+    title: 'AI Chatbot',
+    description: 'Chatbot cerdas berbasis AI untuk berbagai kebutuhan bisnis Anda.',
     icon: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-             <path d="M9 12l2 2 4-4"/>
-             <path d="M21 12c.552 0 1-.448 1-1V5c0-.552-.448-1-1-1H3c-.552 0-1 .448-1 1v6c0 .552.448 1 1 1"/>
-             <path d="M3 12v6c0 .552.448 1 1 1h16c.552 0 1-.448 1-1v-6"/>
+             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+             <circle cx="9" cy="10" r="1"/>
+             <circle cx="15" cy="10" r="1"/>
+             <path d="M9 14c.5.5 2 1 3 1s2.5-.5 3-1"/>
            </svg>`,
     features: [
-      'AI Meeting Recorder',
-      'AI untuk Advertising',
-      'Custom AI Software Solutions'
+      'Customer Service Automation',
+      'HR Training Assistant',
+      'Lead Generation Bot',
+      'Multi-platform Integration',
+      'Custom AI Solutions'
     ]
   },
   {
-    title: 'Otomasi AI',
-    description: 'Sistem otomasi cerdas yang disesuaikan untuk mengoptimalkan proses bisnis Anda.',
+    title: 'Custom Software',
+    description: 'Software khusus yang disesuaikan untuk memenuhi kebutuhan bisnis Anda.',
     icon: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-             <path d="M12 2v6l3-3 3 3"/>
-             <path d="M12 8v6l-3-3-3 3"/>
-             <path d="M12 14v6l3-3 3 3"/>
+             <polyline points="16 18 22 12 16 6"/>
+             <polyline points="8 6 2 12 8 18"/>
            </svg>`,
     features: [
-      'Laporan Keuangan Otomatis',
+      'Business Process Automation',
+      'Custom Management System',
       'API Integration',
-      'Workflow Automation',
-      'Chatbot Integration',
-      'Data Processing'
+      'Data Analytics Dashboard',
+      'Scalable Solutions'
     ]
   }
 ])
@@ -376,8 +376,19 @@ const techStack = ref([
 
 const caseStudies = ref([
   {
+    title: 'Travel Agency Website',
+    category: 'Custom Website',
+    description: 'Membangun website modern untuk travel agency yang menampilkan paket wisata, booking system, dan galeri destinasi.',
+    image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop',
+    technologies: ['Vue.js', 'TypeScript', 'API'],
+    results: [
+      { value: '50+', label: 'Paket Wisata' },
+      { value: '3x', label: 'Peningkatan Booking' }
+    ]
+  },
+  {
     title: 'Company Website untuk Brand Otomotif',
-    category: 'Website Perusahaan',
+    category: 'Custom Website',
     description: 'Membangun website perusahaan untuk brand otomotif yang menjual berbagai produk kendaraan.',
     image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
     technologies: ['Vue.js', 'TypeScript'],
@@ -387,36 +398,14 @@ const caseStudies = ref([
     ]
   },
   {
-    title: 'AI Meeting Assistant untuk Startup',
-    category: 'Software AI',
-    description: 'Mengembangkan aplikasi AI yang dapat merekam, mentranskrip, dan merangkum meeting secara otomatis.',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop',
-    technologies: ['Python', 'React', 'NoSQL'],
-    results: [
-      { value: '80%', label: 'Efisiensi Waktu' },
-      { value: '95%', label: 'Akurasi Transkrip' }
-    ]
-  },
-  {
-    title: 'Sistem Laporan Keuangan Otomatis',
-    category: 'Otomasi AI',
+    title: 'AI untuk Financial Reporting',
+    category: 'Custom Software',
     description: 'Membangun sistem Artificial Intelligence yang secara otomatis menghasilkan laporan keuangan dari berbagai sumber data.',
     image: caseStudy1Image,
     technologies: ['Python', 'SQL', 'Vue', 'AI'],
     results: [
       { value: '90%', label: 'Pengurangan Waktu Manual' },
       { value: '99%', label: 'Akurasi Data' }
-    ]
-  },
-  {
-    title: 'AI Product Photo Generator untuk E-commerce',
-    category: 'Software AI',
-    description: 'Mengembangkan software AI yang dapat menghasilkan foto produk berkualitas tinggi secara otomatis untuk kebutuhan e-commerce dan marketing.',
-    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop',
-    technologies: ['Python', 'AI/ML', 'React', 'API'],
-    results: [
-      { value: '75%', label: 'Pengurangan Biaya Fotografi' },
-      { value: '10x', label: 'Kecepatan Produksi' }
     ]
   }
 ])
