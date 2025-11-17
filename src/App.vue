@@ -262,6 +262,17 @@
         </div>
       </div>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/6287881332121" target="_blank" rel="noopener noreferrer" 
+       class="whatsapp-float" 
+       @click="trackButtonClick('WhatsApp', 'floating_button')"
+       aria-label="Chat on WhatsApp">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 0C7.164 0 0 7.164 0 16c0 2.832.744 5.604 2.154 8.048L.036 31.64l7.876-2.064A15.954 15.954 0 0 0 16 32c8.836 0 16-7.164 16-16S24.836 0 16 0z" fill="#25D366"/>
+        <path d="M25.31 22.776c-.344.968-1.704 1.776-2.788 2.012-.744.156-1.716.28-4.988-.972-4.196-1.604-6.908-5.86-7.116-6.128-.208-.268-1.688-2.244-1.688-4.284s1.068-3.04 1.448-3.456c.38-.416.828-.52 1.104-.52.276 0 .552.004.792.016.256.012.596-.096.932.712.344.828 1.164 2.84 1.268 3.048.104.208.172.452.036.72-.136.268-.208.436-.416.672-.208.236-.436.528-.624.708-.208.196-.424.408-.184.8.24.392 1.068 1.76 2.292 2.852 1.572 1.404 2.9 1.844 3.312 2.048.412.204.652.172.892-.104.24-.276 1.032-1.204 1.308-1.62.276-.416.552-.348.928-.208.376.14 2.388 1.128 2.8 1.332.412.204.684.308.784.476.1.168.1.968-.244 1.936z" fill="#fff"/>
+      </svg>
+    </a>
   </div>
 </template>
 
@@ -1325,5 +1336,55 @@ onUnmounted(() => {
   .client-logo img {
     max-height: 50px;
   }
+  
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  z-index: 999;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float svg {
+  width: 36px;
+  height: 36px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.7), 0 0 0 10px rgba(37, 211, 102, 0.1);
+  }
+}
+
+.whatsapp-float {
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+  animation: none;
 }
 </style> 
