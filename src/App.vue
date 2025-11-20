@@ -9,8 +9,6 @@
         <ul class="nav-links" :class="{ 'active': mobileMenuOpen }">
           <li><a href="#beranda" @click="closeMobileMenu('beranda')">Beranda</a></li>
           <li><a href="#layanan" @click="closeMobileMenu('layanan')">Layanan</a></li>
-          <li><a href="#portofolio" @click="closeMobileMenu('portofolio')">Portofolio</a></li>
-          <li><a href="#tentang" @click="closeMobileMenu('tentang')">Tentang</a></li>
           <li><a href="#kontak" @click="closeMobileMenu('kontak')">Kontak</a></li>
         </ul>
         <div class="mobile-menu-toggle" @click="toggleMobileMenu">
@@ -26,15 +24,13 @@
       <div class="hero-content container">
         <div class="hero-text fade-in" :class="{ 'visible': heroVisible }">
           <h1 class="hero-title">
-            Solusi <span class="highlight">Website</span> dan <span class="highlight">Software AI</span><br>
-            Terdepan untuk Bisnis Anda
+            Tingkatkan <span class="highlight">Brand Bisnis Anda</span> dengan Website yang<span class="highlight"> Profesional</span>
           </h1>
           <p class="hero-description">
-            Stratigo menghadirkan layanan website dan website perusahaan yang dipersonalisasi dengan website profesional, integrasi AI, dan otomasi.
+            Stratigo menghadirkan website profesional yang dirancang secara custom untuk menarik perhatian calon klien dan konsumen
           </p>
           <div class="hero-buttons">
-            <a href="#layanan" class="btn btn-primary" @click="trackButtonClick('Jelajahi Layanan', 'hero')">Jelajahi Layanan</a>
-            <a href="#kontak" class="btn btn-outline" @click="trackButtonClick('Hubungi Kami', 'hero')">Hubungi Kami</a>
+            <a href="https://wa.me/6287881332121" target="_blank" rel="noopener noreferrer" class="btn btn-primary" @click="trackButtonClick('Konsultasi Sekarang', 'hero')">Konsultasi Sekarang</a>
           </div>
         </div>
         <div class="hero-visual fade-in" :class="{ 'visible': heroVisible }">
@@ -51,37 +47,69 @@
           </div>
         </div>
       </div>
+      
     </section>
 
-    <!-- Services Section -->
-    <section id="layanan" class="section services">
+
+
+    <!-- Digital Presence Section -->
+    <section class="section digital-presence">
       <div class="container">
-        <h2 class="section-title fade-in" :class="{ 'visible': servicesVisible }">Layanan Kami</h2>
-        <div class="services-grid">
-          <div class="service-card fade-in" :class="{ 'visible': servicesVisible }" 
-               v-for="(service, index) in services" :key="index"
-               :style="{ 'animation-delay': `${index * 0.2}s` }"
-               @click="handleServiceClick(service.title)">
-            <div class="service-icon">
-              <div v-html="service.icon"></div>
+        <div class="digital-presence-content fade-in" :class="{ 'visible': digitalPresenceVisible }">
+          <div class="digital-presence-text">
+            <h2 class="digital-presence-title">
+              Apakah bisnis Anda <span class="highlight-text">siap berkompetisi</span> di era digital?
+            </h2>
+            <div class="digital-presence-description">
+              <p class="lead-text">
+                Di era digital ini, <strong>masyarakat Indonesia menghabiskan lebih dari 7 jam setiap harinya di internet</strong>. 
+                Website bukan hanya pelengkap—melainkan <strong>kebutuhan vital</strong> bagi bisnis yang ingin berkembang.
+              </p>
+              <p class="emphasis-text">
+                Website adalah etalase digital bisnis Anda. Tempat pertama calon pelanggan mencari informasi dan menilai kredibilitas perusahaan Anda. Tanpa website profesional, bisnis Anda:
+              </p>
+              <ul class="challenge-list">
+                <li>
+                  <svg class="icon-cross" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="15" y1="9" x2="9" y2="15"/>
+                    <line x1="9" y1="9" x2="15" y2="15"/>
+                  </svg>
+                  <span>Sulit ditemukan calon pelanggan di mesin pencari</span>
+                </li>
+                <li>
+                  <svg class="icon-cross" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="15" y1="9" x2="9" y2="15"/>
+                    <line x1="9" y1="9" x2="15" y2="15"/>
+                  </svg>
+                  <span>Terlihat kurang kredibel dan profesional</span>
+                </li>
+              </ul>
             </div>
-            <h3>{{ service.title }}</h3>
-            <p>{{ service.description }}</p>
-            <ul class="service-features">
-              <li v-for="feature in service.features" :key="feature">{{ feature }}</li>
-            </ul>
+          </div>
+          <div class="digital-presence-visual">
+            <div class="stat-card">
+              <div class="stat-content">
+                <div class="stat-number">7+ Jam</div>
+                <div class="stat-label">Waktu online rata-rata masyarakat Indonesia per hari</div>
+                <div class="stat-note">Sumber: Data Penggunaan Internet Indonesia 2023</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Trusted By Section -->
-    <section class="section trusted-by">
+    <!-- Solution Section -->
+    <section class="section solution-section">
       <div class="container">
-        <h2 class="section-title fade-in" :class="{ 'visible': trustedByVisible }">Dipercaya Oleh</h2>
-        <p class="section-subtitle fade-in" :class="{ 'visible': trustedByVisible }">
-          Klien-klien yang telah mempercayai layanan kami
-        </p>
+        <div class="solution-content fade-in" :class="{ 'visible': solutionVisible }">
+          <h2 class="solution-title">
+            Ingin website yang <span class="highlight-orange">profesional</span> dan <span class="highlight-orange">menarik pengunjung</span>?
+          </h2>
+          <p class="solution-subtitle">Di situlah Stratigo hadir untuk membantu Anda</p>
+        </div>
         <div class="carousel-container">
           <div class="carousel-track">
             <div class="client-logo" v-for="(client, index) in [...clientLogos, ...clientLogos]" :key="`${client.name}-${index}`"
@@ -93,74 +121,230 @@
       </div>
     </section>
 
-    <!-- Case Studies Section -->
-    <section id="portofolio" class="section case-studies">
+    <!-- Packages Section Header -->
+    <section id="layanan" class="section packages-header">
       <div class="container">
-        <h2 class="section-title fade-in" :class="{ 'visible': caseStudiesVisible }">Studi Kasus</h2>
-        <p class="section-subtitle fade-in" :class="{ 'visible': caseStudiesVisible }">
-          Lihat beberapa proyek yang telah kami selesaikan untuk klien kami
+        <h2 class="section-title fade-in" :class="{ 'visible': packagesVisible }">Pilih Paket yang Sesuai untuk Bisnis Anda</h2>
+        <p class="section-subtitle fade-in" :class="{ 'visible': packagesVisible }">
+          Kami menawarkan tiga pilihan paket yang dirancang khusus untuk berbagai kebutuhan dan skala bisnis
         </p>
-        <div class="case-studies-grid">
-          <div class="case-study-card fade-in" :class="{ 'visible': caseStudiesVisible }" 
-               v-for="(caseStudy, index) in caseStudies" :key="index"
-               :style="{ 'animation-delay': `${index * 0.2}s` }"
-               @click="handleCaseStudyClick(caseStudy.title, caseStudy.category)">
-            <div class="case-study-image">
-              <img :src="caseStudy.image" :alt="caseStudy.title" />
-              <div class="case-study-overlay">
-                <div class="case-study-category">{{ caseStudy.category }}</div>
+      </div>
+    </section>
+
+    <!-- Business Package -->
+    <section class="section package-single business-package">
+      <div class="container">
+        <div class="package-content fade-in" :class="{ 'visible': businessVisible }">
+          <div class="package-info">
+            <div class="package-name-tag">Business</div>
+            <h3 class="package-title">Paket Business</h3>
+            <p class="package-description">Sempurna untuk bisnis yang baru membangun kehadiran digital</p>
+            <div class="package-specs-list">
+              <div class="spec-row">
+                <span class="spec-label">Halaman</span>
+                <span class="spec-value">1-5 Halaman</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Revisi</span>
+                <span class="spec-value">Hingga 3x</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Desain</span>
+                <span class="spec-value">Sederhana & Profesional</span>
               </div>
             </div>
-            <div class="case-study-content">
-              <h3>{{ caseStudy.title }}</h3>
-              <p>{{ caseStudy.description }}</p>
-              <div class="case-study-tech">
-                <span v-for="tech in caseStudy.technologies" :key="tech" class="tech-tag">
-                  {{ tech }}
-                </span>
-              </div>
-              <div class="case-study-results">
-                <div class="result-item" v-for="result in caseStudy.results" :key="result.label">
-                  <span class="result-value">{{ result.value }}</span>
-                  <span class="result-label">{{ result.label }}</span>
-                </div>
-              </div>
-            </div>
+          </div>
+          <div class="package-features-box">
+            <h4>Fitur Unggulan</h4>
+            <ul class="features-list">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Desain responsif & menarik</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Blog untuk artikel & berita</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Galeri, slide, ikon & video</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>WhatsApp & form kontak</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Optimasi SEO dasar</span>
+              </li>
+            </ul>
+            <a href="https://wa.me/6287881332121?text=Halo, saya tertarik dengan Paket Business" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="btn-package-cta"
+               @click="trackButtonClick('Paket Business', 'packages')">
+              Pilih Paket Business
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="tentang" class="section about">
+    <!-- Prime Package -->
+    <section class="section package-single prime-package">
       <div class="container">
-        <div class="about-content">
-          <div class="about-text fade-in" :class="{ 'visible': aboutVisible }">
-            <h2 class="section-title">Tentang Stratigo</h2>
-            <p class="about-description">
-              Stratigo berkomitmen untuk mengembangkan digitalisasi bisnis Anda dengan solusi website dan software AI terdepan.
-            </p>
-            <div class="stats">
-              <div class="stat-item">
-                <h3>100%</h3>
-                <p>Jaminan Uang Kembali</p>
+        <div class="package-content fade-in" :class="{ 'visible': primeVisible }">
+          <div class="package-info">
+            <div class="package-name-tag popular">Prime <span class="badge-text">POPULER</span></div>
+            <h3 class="package-title">Paket Prime</h3>
+            <p class="package-description">Ideal untuk perusahaan berkembang dengan konten lebih lengkap</p>
+            <div class="package-specs-list">
+              <div class="spec-row">
+                <span class="spec-label">Halaman</span>
+                <span class="spec-value">5-10 Halaman</span>
               </div>
-              <div class="stat-item">
-                <h3>⚡</h3>
-                <p>Pengerjaan Cepat & Berkualitas</p>
+              <div class="spec-row">
+                <span class="spec-label">Revisi</span>
+                <span class="spec-value">Hingga 4x</span>
               </div>
-              <div class="stat-item">
-                <h3>4+</h3>
-                <p>Tahun Pengalaman</p>
+              <div class="spec-row">
+                <span class="spec-label">Desain</span>
+                <span class="spec-value">Interaktif & Profesional</span>
               </div>
             </div>
           </div>
-          <div class="about-visual fade-in" :class="{ 'visible': aboutVisible }">
-            <div class="tech-stack">
-              <div class="tech-item" v-for="tech in techStack" :key="tech">
-                {{ tech }}
+          <div class="package-features-box">
+            <h4>Fitur Unggulan</h4>
+            <ul class="features-list">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Semua fitur Business</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Katalog produk/portfolio</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Instagram Feed integration</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Newsletter subscription</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Live Chat support</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Animasi ringan</span>
+              </li>
+            </ul>
+            <a href="https://wa.me/6287881332121?text=Halo, saya tertarik dengan Paket Prime" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="btn-package-cta"
+               @click="trackButtonClick('Paket Prime', 'packages')">
+              Pilih Paket Prime
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Corporate Package -->
+    <section class="section package-single corporate-package">
+      <div class="container">
+        <div class="package-content fade-in" :class="{ 'visible': corporateVisible }">
+          <div class="package-info">
+            <div class="package-name-tag">Corporate</div>
+            <h3 class="package-title">Paket Corporate</h3>
+            <p class="package-description">Solusi premium untuk perusahaan besar dengan kebutuhan kompleks</p>
+            <div class="package-specs-list">
+              <div class="spec-row">
+                <span class="spec-label">Halaman</span>
+                <span class="spec-value">10-20+ Halaman</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Revisi</span>
+                <span class="spec-value">Hingga 4x + Meeting</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Desain</span>
+                <span class="spec-value">Advanced & Brand Identity</span>
               </div>
             </div>
+          </div>
+          <div class="package-features-box">
+            <h4>Fitur Unggulan</h4>
+            <ul class="features-list">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Semua fitur Prime</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Fokus identitas brand</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Animasi kompleks</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Fitur khusus custom</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Proses revisi lengkap</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Konsultasi via meeting</span>
+              </li>
+            </ul>
+            <a href="https://wa.me/6287881332121?text=Halo, saya tertarik dengan Paket Corporate" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="btn-package-cta"
+               @click="trackButtonClick('Paket Corporate', 'packages')">
+              Pilih Paket Corporate
+            </a>
           </div>
         </div>
       </div>
@@ -169,11 +353,10 @@
     <!-- Contact Section -->
     <section id="kontak" class="section contact">
       <div class="container">
-        <h2 class="section-title fade-in" :class="{ 'visible': contactVisible }">Hubungi Kami</h2>
         <div class="contact-content">
           <div class="contact-info fade-in" :class="{ 'visible': contactVisible }">
-            <h3>Mari Berkolaborasi</h3>
-            <p>Siap untuk mengembangkan bisnis Anda dengan website profesional dan teknologi AI terdepan? Hubungi tim Stratigo sekarang!</p>
+            <h3>The world moves fast. Don't just keep pace. Stay ahead.</h3>
+            <p>Siap untuk mengembangkan bisnis Anda dengan website profesional? Hubungi tim Stratigo sekarang!</p>
             <div class="collaboration-points">
               <div class="collaboration-point">
                 <svg class="checkmark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -237,7 +420,7 @@
         <div class="footer-content">
           <div class="footer-brand">
             <h3>Stratigo</h3>
-            <p>Solusi Website & Software AI Terdepan</p>
+            <p>Tingkatkan Identitas Bisnis Anda Dengan Website yang Profesional</p>
           </div>
           <div class="footer-links">
             <div class="footer-section">
@@ -290,8 +473,12 @@ const mobileMenuOpen = ref(false)
 const heroVisible = ref(false)
 const servicesVisible = ref(false)
 const trustedByVisible = ref(false)
-const caseStudiesVisible = ref(false)
-const aboutVisible = ref(false)
+const digitalPresenceVisible = ref(false)
+const solutionVisible = ref(false)
+const packagesVisible = ref(false)
+const businessVisible = ref(false)
+const primeVisible = ref(false)
+const corporateVisible = ref(false)
 const contactVisible = ref(false)
 
 const form = ref({
@@ -303,57 +490,6 @@ const form = ref({
   message: ''
 })
 
-const services = ref([
-  {
-    title: 'Custom Website',
-    description: 'Website modern dan responsif yang dipersonalisasi untuk berbagai kebutuhan bisnis Anda.',
-    icon: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-             <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-             <line x1="8" y1="21" x2="16" y2="21"/>
-             <line x1="12" y1="17" x2="12" y2="21"/>
-           </svg>`,
-    features: [
-      'Portfolio Website',
-      'E-commerce Website',
-      'Company Website',
-      'Desain Modern & Responsif',
-      'SEO Optimized'
-    ]
-  },
-  {
-    title: 'AI Chatbot',
-    description: 'Chatbot cerdas berbasis AI untuk berbagai kebutuhan bisnis Anda.',
-    icon: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-             <circle cx="9" cy="10" r="1"/>
-             <circle cx="15" cy="10" r="1"/>
-             <path d="M9 14c.5.5 2 1 3 1s2.5-.5 3-1"/>
-           </svg>`,
-    features: [
-      'Customer Service Automation',
-      'HR Training Assistant',
-      'Lead Generation Bot',
-      'Multi-platform Integration',
-      'Custom AI Solutions'
-    ]
-  },
-  {
-    title: 'Custom Software',
-    description: 'Software khusus yang disesuaikan untuk memenuhi kebutuhan bisnis Anda.',
-    icon: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-             <polyline points="16 18 22 12 16 6"/>
-             <polyline points="8 6 2 12 8 18"/>
-           </svg>`,
-    features: [
-      'Business Process Automation',
-      'Custom Management System',
-      'API Integration',
-      'Data Analytics Dashboard',
-      'Scalable Solutions'
-    ]
-  }
-])
-
 const clientLogos = ref([
   {
     name: 'IZY',
@@ -362,6 +498,10 @@ const clientLogos = ref([
   {
     name: 'ENOS',
     logo: new URL('./assets/logos/enos-logo.png', import.meta.url).href
+  },
+  {
+    name: 'DELYA',
+    logo: new URL('./assets/logos/delya-logo.png', import.meta.url).href
   },
   {
     name: 'Temu',
@@ -428,9 +568,13 @@ const handleScroll = () => {
   // Intersection observer for animations
   const heroSection = document.querySelector('.hero')
   const servicesSection = document.querySelector('.services')
-  const trustedBySection = document.querySelector('.trusted-by')
-  const caseStudiesSection = document.querySelector('.case-studies')
-  const aboutSection = document.querySelector('.about')
+  const trustedBySection = document.querySelector('.trusted-by-header')
+  const digitalPresenceSection = document.querySelector('.digital-presence')
+  const solutionSection = document.querySelector('.solution-section')
+  const packagesSection = document.querySelector('.packages-header')
+  const businessSection = document.querySelector('.business-package')
+  const primeSection = document.querySelector('.prime-package')
+  const corporateSection = document.querySelector('.corporate-package')
   const contactSection = document.querySelector('.contact')
   
   if (heroSection && isInViewport(heroSection)) {
@@ -442,11 +586,23 @@ const handleScroll = () => {
   if (trustedBySection && isInViewport(trustedBySection)) {
     trustedByVisible.value = true
   }
-  if (caseStudiesSection && isInViewport(caseStudiesSection)) {
-    caseStudiesVisible.value = true
+  if (digitalPresenceSection && isInViewport(digitalPresenceSection)) {
+    digitalPresenceVisible.value = true
   }
-  if (aboutSection && isInViewport(aboutSection)) {
-    aboutVisible.value = true
+  if (solutionSection && isInViewport(solutionSection)) {
+    solutionVisible.value = true
+  }
+  if (packagesSection && isInViewport(packagesSection)) {
+    packagesVisible.value = true
+  }
+  if (businessSection && isInViewport(businessSection)) {
+    businessVisible.value = true
+  }
+  if (primeSection && isInViewport(primeSection)) {
+    primeVisible.value = true
+  }
+  if (corporateSection && isInViewport(corporateSection)) {
+    corporateVisible.value = true
   }
   if (contactSection && isInViewport(contactSection)) {
     contactVisible.value = true
@@ -556,14 +712,14 @@ onUnmounted(() => {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(10, 10, 10, 0.9);
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
   backdrop-filter: blur(10px);
   z-index: 1000;
   transition: all 0.3s ease;
 }
 
 .header.scrolled {
-  background: rgba(10, 10, 10, 0.95);
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -708,99 +864,218 @@ onUnmounted(() => {
   50% { transform: translateY(-20px); }
 }
 
-/* Services Styles */
-.services {
-  background: var(--dark-secondary);
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-}
-
-.service-card {
+/* Packages Header */
+.packages-header {
   background: var(--dark-bg);
-  padding: 2.5rem;
-  border-radius: 1rem;
-  border: 1px solid var(--dark-tertiary);
-  transition: all 0.3s ease;
+  padding: 4rem 0 2rem;
+}
+
+/* Package Single Styles */
+.package-single {
+  padding: 4rem 0;
+  background: var(--dark-bg);
+}
+
+.business-package {
+  background: var(--dark-bg);
+}
+
+.prime-package {
+  background: var(--dark-bg);
+}
+
+.corporate-package {
+  background: var(--dark-bg);
+}
+
+.package-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.package-info {
   position: relative;
-  overflow: hidden;
-  cursor: pointer;
 }
 
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary-orange), var(--secondary-orange));
-}
-
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
-}
-
-.service-icon {
+.package-name-tag {
+  display: inline-block;
+  background: transparent;
   color: var(--primary-orange);
-  margin-bottom: 1.5rem;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
 }
 
-.service-card h3 {
+.package-name-tag.popular {
+  background: transparent;
+  position: relative;
+  padding-right: 0;
+}
+
+.badge-text {
+  display: inline;
+  background: transparent;
+  color: var(--primary-orange);
+  padding: 0 0 0 0.5rem;
+  border-radius: 0;
+  font-size: 0.75rem;
+}
+
+.package-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-size: 2.25rem;
+  font-weight: 700;
   color: var(--text-primary);
+  margin-bottom: 1rem;
   letter-spacing: -0.02em;
 }
 
-.service-card p {
+.package-description {
+  font-size: 1rem;
   color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.package-specs-list {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+  border-top: 1px solid var(--dark-tertiary);
+  padding-top: 2rem;
+}
+
+.prime-package .package-specs-list {
+  background: transparent;
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.spec-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.spec-row:first-child {
+  padding-top: 0;
+}
+
+.spec-label {
+  color: var(--text-secondary);
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+.spec-value {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.package-features-box {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+  border-top: 1px solid var(--dark-tertiary);
+  padding-top: 2rem;
+  position: sticky;
+  top: 100px;
+}
+
+.prime-package .package-features-box {
+  background: transparent;
+  border-color: var(--dark-tertiary);
+}
+
+.package-features-box h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
   margin-bottom: 1.5rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2.5rem;
+}
+
+.features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.875rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
   line-height: 1.6;
 }
 
-.service-features {
-  list-style: none;
-}
-
-.service-features li {
-  color: var(--text-secondary);
-  margin-bottom: 0.5rem;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.service-features li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
+.features-list li svg {
   color: var(--primary-orange);
-  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+  width: 18px;
+  height: 18px;
 }
 
-/* Trusted By Styles */
-.trusted-by {
-  background: var(--dark-secondary);
-  padding: 4rem 0;
-  overflow: hidden;
+.btn-package-cta {
+  display: inline-block;
+  width: auto;
+  padding: 1rem 2.5rem;
+  background: var(--primary-orange);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
 
-.trusted-by .section-title {
+.btn-package-cta:hover {
+  background: var(--secondary-orange);
+  transform: translateY(-1px);
+}
+
+/* Trusted By Header Styles */
+.trusted-by-header {
+  background: var(--dark-bg);
+  padding: 3rem 0 1rem;
+}
+
+.trusted-by-header .section-title {
   text-align: center;
   margin-bottom: 1rem;
 }
 
-.trusted-by .section-subtitle {
+.trusted-by-header .section-subtitle {
   text-align: center;
   color: var(--text-secondary);
   font-size: 1.1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 0;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -879,6 +1154,173 @@ onUnmounted(() => {
 /* Pause animation on hover */
 .carousel-container:hover .carousel-track {
   animation-play-state: paused;
+}
+
+/* Digital Presence Section */
+.digital-presence {
+  background: var(--dark-bg);
+  padding: 5rem 0;
+}
+
+.digital-presence-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.digital-presence-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.highlight-text {
+  color: var(--primary-orange);
+  position: relative;
+}
+
+.digital-presence-description {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.lead-text {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.lead-text strong {
+  color: var(--primary-orange);
+  font-weight: 600;
+}
+
+.emphasis-text {
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.challenge-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.challenge-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: var(--dark-secondary);
+  border-radius: 0.5rem;
+  border-left: 3px solid #ef4444;
+}
+
+.challenge-list li span {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.icon-cross {
+  color: #ef4444;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.digital-presence-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, var(--dark-secondary), var(--dark-tertiary));
+  border-radius: 1.5rem;
+  padding: 3rem 2.5rem;
+  border: 2px solid var(--primary-orange);
+  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--primary-orange), var(--secondary-orange));
+}
+
+.stat-content {
+  text-align: center;
+}
+
+.stat-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--primary-orange);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.stat-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--dark-tertiary);
+}
+
+/* Solution Section */
+.solution-section {
+  background: var(--dark-secondary);
+  padding: 3rem 0 4rem;
+  overflow: hidden;
+}
+
+.solution-content {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.solution-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.highlight-orange {
+  color: var(--primary-orange);
+}
+
+.solution-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  font-weight: 500;
 }
 
 /* Case Studies Styles */
@@ -1287,8 +1729,17 @@ onUnmounted(() => {
     flex-wrap: wrap;
   }
   
-  .services-grid {
+  .package-content {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .package-title {
+    font-size: 2rem;
+  }
+  
+  .package-features-box {
+    position: static;
   }
   
   .case-studies-grid {
@@ -1307,6 +1758,31 @@ onUnmounted(() => {
   
   .tech-stack {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .digital-presence-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .digital-presence-title {
+    font-size: 2rem;
+  }
+  
+  .stat-number {
+    font-size: 3rem;
+  }
+  
+  .stat-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .solution-title {
+    font-size: 1.8rem;
+  }
+  
+  .solution-subtitle {
+    font-size: 1rem;
   }
   
   .contact-content {
