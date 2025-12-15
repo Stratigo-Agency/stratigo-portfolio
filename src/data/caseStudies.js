@@ -52,7 +52,6 @@ export const caseStudies = [
     technologies: ['Vue.js', 'TypeScript'],
     results: [
       { value: '20+', label: 'Foto produk' },
-      { value: '4+', label: 'Tahun pengalaman' }
     ],
     content: []
   },

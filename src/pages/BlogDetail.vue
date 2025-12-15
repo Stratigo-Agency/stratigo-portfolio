@@ -36,7 +36,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { computed, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import Navbar from '../components/Navbar.vue'
 import Footer from '../components/Footer.vue'
@@ -46,6 +46,18 @@ import { blogPosts } from '../data/blogPosts.js'
 const route = useRoute()
 const post = computed(() => {
   return blogPosts.find(p => p.id === route.params.id)
+})
+
+const scrollToTop = () => {
+  window.scrollTo(0, 0)
+}
+
+onMounted(() => {
+  scrollToTop()
+})
+
+watch(() => route.params.id, () => {
+  scrollToTop()
 })
 </script>
 
@@ -71,7 +83,6 @@ const post = computed(() => {
 
 .blog-detail-category {
   display: inline-block;
-  background: var(--electric-blue);
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 0;

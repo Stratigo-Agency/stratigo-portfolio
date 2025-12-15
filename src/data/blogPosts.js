@@ -465,7 +465,7 @@ export const blogPosts = [
       {
         type: 'text',
         props: {
-          text: 'AI bukan lagi teknologi masa depan—ini adalah realitas sekarang. Bisnis yang mengadopsi AI hari ini akan memiliki keunggulan kompetitif yang signifikan di masa depan. Mulailah dengan langkah kecil, fokus pada area yang akan memberikan dampak terbesar, dan teruslah belajar dan beradaptasi.',
+          text: 'AI bukan lagi teknologi masa depan, melainkan sesuatu yang mulai diterapkan secara masif. Bisnis yang mengadopsi AI hari ini akan memiliki keunggulan kompetitif yang signifikan di masa depan. Mulailah dengan langkah kecil, fokus pada area yang akan memberikan dampak terbesar, dan teruslah belajar dan beradaptasi.',
           size: 'medium'
         }
       },

@@ -59,7 +59,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import Navbar from '../components/Navbar.vue'
 import Footer from '../components/Footer.vue'
@@ -69,6 +69,18 @@ import { caseStudies } from '../data/caseStudies.js'
 const route = useRoute()
 const caseStudy = computed(() => {
   return caseStudies.find(cs => cs.id === route.params.id)
+})
+
+const scrollToTop = () => {
+  window.scrollTo(0, 0)
+}
+
+onMounted(() => {
+  scrollToTop()
+})
+
+watch(() => route.params.id, () => {
+  scrollToTop()
 })
 </script>
 
