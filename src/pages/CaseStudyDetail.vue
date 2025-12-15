@@ -42,6 +42,8 @@
                 </div>
               </div>
             </div>
+            
+            <DynamicContent v-if="caseStudy.content && caseStudy.content.length > 0" :content="caseStudy.content" />
           </div>
         </div>
         
@@ -61,6 +63,7 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import Navbar from '../components/Navbar.vue'
 import Footer from '../components/Footer.vue'
+import DynamicContent from '../components/dynamic/DynamicContent.vue'
 import { caseStudies } from '../data/caseStudies.js'
 
 const route = useRoute()

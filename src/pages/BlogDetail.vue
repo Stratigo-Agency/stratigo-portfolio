@@ -20,6 +20,7 @@
           
           <div class="blog-detail-body">
             <p class="blog-detail-excerpt">{{ post.excerpt }}</p>
+            <DynamicContent v-if="post.content && post.content.length > 0" :content="post.content" />
           </div>
         </div>
         
@@ -39,6 +40,7 @@ import { ref, computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import Navbar from '../components/Navbar.vue'
 import Footer from '../components/Footer.vue'
+import DynamicContent from '../components/dynamic/DynamicContent.vue'
 import { blogPosts } from '../data/blogPosts.js'
 
 const route = useRoute()
