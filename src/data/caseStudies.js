@@ -2,6 +2,7 @@ import previewImage from '../assets/preview.jpg'
 
 export const caseStudies = [
   {
+    id: 'travel-agency-website',
     title: 'Travel Agency Website',
     category: 'Custom Website',
     description: 'Membangun website modern untuk travel agency yang menampilkan paket wisata, booking system, dan galeri destinasi.',
@@ -13,6 +14,7 @@ export const caseStudies = [
     ]
   },
   {
+    id: 'company-website-brand-otomotif',
     title: 'Company Website untuk Brand Otomotif',
     category: 'Custom Website',
     description: 'Membangun website perusahaan untuk brand otomotif yang menjual berbagai produk kendaraan.',
@@ -24,6 +26,7 @@ export const caseStudies = [
     ]
   },
   {
+    id: 'ai-financial-reporting',
     title: 'AI untuk Financial Reporting',
     category: 'Custom Software',
     description: 'Membangun sistem Artificial Intelligence yang secara otomatis menghasilkan laporan keuangan dari berbagai sumber data.',

@@ -40,6 +40,8 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
+
 const props = defineProps({
   post: {
     type: Object,
@@ -53,9 +55,13 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['click'])
+const router = useRouter()
 
 const handleClick = () => {
   emit('click', props.post)
+  if (props.post.id) {
+    router.push(`/blog/${props.post.id}`)
+  }
 }
 </script>
 

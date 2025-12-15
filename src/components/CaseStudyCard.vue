@@ -43,6 +43,8 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
+
 const props = defineProps({
   caseStudy: {
     type: Object,
@@ -56,9 +58,13 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['click'])
+const router = useRouter()
 
 const handleClick = () => {
   emit('click', props.caseStudy)
+  if (props.caseStudy.id) {
+    router.push(`/case-studies/${props.caseStudy.id}`)
+  }
 }
 </script>
 
