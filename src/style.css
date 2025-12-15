@@ -1,9 +1,14 @@
 :root {
-  --primary-orange: #ff6b35;
-  --secondary-orange: #ff8c42;
-  --dark-bg: #0a0a0a;
-  --dark-secondary: #1a1a1a;
-  --dark-tertiary: #2a2a2a;
+  --primary-blue: #051C2C;
+  --electric-blue: #2251FF;
+  --cyan-blue: #00A9F4;
+  --accent-blue: #1a3a52;
+  --light-bg: #000000;
+  --light-secondary: #0a0a0a;
+  --light-tertiary: #1a1a1a;
+  --dark-gray: #333333;
+  --mid-gray: #757575;
+  --light-gray: #BDBDBD;
   --text-primary: #ffffff;
   --text-secondary: #b0b0b0;
   --text-muted: #808080;
@@ -20,34 +25,45 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--dark-bg);
+  font-family: 'League Spartan', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--light-bg);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.8;
   overflow-x: hidden;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.01em;
+}
+
+p:last-child {
+  margin-bottom: 0;
 }
 
 /* Typography Hierarchy */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'League Spartan', sans-serif;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+  margin-bottom: 1rem;
 }
 
 .logo h2 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'League Spartan', sans-serif;
   font-weight: 700;
   letter-spacing: -0.03em;
 }
 
 .hero-title {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'League Spartan', sans-serif;
   font-weight: 700;
   letter-spacing: -0.04em;
 }
 
 .section-title {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'League Spartan', sans-serif;
   font-weight: 700;
   letter-spacing: -0.03em;
 }
@@ -62,8 +78,8 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   padding: 0.75rem 2rem;
   border: none;
-  border-radius: 0.5rem;
-  font-family: 'Space Grotesk', sans-serif;
+  border-radius: 0;
+  font-family: 'League Spartan', sans-serif;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
@@ -73,23 +89,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+  background: var(--light-bg);
   color: white;
+  border: 2px solid white;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
 }
 
 .btn-primary:hover {
+  background: white;
+  color: var(--light-bg);
+  border-color: white;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--primary-orange);
-  border: 2px solid var(--primary-orange);
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
 }
 
 .btn-outline:hover {
-  background: var(--primary-orange);
+  background: var(--primary-blue);
   color: white;
 }
 
@@ -102,10 +123,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
-  background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
 }
 
 .fade-in {

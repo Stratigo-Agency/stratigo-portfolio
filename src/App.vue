@@ -7,10 +7,87 @@
           <h2>Stratigo</h2>
         </div>
         <ul class="nav-links" :class="{ 'active': mobileMenuOpen }">
-          <li><a href="#beranda" @click="closeMobileMenu('beranda')">Beranda</a></li>
-          <li><a href="#layanan" @click="closeMobileMenu('layanan')">Layanan</a></li>
-          <li><a href="#kontak" @click="closeMobileMenu('kontak')">Kontak</a></li>
+          <li>
+            <a href="#beranda" @click="closeMobileMenu('beranda')">Beranda</a>
+          </li>
+          <li class="nav-item-dropdown" 
+              @mouseenter="showDropdown = 'layanan'"
+              @mouseleave="showDropdown = null">
+            <a href="#layanan" @click="closeMobileMenu('layanan')">
+              Layanan
+              <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 4.5l3 3 3-3"/>
+              </svg>
+            </a>
+            <div class="dropdown-menu" v-if="showDropdown === 'layanan'">
+              <div class="dropdown-grid">
+                <a href="#layanan" class="dropdown-card card-blue" @click="closeMobileMenu('layanan')">
+                  <span class="dropdown-card-text">Service Option 1</span>
+                  <div class="dropdown-card-button">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M6 4l4 4-4 4"/>
+                    </svg>
+                  </div>
+                </a>
+                <a href="#layanan" class="dropdown-card card-light" @click="closeMobileMenu('layanan')">
+                  <span class="dropdown-card-text">Service Option 2</span>
+                  <div class="dropdown-card-button">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M6 4l4 4-4 4"/>
+                    </svg>
+                  </div>
+                </a>
+                <a href="#layanan" class="dropdown-card card-dark" @click="closeMobileMenu('layanan')">
+                  <span class="dropdown-card-text">Service Option 3</span>
+                  <div class="dropdown-card-button">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M6 4l4 4-4 4"/>
+                    </svg>
+                  </div>
+                </a>
+                <a href="#layanan" class="dropdown-card card-white" @click="closeMobileMenu('layanan')">
+                  <span class="dropdown-card-text">Service Option 4</span>
+                  <div class="dropdown-card-button">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M6 4l4 4-4 4"/>
+                    </svg>
+                  </div>
+                </a>
+                <a href="#layanan" class="dropdown-card card-dark" @click="closeMobileMenu('layanan')">
+                  <span class="dropdown-card-text">Service Option 5</span>
+                  <div class="dropdown-card-button">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M6 4l4 4-4 4"/>
+                    </svg>
+                  </div>
+                </a>
+                <a href="#layanan" class="dropdown-card card-dark" @click="closeMobileMenu('layanan')">
+                  <span class="dropdown-card-text">Service Option 6</span>
+                  <div class="dropdown-card-button">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M6 4l4 4-4 4"/>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="#kontak" @click="closeMobileMenu('kontak')">Kontak</a>
+          </li>
+          <li class="mobile-nav-buttons">
+            <a href="#kontak" class="btn-nav-secondary" @click="closeMobileMenu('kontak')">Hubungi Kami</a>
+            <a href="https://wa.me/6287881332121" target="_blank" rel="noopener noreferrer" class="btn-nav-primary" @click="trackButtonClick('Konsultasi Sekarang', 'navbar'); closeMobileMenu()">
+              Konsultasi Sekarang
+            </a>
+          </li>
         </ul>
+        <div class="nav-cta">
+          <a href="#kontak" class="btn-nav-secondary">Hubungi Kami</a>
+          <a href="https://wa.me/6287881332121" target="_blank" rel="noopener noreferrer" class="btn-nav-primary" @click="trackButtonClick('Konsultasi Sekarang', 'navbar')">
+            Konsultasi Sekarang
+          </a>
+        </div>
         <div class="mobile-menu-toggle" @click="toggleMobileMenu">
           <span></span>
           <span></span>
@@ -23,79 +100,81 @@
     <section id="beranda" class="hero">
       <div class="hero-content container">
         <div class="hero-text fade-in" :class="{ 'visible': heroVisible }">
-          <h1 class="hero-title">
-            Tingkatkan <span class="highlight">Brand Bisnis Anda</span> dengan Website yang<span class="highlight"> Profesional</span>
-          </h1>
-          <p class="hero-description">
-            Stratigo menghadirkan website profesional yang dirancang secara custom untuk menarik perhatian calon klien dan konsumen
+          <p class="hero-content-text">
+            Tingkatkan Brand Bisnis Anda dengan Website yang Profesional. Stratigo menghadirkan website profesional yang dirancang secara custom untuk menarik perhatian calon klien dan konsumen.
           </p>
+       
           <div class="hero-buttons">
-            <a href="https://wa.me/6287881332121" target="_blank" rel="noopener noreferrer" class="btn btn-primary" @click="trackButtonClick('Konsultasi Sekarang', 'hero')">Konsultasi Sekarang</a>
+            <a href="https://wa.me/6287881332121" target="_blank" rel="noopener noreferrer" class="btn btn-primary" @click="trackButtonClick('Konsultasi Sekarang', 'hero')">
+              Konsultasi Sekarang <span class="btn-arrow">></span>
+            </a>
           </div>
         </div>
         <div class="hero-visual fade-in" :class="{ 'visible': heroVisible }">
-          <div class="floating-card">
-            <div class="card-content">
-              <div class="code-lines">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line short"></div>
-                <div class="line"></div>
-                <div class="line short"></div>
-              </div>
-            </div>
+          <div class="hero-typography">
+            <div class="hero-word-large">We build</div>
+            <div class="hero-word-large">{{ animatedText }}<span class="typing-cursor">|</span></div>
           </div>
         </div>
       </div>
-      
     </section>
 
-
+    <!-- Products Section -->
+    <section class="section products">
+      <div class="container">
+        <h2 class="products-header fade-in" :class="{ 'visible': productsVisible }">
+          ( LAYANAN KAMI )
+        </h2>
+        <div class="products-grid fade-in" :class="{ 'visible': productsVisible }">
+          <a href="#layanan" class="product-card product-blue" @click="trackButtonClick('Portfolio Website', 'products')">
+            <div class="product-content">
+              <h3 class="product-title">Portfolio Website</h3>
+              <p class="product-description">Website profesional untuk menampilkan karya dan portofolio Anda dengan desain yang menarik dan modern.</p>
+            </div>
+            <div class="product-button">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 5l6 5-6 5"/>
+              </svg>
+            </div>
+          </a>
+          <a href="#layanan" class="product-card product-light" @click="trackButtonClick('E-Learning Apps', 'products')">
+            <div class="product-content">
+              <h3 class="product-title">E-Learning Apps</h3>
+              <p class="product-description">Aplikasi pembelajaran online yang interaktif dan mudah digunakan untuk berbagai kebutuhan edukasi.</p>
+            </div>
+            <div class="product-button">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 5l6 5-6 5"/>
+              </svg>
+            </div>
+          </a>
+          <a href="#layanan" class="product-card product-dark" @click="trackButtonClick('Customer AI Chatbot', 'products')">
+            <div class="product-content">
+              <h3 class="product-title">Customer AI Chatbot</h3>
+              <p class="product-description">Chatbot AI cerdas untuk customer service yang dapat menjawab pertanyaan pelanggan 24/7 secara otomatis.</p>
+            </div>
+            <div class="product-button">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 5l6 5-6 5"/>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
 
     <!-- Digital Presence Section -->
     <section class="section digital-presence">
       <div class="container">
         <div class="digital-presence-content fade-in" :class="{ 'visible': digitalPresenceVisible }">
+          <div class="digital-presence-number">7+</div>
           <div class="digital-presence-text">
-            <h2 class="digital-presence-title">
-              Apakah bisnis Anda <span class="highlight-text">siap berkompetisi</span> di era digital?
-            </h2>
-            <div class="digital-presence-description">
-              <p class="lead-text">
-                Di era digital ini, <strong>masyarakat Indonesia menghabiskan lebih dari 7 jam setiap harinya di internet</strong>. 
-                Website bukan hanya pelengkap—melainkan <strong>kebutuhan vital</strong> bagi bisnis yang ingin berkembang.
-              </p>
-              <p class="emphasis-text">
-                Website adalah etalase digital bisnis Anda. Tempat pertama calon pelanggan mencari informasi dan menilai kredibilitas perusahaan Anda. Tanpa website profesional, bisnis Anda:
-              </p>
-              <ul class="challenge-list">
-                <li>
-                  <svg class="icon-cross" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"/>
-                    <line x1="15" y1="9" x2="9" y2="15"/>
-                    <line x1="9" y1="9" x2="15" y2="15"/>
-                  </svg>
-                  <span>Sulit ditemukan calon pelanggan di mesin pencari</span>
-                </li>
-                <li>
-                  <svg class="icon-cross" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"/>
-                    <line x1="15" y1="9" x2="9" y2="15"/>
-                    <line x1="9" y1="9" x2="15" y2="15"/>
-                  </svg>
-                  <span>Terlihat kurang kredibel dan profesional</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="digital-presence-visual">
-            <div class="stat-card">
-              <div class="stat-content">
-                <div class="stat-number">7+ Jam</div>
-                <div class="stat-label">Waktu online rata-rata masyarakat Indonesia per hari</div>
-                <div class="stat-note">Sumber: Data Penggunaan Internet Indonesia 2023</div>
-              </div>
-            </div>
+            <p class="digital-presence-main-text">
+              <strong>Masyarakat Indonesia menghabiskan lebih dari 7 jam setiap harinya di internet</strong>. Website bukan hanya pelengkap, melainkan <strong>kebutuhan vital</strong> bagi bisnis yang ingin berkembang.
+            </p>
+            <p class="digital-presence-sub-text">
+              Website adalah etalase digital bisnis Anda. Tanpa website profesional, bisnis Anda sulit ditemukan dan terlihat kurang kredibel.
+            </p>
           </div>
         </div>
       </div>
@@ -105,11 +184,13 @@
     <section class="section solution-section">
       <div class="container">
         <div class="solution-content fade-in" :class="{ 'visible': solutionVisible }">
-          <h2 class="solution-title">
-            Ingin website yang <span class="highlight-orange">profesional</span> dan <span class="highlight-orange">menarik pengunjung</span>?
-          </h2>
-          <p class="solution-subtitle">Di situlah Stratigo hadir untuk membantu Anda</p>
+        
         </div>
+      </div>
+      <div class="container">
+        <h2 class="products-header fade-in" :class="{ 'visible': productsVisible }">
+          ( DIPERCAYA OLEH )
+        </h2>
         <div class="carousel-container">
           <div class="carousel-track">
             <div class="client-logo" v-for="(client, index) in [...clientLogos, ...clientLogos]" :key="`${client.name}-${index}`"
@@ -121,241 +202,12 @@
       </div>
     </section>
 
-    <!-- Packages Section Header -->
-    <section id="layanan" class="section packages-header">
-      <div class="container">
-        <h2 class="section-title fade-in" :class="{ 'visible': packagesVisible }">Pilih Paket yang Sesuai untuk Bisnis Anda</h2>
-        <p class="section-subtitle fade-in" :class="{ 'visible': packagesVisible }">
-          Kami menawarkan tiga pilihan paket yang dirancang khusus untuk berbagai kebutuhan dan skala bisnis
-        </p>
-      </div>
-    </section>
-
-    <!-- Business Package -->
-    <section class="section package-single business-package">
-      <div class="container">
-        <div class="package-content fade-in" :class="{ 'visible': businessVisible }">
-          <div class="package-info">
-            <div class="package-name-tag">Business</div>
-            <h3 class="package-title">Paket Business</h3>
-            <p class="package-description">Sempurna untuk bisnis yang baru membangun kehadiran digital</p>
-            <div class="package-specs-list">
-              <div class="spec-row">
-                <span class="spec-label">Halaman</span>
-                <span class="spec-value">1-5 Halaman</span>
-              </div>
-              <div class="spec-row">
-                <span class="spec-label">Revisi</span>
-                <span class="spec-value">Hingga 3x</span>
-              </div>
-              <div class="spec-row">
-                <span class="spec-label">Desain</span>
-                <span class="spec-value">Sederhana & Profesional</span>
-              </div>
-            </div>
-          </div>
-          <div class="package-features-box">
-            <h4>Fitur Unggulan</h4>
-            <ul class="features-list">
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                <span>Desain responsif & menarik</span>
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                <span>Blog untuk artikel & berita</span>
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                <span>Galeri, slide, ikon & video</span>
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                <span>WhatsApp & form kontak</span>
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                <span>Optimasi SEO dasar</span>
-              </li>
-            </ul>
-            <a href="https://wa.me/6287881332121?text=Halo, saya tertarik dengan Paket Business" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="btn-package-cta"
-               @click="trackButtonClick('Paket Business', 'packages')">
-              Pilih Paket Business
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Prime Package -->
-    <section class="section package-single prime-package">
-      <div class="container">
-        <div class="package-content fade-in" :class="{ 'visible': primeVisible }">
-          <div class="package-info">
-            <div class="package-name-tag popular">Prime <span class="badge-text">POPULER</span></div>
-            <h3 class="package-title">Paket Prime</h3>
-            <p class="package-description">Ideal untuk perusahaan berkembang dengan konten lebih lengkap</p>
-            <div class="package-specs-list">
-              <div class="spec-row">
-                <span class="spec-label">Halaman</span>
-                <span class="spec-value">5-10 Halaman</span>
-              </div>
-              <div class="spec-row">
-                <span class="spec-label">Revisi</span>
-                <span class="spec-value">Hingga 4x</span>
-              </div>
-              <div class="spec-row">
-                <span class="spec-label">Desain</span>
-                <span class="spec-value">Interaktif & Profesional</span>
-              </div>
-            </div>
-          </div>
-          <div class="package-features-box">
-            <h4>Fitur Unggulan</h4>
-            <ul class="features-list">
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                <span>Semua fitur Business</span>
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                <span>Katalog produk/portfolio</span>
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                <span>Instagram Feed integration</span>
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                <span>Newsletter subscription</span>
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                <span>Live Chat support</span>
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                <span>Animasi ringan</span>
-              </li>
-            </ul>
-            <a href="https://wa.me/6287881332121?text=Halo, saya tertarik dengan Paket Prime" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="btn-package-cta"
-               @click="trackButtonClick('Paket Prime', 'packages')">
-              Pilih Paket Prime
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Corporate Package -->
-    <section class="section package-single corporate-package">
-      <div class="container">
-        <div class="package-content fade-in" :class="{ 'visible': corporateVisible }">
-          <div class="package-info">
-            <div class="package-name-tag">Corporate</div>
-            <h3 class="package-title">Paket Corporate</h3>
-            <p class="package-description">Solusi premium untuk perusahaan besar dengan kebutuhan kompleks</p>
-            <div class="package-specs-list">
-              <div class="spec-row">
-                <span class="spec-label">Halaman</span>
-                <span class="spec-value">10-20+ Halaman</span>
-              </div>
-              <div class="spec-row">
-                <span class="spec-label">Revisi</span>
-                <span class="spec-value">Hingga 4x + Meeting</span>
-              </div>
-              <div class="spec-row">
-                <span class="spec-label">Desain</span>
-                <span class="spec-value">Advanced & Brand Identity</span>
-              </div>
-            </div>
-          </div>
-          <div class="package-features-box">
-            <h4>Fitur Unggulan</h4>
-            <ul class="features-list">
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                <span>Semua fitur Prime</span>
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                <span>Fokus identitas brand</span>
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                <span>Animasi kompleks</span>
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                <span>Fitur khusus custom</span>
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                <span>Proses revisi lengkap</span>
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                <span>Konsultasi via meeting</span>
-              </li>
-            </ul>
-            <a href="https://wa.me/6287881332121?text=Halo, saya tertarik dengan Paket Corporate" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="btn-package-cta"
-               @click="trackButtonClick('Paket Corporate', 'packages')">
-              Pilih Paket Corporate
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Contact Section -->
     <section id="kontak" class="section contact">
       <div class="container">
         <div class="contact-content">
           <div class="contact-info fade-in" :class="{ 'visible': contactVisible }">
-            <h3>The world moves fast. Don't just keep pace. Stay ahead.</h3>
+            <h3>Realisasikan ide bisnis Anda dengan kami.</h3>
             <p>Siap untuk mengembangkan bisnis Anda dengan website profesional? Hubungi tim Stratigo sekarang!</p>
             <div class="collaboration-points">
               <div class="collaboration-point">
@@ -375,7 +227,10 @@
             </div>
             <div class="contact-methods">
               <div class="contact-method">
-                <strong>Email:</strong> info@stratigo.id
+                <strong>Email:</strong> info@stratigo.co.id
+              </div>
+              <div class="contact-method">
+                <strong>Telepon:</strong> +6287881332121
               </div>
               <div class="contact-method">
                 <strong>Alamat:</strong> Jakarta, Indonesia
@@ -470,15 +325,50 @@ const { trackEvent, trackFormSubmission, trackButtonClick, trackServiceInterest,
 // Reactive data
 const isScrolled = ref(false)
 const mobileMenuOpen = ref(false)
+const showDropdown = ref(null)
 const heroVisible = ref(false)
+const productsVisible = ref(false)
 const servicesVisible = ref(false)
 const trustedByVisible = ref(false)
 const digitalPresenceVisible = ref(false)
+
+// Typing animation for hero text
+const animatedText = ref('Websites.')
+const typingWords = ['Websites.', 'Software.']
+let typingTimeout = null
+let currentWordIndex = 0
+let isDeleting = false
+let currentCharIndex = 0
+
+const typeText = () => {
+  const currentWord = typingWords[currentWordIndex]
+  
+  if (isDeleting) {
+    // Delete characters
+    if (currentCharIndex > 0) {
+      animatedText.value = currentWord.substring(0, currentCharIndex - 1)
+      currentCharIndex--
+      typingTimeout = setTimeout(typeText, 30) // Faster deletion
+    } else {
+      // Finished deleting, move to next word
+      isDeleting = false
+      currentWordIndex = (currentWordIndex + 1) % typingWords.length
+      typingTimeout = setTimeout(typeText, 300) // Pause before typing next word
+    }
+  } else {
+    // Type characters
+    if (currentCharIndex < currentWord.length) {
+      animatedText.value = currentWord.substring(0, currentCharIndex + 1)
+      currentCharIndex++
+      typingTimeout = setTimeout(typeText, 60) // Typing speed
+    } else {
+      // Finished typing, wait then start deleting
+      isDeleting = true
+      typingTimeout = setTimeout(typeText, 1000) // Pause before deleting
+    }
+  }
+}
 const solutionVisible = ref(false)
-const packagesVisible = ref(false)
-const businessVisible = ref(false)
-const primeVisible = ref(false)
-const corporateVisible = ref(false)
 const contactVisible = ref(false)
 
 const form = ref({
@@ -567,18 +457,18 @@ const handleScroll = () => {
   
   // Intersection observer for animations
   const heroSection = document.querySelector('.hero')
+  const productsSection = document.querySelector('.products')
   const servicesSection = document.querySelector('.services')
   const trustedBySection = document.querySelector('.trusted-by-header')
   const digitalPresenceSection = document.querySelector('.digital-presence')
   const solutionSection = document.querySelector('.solution-section')
-  const packagesSection = document.querySelector('.packages-header')
-  const businessSection = document.querySelector('.business-package')
-  const primeSection = document.querySelector('.prime-package')
-  const corporateSection = document.querySelector('.corporate-package')
   const contactSection = document.querySelector('.contact')
   
   if (heroSection && isInViewport(heroSection)) {
     heroVisible.value = true
+  }
+  if (productsSection && isInViewport(productsSection)) {
+    productsVisible.value = true
   }
   if (servicesSection && isInViewport(servicesSection)) {
     servicesVisible.value = true
@@ -591,18 +481,6 @@ const handleScroll = () => {
   }
   if (solutionSection && isInViewport(solutionSection)) {
     solutionVisible.value = true
-  }
-  if (packagesSection && isInViewport(packagesSection)) {
-    packagesVisible.value = true
-  }
-  if (businessSection && isInViewport(businessSection)) {
-    businessVisible.value = true
-  }
-  if (primeSection && isInViewport(primeSection)) {
-    primeVisible.value = true
-  }
-  if (corporateSection && isInViewport(corporateSection)) {
-    corporateVisible.value = true
   }
   if (contactSection && isInViewport(contactSection)) {
     contactVisible.value = true
@@ -694,14 +572,25 @@ ${form.value.name}`
   }
 }
 
+
 // Lifecycle
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
   handleScroll() // Initial check
+  
+  // Start typing animation after a delay
+  setTimeout(() => {
+    typeText()
+  }, 1000) // Wait 1 second before starting animation
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  
+  // Clean up typing animation
+  if (typingTimeout) {
+    clearTimeout(typingTimeout)
+  }
 })
 </script>
 
@@ -712,50 +601,237 @@ onUnmounted(() => {
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
-  backdrop-filter: blur(10px);
+  background: transparent;
+  backdrop-filter: none;
   z-index: 1000;
   transition: all 0.3s ease;
 }
 
 .header.scrolled {
-  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  background: transparent;
+  box-shadow: none;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
+  gap: 3rem;
 }
 
 .logo h2 {
-  background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
   font-size: 1.8rem;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 2.5rem;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.mobile-nav-buttons {
+  display: none;
+}
+
+.nav-item-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  right: -20px;
+  height: 0.5rem;
+  background: transparent;
 }
 
 .nav-links a {
   color: var(--text-primary);
   text-decoration: none;
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  transition: color 0.3s ease;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
 }
 
 .nav-links a:hover {
-  color: var(--primary-orange);
+  color: var(--text-primary);
+}
+
+.nav-item-dropdown a {
+  position: relative;
+}
+
+.nav-item-dropdown:hover a {
+  border-bottom: 1px solid var(--text-primary);
+}
+
+.dropdown-arrow {
+  transition: transform 0.3s ease;
+}
+
+.nav-item-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  background: rgba(128, 128, 128, 0.3);
+  backdrop-filter: blur(80px) saturate(200%);
+  -webkit-backdrop-filter: blur(80px) saturate(200%);
+  border: none;
+  min-width: 600px;
+  z-index: 1001;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.dropdown-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  aspect-ratio: 1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 1.5rem;
+  min-width: 180px;
+  min-height: 180px;
+}
+
+.dropdown-card:hover {
+  transform: translateY(-2px);
+}
+
+.card-blue {
+  background: var(--electric-blue);
+}
+
+.card-light {
+  background: #e8e8e8;
+}
+
+.card-dark {
+  background: #1a1a1a;
+}
+
+.card-white {
+  background: #ffffff;
+}
+
+.dropdown-card-text {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-align: left;
+}
+
+.card-blue .dropdown-card-text,
+.card-dark .dropdown-card-text {
+  color: white;
+}
+
+.card-light .dropdown-card-text,
+.card-white .dropdown-card-text {
+  color: #1a1a1a;
+}
+
+.dropdown-card-button {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.card-blue .dropdown-card-button {
+  background: white;
+  color: var(--electric-blue);
+}
+
+.card-light .dropdown-card-button {
+  background: #d0d0d0;
+  color: #1a1a1a;
+}
+
+.card-dark .dropdown-card-button {
+  background: #2a2a2a;
+  color: white;
+}
+
+.card-white .dropdown-card-button {
+  background: #f0f0f0;
+  color: #1a1a1a;
+}
+
+.dropdown-card:hover .dropdown-card-button {
+  transform: translateX(4px);
+}
+
+.nav-cta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.btn-nav-secondary {
+  padding: 0.75rem 1.5rem;
+  background: var(--light-secondary);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border: 1px solid var(--light-tertiary);
+}
+
+.btn-nav-secondary:hover {
+  background: var(--light-tertiary);
+}
+
+.btn-nav-primary {
+  padding: 0.75rem 1.5rem;
+  background: var(--electric-blue);
+  color: white;
+  text-decoration: none;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.btn-nav-primary:hover {
+  background: var(--cyan-blue);
 }
 
 .mobile-menu-toggle {
@@ -768,58 +844,70 @@ onUnmounted(() => {
 .mobile-menu-toggle span {
   width: 25px;
   height: 3px;
-  background: var(--primary-orange);
+  background: var(--electric-blue);
   transition: all 0.3s ease;
 }
 
 /* Hero Styles */
 .hero {
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
-  align-items: center;
-  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
+  flex-direction: column;
+  justify-content: center;
+  background: var(--light-bg);
   position: relative;
   overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+  padding: 8rem 0 2rem 0;
 }
 
 .hero-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 6rem;
   align-items: center;
   position: relative;
   z-index: 1;
+  flex: 1;
 }
 
-.hero-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
+.hero-clients {
+  width: 100%;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.highlight {
-  background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.hero-clients .carousel-container {
+  margin-top: 0;
+}
+
+.hero-content-text {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.9;
+  margin-bottom: 3rem;
+  color: white;
+  letter-spacing: 0.02em;
+  max-width: 90%;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.9;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+  max-width: 90%;
 }
 
 .hero-description {
   font-size: 1.2rem;
   color: var(--text-secondary);
-  margin-bottom: 2rem;
-  line-height: 1.6;
+  margin-bottom: 3rem;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+  max-width: 90%;
 }
 
 .hero-buttons {
@@ -827,242 +915,227 @@ onUnmounted(() => {
   gap: 1rem;
 }
 
+.btn-arrow {
+  margin-left: 0.5rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
 .hero-visual {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  position: relative;
 }
 
-.floating-card {
-  background: var(--dark-secondary);
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--dark-tertiary);
-  animation: float 6s ease-in-out infinite;
-}
-
-.code-lines {
+.hero-typography {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  align-items: flex-end;
+  gap: 0;
 }
 
-.line {
-  height: 8px;
-  background: linear-gradient(90deg, var(--primary-orange), var(--secondary-orange));
-  border-radius: 4px;
-  width: 200px;
+.hero-word-large {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  opacity: 0.95;
 }
 
-.line.short {
-  width: 120px;
+.hero-word-large:first-child {
+  margin-right: -2rem;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+.hero-word-large:last-child {
+  margin-left: -1rem;
+}
+
+.typing-cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Products Section */
+.products {
+  background: var(--light-bg);
+  padding: 5rem 0;
+}
+
+.products-header {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.products-grid {
+  display: flex;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 300px;
+  padding: 2rem;
+  text-decoration: none;
+  transition: flex-grow 0.5s ease, min-width 0.5s ease;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.products-grid:hover .product-card {
+  flex: 0.3;
+  min-width: 80px;
+}
+
+.products-grid:hover .product-card .product-content,
+.products-grid:hover .product-card .product-button {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.products-grid .product-card:hover {
+  flex: 2;
+  min-width: 400px;
+}
+
+.products-grid .product-card:hover .product-content,
+.products-grid .product-card:hover .product-button {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.product-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+  transition: opacity 0.3s ease;
+}
+
+.product-button {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.product-blue {
+  background: var(--electric-blue);
+}
+
+.product-light {
+  background: #e8e8e8;
+}
+
+.product-dark {
+  background: #1a1a1a;
+}
+
+.product-title {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.product-description {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease 0.2s, max-height 0.4s ease 0.2s;
+}
+
+.product-card:hover .product-description {
+  opacity: 1;
+  max-height: 200px;
+}
+
+.product-blue .product-title,
+.product-dark .product-title {
+  color: white;
+}
+
+.product-light .product-title {
+  color: #1a1a1a;
+}
+
+.product-blue .product-description,
+.product-dark .product-description {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.product-light .product-description {
+  color: rgba(26, 26, 26, 0.8);
+}
+
+.product-button {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.product-blue .product-button {
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.product-light .product-button {
+  background: rgba(0, 0, 0, 0.1);
+  color: #1a1a1a;
+}
+
+.product-dark .product-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.product-card:hover .product-button {
+  transform: translateX(4px);
 }
 
 /* Packages Header */
-.packages-header {
-  background: var(--dark-bg);
-  padding: 4rem 0 2rem;
-}
-
-/* Package Single Styles */
-.package-single {
-  padding: 4rem 0;
-  background: var(--dark-bg);
-}
-
-.business-package {
-  background: var(--dark-bg);
-}
-
-.prime-package {
-  background: var(--dark-bg);
-}
-
-.corporate-package {
-  background: var(--dark-bg);
-}
-
-.package-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: start;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.package-info {
-  position: relative;
-}
-
-.package-name-tag {
-  display: inline-block;
-  background: transparent;
-  color: var(--primary-orange);
-  padding: 0;
-  border-radius: 0;
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 1rem;
-}
-
-.package-name-tag.popular {
-  background: transparent;
-  position: relative;
-  padding-right: 0;
-}
-
-.badge-text {
-  display: inline;
-  background: transparent;
-  color: var(--primary-orange);
-  padding: 0 0 0 0.5rem;
-  border-radius: 0;
-  font-size: 0.75rem;
-}
-
-.package-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-  letter-spacing: -0.02em;
-}
-
-.package-description {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: 3rem;
-}
-
-.package-specs-list {
-  background: transparent;
-  border-radius: 0;
-  padding: 0;
-  border: none;
-  border-top: 1px solid var(--dark-tertiary);
-  padding-top: 2rem;
-}
-
-.prime-package .package-specs-list {
-  background: transparent;
-}
-
-.spec-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.spec-row:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.spec-row:first-child {
-  padding-top: 0;
-}
-
-.spec-label {
-  color: var(--text-secondary);
-  font-weight: 400;
-  font-size: 0.95rem;
-}
-
-.spec-value {
-  color: var(--text-primary);
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-.package-features-box {
-  background: transparent;
-  border-radius: 0;
-  padding: 0;
-  border: none;
-  border-top: 1px solid var(--dark-tertiary);
-  padding-top: 2rem;
-  position: sticky;
-  top: 100px;
-}
-
-.prime-package .package-features-box {
-  background: transparent;
-  border-color: var(--dark-tertiary);
-}
-
-.package-features-box h4 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
-  letter-spacing: 0;
-  text-transform: uppercase;
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-}
-
-.features-list {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 2.5rem;
-}
-
-.features-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  margin-bottom: 0.875rem;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.features-list li svg {
-  color: var(--primary-orange);
-  flex-shrink: 0;
-  margin-top: 0.25rem;
-  width: 18px;
-  height: 18px;
-}
-
-.btn-package-cta {
-  display: inline-block;
-  width: auto;
-  padding: 1rem 2.5rem;
-  background: var(--primary-orange);
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-package-cta:hover {
-  background: var(--secondary-orange);
-  transform: translateY(-1px);
-}
-
 /* Trusted By Header Styles */
 .trusted-by-header {
-  background: var(--dark-bg);
+  background: var(--light-bg);
   padding: 3rem 0 1rem;
 }
 
@@ -1114,20 +1187,12 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2rem;
-  background: transparent;
-  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: #1a1a1a;
+  border-radius: 0;
   border: 1px solid transparent;
-  transition: all 0.3s ease;
   min-width: 180px;
   height: 100px;
-  cursor: pointer;
-}
-
-.client-logo:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.2);
-  border-color: var(--primary-orange);
 }
 
 .client-logo img {
@@ -1135,11 +1200,6 @@ onUnmounted(() => {
   max-height: 60px;
   object-fit: contain;
   filter: brightness(0) invert(1) opacity(0.4);
-  transition: all 0.3s ease;
-}
-
-.client-logo:hover img {
-  filter: brightness(0) invert(1) opacity(0.8);
 }
 
 @keyframes scroll-infinite {
@@ -1151,104 +1211,59 @@ onUnmounted(() => {
   }
 }
 
-/* Pause animation on hover */
-.carousel-container:hover .carousel-track {
-  animation-play-state: paused;
-}
 
 /* Digital Presence Section */
 .digital-presence {
-  background: var(--dark-bg);
+  background: #000;
   padding: 5rem 0;
 }
 
 .digital-presence-content {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: auto 1fr;
   gap: 4rem;
-  align-items: center;
+  align-items: start;
 }
 
-.digital-presence-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: 2rem;
-  color: var(--text-primary);
-  letter-spacing: -0.02em;
+.digital-presence-number {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 12rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+  white-space: nowrap;
 }
 
-.highlight-text {
-  color: var(--primary-orange);
-  position: relative;
-}
-
-.digital-presence-description {
-  color: var(--text-secondary);
-  line-height: 1.8;
-}
-
-.lead-text {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  color: var(--text-primary);
-}
-
-.lead-text strong {
-  color: var(--primary-orange);
-  font-weight: 600;
-}
-
-.emphasis-text {
-  font-size: 1.05rem;
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-}
-
-.challenge-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 1.5rem;
-}
-
-.challenge-list li {
+.digital-presence-text {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  background: var(--dark-secondary);
-  border-radius: 0.5rem;
-  border-left: 3px solid #ef4444;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 1rem;
 }
 
-.challenge-list li span {
-  font-size: 1rem;
+.digital-presence-main-text {
+  font-size: 1.5rem;
+  font-weight: 400;
   line-height: 1.6;
-  color: var(--text-secondary);
+  color: #fff;
+  margin: 0;
 }
 
-.icon-cross {
-  color: #ef4444;
-  flex-shrink: 0;
-  margin-top: 0.1rem;
+.digital-presence-main-text strong {
+  font-weight: 600;
+  color: #fff;
 }
 
-.digital-presence-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.digital-presence-sub-text {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #fff;
+  margin: 0;
 }
 
-.stat-card {
-  background: linear-gradient(135deg, var(--dark-secondary), var(--dark-tertiary));
-  border-radius: 1.5rem;
-  padding: 3rem 2.5rem;
-  border: 2px solid var(--primary-orange);
-  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
-  position: relative;
-  overflow: hidden;
+.source-text {
+  font-weight: 600;
 }
 
 .stat-card::before {
@@ -1258,7 +1273,7 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 6px;
-  background: linear-gradient(90deg, var(--primary-orange), var(--secondary-orange));
+  background: var(--electric-blue);
 }
 
 .stat-content {
@@ -1266,10 +1281,10 @@ onUnmounted(() => {
 }
 
 .stat-number {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'League Spartan', sans-serif;
   font-size: 4rem;
   font-weight: 700;
-  color: var(--primary-orange);
+  color: var(--electric-blue);
   margin-bottom: 1rem;
   line-height: 1;
 }
@@ -1288,12 +1303,12 @@ onUnmounted(() => {
   font-style: italic;
   margin-top: 1.5rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--dark-tertiary);
+  border-top: 1px solid var(--light-tertiary);
 }
 
 /* Solution Section */
 .solution-section {
-  background: var(--dark-secondary);
+  background: var(--light-secondary);
   padding: 3rem 0 4rem;
   overflow: hidden;
 }
@@ -1304,7 +1319,7 @@ onUnmounted(() => {
 }
 
 .solution-title {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'League Spartan', sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.3;
@@ -1314,18 +1329,20 @@ onUnmounted(() => {
 }
 
 .highlight-orange {
-  color: var(--primary-orange);
+  color: var(--electric-blue);
 }
 
 .solution-subtitle {
   font-size: 1.2rem;
   color: var(--text-secondary);
   font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
 }
 
 /* Case Studies Styles */
 .case-studies {
-  background: var(--dark-bg);
+  background: var(--light-bg);
 }
 
 .section-subtitle {
@@ -1336,6 +1353,8 @@ onUnmounted(() => {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
 }
 
 .case-studies-grid {
@@ -1345,17 +1364,17 @@ onUnmounted(() => {
 }
 
 .case-study-card {
-  background: var(--dark-secondary);
-  border-radius: 1rem;
+  background: var(--light-secondary);
+  border-radius: 0;
   overflow: hidden;
-  border: 1px solid var(--dark-tertiary);
+  border: 1px solid var(--light-tertiary);
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .case-study-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.15);
+  box-shadow: 0 20px 40px rgba(34, 81, 255, 0.1);
 }
 
 .case-study-image {
@@ -1382,10 +1401,10 @@ onUnmounted(() => {
 }
 
 .case-study-category {
-  background: var(--primary-orange);
+  background: var(--electric-blue);
   color: white;
   padding: 0.5rem 1rem;
-  border-radius: 2rem;
+  border-radius: 0;
   font-size: 0.875rem;
   font-weight: 600;
 }
@@ -1395,7 +1414,7 @@ onUnmounted(() => {
 }
 
 .case-study-content h3 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'League Spartan', sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -1405,8 +1424,9 @@ onUnmounted(() => {
 
 .case-study-content p {
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.8;
   margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
 }
 
 .case-study-tech {
@@ -1420,7 +1440,7 @@ onUnmounted(() => {
   background: var(--dark-tertiary);
   color: var(--text-secondary);
   padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
+  border-radius: 0;
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -1434,16 +1454,16 @@ onUnmounted(() => {
 .result-item {
   text-align: center;
   padding: 1rem;
-  background: var(--dark-bg);
-  border-radius: 0.5rem;
-  border: 1px solid var(--dark-tertiary);
+  background: var(--light-bg);
+  border-radius: 0;
+  border: 1px solid var(--light-tertiary);
 }
 
 .result-value {
   display: block;
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary-orange);
+  color: var(--electric-blue);
   margin-bottom: 0.25rem;
 }
 
@@ -1481,7 +1501,7 @@ onUnmounted(() => {
 .stat-item h3 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--primary-orange);
+  color: var(--electric-blue);
   margin-bottom: 0.5rem;
 }
 
@@ -1497,23 +1517,23 @@ onUnmounted(() => {
 }
 
 .tech-item {
-  background: var(--dark-secondary);
+  background: var(--light-secondary);
   padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0;
   text-align: center;
   font-weight: 500;
-  border: 1px solid var(--dark-tertiary);
+  border: 1px solid var(--light-tertiary);
   transition: all 0.3s ease;
 }
 
 .tech-item:hover {
-  background: var(--primary-orange);
+  background: var(--electric-blue);
   transform: translateY(-2px);
 }
 
 /* Contact Styles */
 .contact {
-  background: var(--dark-secondary);
+  background: var(--light-secondary);
 }
 
 .contact-content {
@@ -1523,18 +1543,19 @@ onUnmounted(() => {
 }
 
 .contact-info h3 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'League Spartan', sans-serif;
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: var(--primary-orange);
+  color: var(--electric-blue);
   letter-spacing: -0.02em;
 }
 
 .contact-info p {
   color: var(--text-secondary);
   margin-bottom: 2rem;
-  line-height: 1.6;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
 }
 
 .collaboration-points {
@@ -1554,7 +1575,7 @@ onUnmounted(() => {
 }
 
 .collaboration-point .checkmark {
-  color: var(--primary-orange);
+  color: var(--electric-blue);
   flex-shrink: 0;
 }
 
@@ -1578,10 +1599,10 @@ onUnmounted(() => {
 }
 
 .contact-form {
-  background: var(--dark-bg);
+  background: var(--light-bg);
   padding: 2rem;
-  border-radius: 1rem;
-  border: 1px solid var(--dark-tertiary);
+  border-radius: 0;
+  border: 1px solid var(--light-tertiary);
 }
 
 .form-group {
@@ -1593,9 +1614,9 @@ onUnmounted(() => {
 .form-group select {
   width: 100%;
   padding: 1rem;
-  background: var(--dark-secondary);
-  border: 1px solid var(--dark-tertiary);
-  border-radius: 0.5rem;
+  background: var(--light-secondary);
+  border: 1px solid var(--light-tertiary);
+  border-radius: 0;
   color: var(--text-primary);
   font-size: 1rem;
   transition: border-color 0.3s ease;
@@ -1614,7 +1635,7 @@ onUnmounted(() => {
 }
 
 .form-group select option {
-  background: var(--dark-secondary);
+  background: var(--light-secondary);
   color: var(--text-primary);
 }
 
@@ -1624,8 +1645,8 @@ onUnmounted(() => {
 
 /* Footer Styles */
 .footer {
-  background: var(--dark-bg);
-  border-top: 1px solid var(--dark-tertiary);
+  background: var(--light-bg);
+  border-top: 1px solid var(--light-tertiary);
   padding: 3rem 0 1rem;
 }
 
@@ -1637,8 +1658,8 @@ onUnmounted(() => {
 }
 
 .footer-brand h3 {
-  font-family: 'Space Grotesk', sans-serif;
-  color: var(--primary-orange);
+  font-family: 'League Spartan', sans-serif;
+  color: var(--electric-blue);
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -1656,7 +1677,7 @@ onUnmounted(() => {
 }
 
 .footer-section h4 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'League Spartan', sans-serif;
   color: var(--text-primary);
   margin-bottom: 1rem;
   font-weight: 600;
@@ -1678,36 +1699,127 @@ onUnmounted(() => {
 }
 
 .footer-section ul li a:hover {
-  color: var(--primary-orange);
+  color: var(--electric-blue);
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: 2rem;
-  border-top: 1px solid var(--dark-tertiary);
+  border-top: 1px solid var(--light-tertiary);
   color: var(--text-muted);
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  .mobile-menu-toggle {
-    display: flex;
+  .nav {
+    flex-wrap: nowrap;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .nav-cta {
+    display: none;
   }
   
   .nav-links {
+    display: none;
     position: fixed;
     top: 70px;
     left: 0;
     right: 0;
-    background: var(--dark-bg);
+    background: var(--light-bg);
     flex-direction: column;
     padding: 2rem;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
+    gap: 0;
+    align-items: stretch;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
   }
   
   .nav-links.active {
+    display: flex;
     transform: translateX(0);
+  }
+  
+  .nav-links li {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid var(--light-tertiary);
+  }
+  
+  .nav-links li.mobile-nav-buttons {
+    border-bottom: none;
+  }
+  
+  .nav-links li a {
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .mobile-nav-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem 0 0 0 !important;
+    border-bottom: none !important;
+    margin-top: 1rem;
+  }
+  
+  .mobile-nav-buttons a {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 1rem !important;
+    border-radius: 0;
+    display: block;
+  }
+  
+  .nav-item-dropdown {
+    width: 100%;
+  }
+  
+  .dropdown-menu {
+    position: static;
+    margin-top: 0.5rem;
+    width: 100%;
+    min-width: auto;
+    background: transparent;
+    backdrop-filter: none;
+    padding: 0;
+    box-shadow: none;
+  }
+  
+  .dropdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  
+  .dropdown-card {
+    min-width: auto;
+    min-height: 120px;
+    padding: 1.25rem;
+  }
+  
+  .dropdown-card-text {
+    font-size: 0.95rem;
+  }
+  
+  .dropdown-card-button {
+    width: 36px;
+    height: 36px;
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+    order: 2;
+    margin-left: auto;
   }
   
   .hero {
@@ -1716,31 +1828,94 @@ onUnmounted(() => {
   
   .hero-content {
     grid-template-columns: 1fr;
-    text-align: center;
-    gap: 2rem;
+    gap: 3rem;
   }
   
-  .hero-title {
-    font-size: 2.5rem;
+  .hero-clients {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+  
+  .hero-content-text {
+    font-size: 1.1rem;
+    text-align: left;
+    max-width: 100%;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+    text-align: left;
+  }
+  
+  .hero-description {
+    max-width: 100%;
+    text-align: left;
   }
   
   .hero-buttons {
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
   
-  .package-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .hero-visual {
+    justify-content: center;
   }
   
-  .package-title {
-    font-size: 2rem;
+  .hero-word-large {
+    font-size: 4rem;
   }
   
-  .package-features-box {
-    position: static;
+  .hero-word-large:first-child {
+    margin-right: 0;
   }
+  
+  .hero-word-large:last-child {
+    margin-left: 0;
+  }
+  
+  .products-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .products-grid:hover .product-card {
+    flex: 1;
+    min-width: auto;
+  }
+  
+  .products-grid .product-card:hover {
+    flex: 1;
+    min-width: auto;
+  }
+  
+  .products-grid:hover .product-card .product-content,
+  .products-grid:hover .product-card .product-button {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .product-card {
+    min-height: 250px;
+    padding: 1.5rem;
+  }
+  
+  .product-title {
+    font-size: 1.25rem;
+    white-space: normal;
+  }
+  
+  .product-description {
+    opacity: 1;
+    max-height: none;
+  }
+  
+  .product-button {
+    width: 44px;
+    height: 44px;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+  
   
   .case-studies-grid {
     grid-template-columns: 1fr;
@@ -1765,16 +1940,16 @@ onUnmounted(() => {
     gap: 2rem;
   }
   
-  .digital-presence-title {
-    font-size: 2rem;
+  .digital-presence-number {
+    font-size: 6rem;
   }
   
-  .stat-number {
-    font-size: 3rem;
+  .digital-presence-main-text {
+    font-size: 1.2rem;
   }
   
-  .stat-card {
-    padding: 2rem 1.5rem;
+  .digital-presence-sub-text {
+    font-size: 0.9rem;
   }
   
   .solution-title {
@@ -1827,7 +2002,7 @@ onUnmounted(() => {
   width: 60px;
   height: 60px;
   background: #25D366;
-  border-radius: 50%;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
