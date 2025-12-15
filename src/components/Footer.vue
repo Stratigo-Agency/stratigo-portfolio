@@ -16,10 +16,10 @@
             </ul>
           </div>
           <div class="footer-section">
-            <h4>Perusahaan</h4>
+            <h4>Resources</h4>
             <ul>
-              <li><a href="#tentang">Tentang Kami</a></li>
-              <li><a href="#kontak">Kontak</a></li>
+              <li><router-link to="/case-studies">Case Studies</router-link></li>
+              <li><router-link to="/blog">Blog</router-link></li>
             </ul>
           </div>
         </div>
