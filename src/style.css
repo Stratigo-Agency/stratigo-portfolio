@@ -69,9 +69,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 8rem;
 }
 
 .btn {
@@ -168,7 +167,7 @@ a.router-link-active.router-link-exact-active {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 8rem;
   gap: 3rem;
 }
 
@@ -244,19 +243,17 @@ a.router-link-active.router-link-exact-active {
   position: absolute;
   top: calc(100% + 0.5rem);
   left: 0;
-  background: rgba(128, 128, 128, 0.3);
-  backdrop-filter: blur(80px) saturate(200%);
+  background: rgba(77, 76, 76, 0.3);
+  backdrop-filter: blur(5px) saturate(200%);
   -webkit-backdrop-filter: blur(80px) saturate(200%);
-  border: none;
   min-width: 600px;
   z-index: 1001;
   padding: 1.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 .dropdown-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 
@@ -266,13 +263,11 @@ a.router-link-active.router-link-exact-active {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  aspect-ratio: 1;
   text-decoration: none;
   transition: all 0.3s ease;
   padding: 1.5rem;
   min-width: 180px;
   min-height: 180px;
-  border-radius: 0;
 }
 
 .dropdown-card:hover {
@@ -298,8 +293,7 @@ a.router-link-active.router-link-exact-active {
 .dropdown-card-text {
   font-family: 'League Spartan', sans-serif;
   font-size: 1.1rem;
-  font-weight: 400;
-  text-align: left;
+  font-weight: 500;
 }
 
 .card-blue .dropdown-card-text,
@@ -405,7 +399,7 @@ a.router-link-active.router-link-exact-active {
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 1rem;
+    padding: 0 0.75rem;
   }
   
   .section {
@@ -420,6 +414,36 @@ a.router-link-active.router-link-exact-active {
     flex-wrap: nowrap;
     gap: 1rem;
     align-items: center;
+    padding: 1rem 0.75rem;
+    min-height: 60px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .logo h2 {
+    margin: 0;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 44px;
   }
   
   .nav-cta {
@@ -514,7 +538,4 @@ a.router-link-active.router-link-exact-active {
     font-size: 0.95rem;
   }
   
-  .mobile-menu-toggle {
-    display: flex;
-  }
 } 

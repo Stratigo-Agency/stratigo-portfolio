@@ -19,8 +19,10 @@
         </div>
         <div class="hero-visual fade-in" :class="{ 'visible': heroVisible }">
           <div class="hero-typography">
-            <div class="hero-word-large">We build</div>
-            <div class="hero-word-large">{{ animatedText }}<span class="typing-cursor">|</span></div>
+            <div class="hero-word-large hero-word-static">We build</div>
+            <div class="hero-word-large hero-word-animated">
+              <span class="animated-text-wrapper">{{ animatedText }}<span class="typing-cursor">|</span></span>
+            </div>
           </div>
         </div>
       </div>
@@ -77,7 +79,7 @@
           <div class="digital-presence-number">7+</div>
           <div class="digital-presence-text">
             <p class="digital-presence-main-text">
-              <strong>Masyarakat Indonesia menghabiskan lebih dari 7 jam setiap harinya di internet</strong>. Website bukan hanya pelengkap, melainkan <strong>kebutuhan vital</strong> bagi bisnis yang ingin berkembang.
+              <strong>Jam dihabiskan oleh masyarakat Indonesia setiap harinya di internet</strong>. Website bukan hanya pelengkap, melainkan <strong>kebutuhan vital</strong> bagi bisnis yang ingin berkembang.
             </p>
             <p class="digital-presence-sub-text">
               Website adalah etalase digital bisnis Anda. Tanpa website profesional, bisnis Anda sulit ditemukan dan terlihat kurang kredibel.
@@ -119,21 +121,13 @@
           <router-link to="/case-studies" class="showcase-view-all">Lihat Semua →</router-link>
         </div>
         <div class="showcase-grid fade-in" :class="{ 'visible': solutionVisible }">
-          <div 
+          <CaseStudyCard
             v-for="(caseStudy, index) in recentCaseStudies" 
             :key="index"
-            class="showcase-card case-study-card"
-            @click="handleCaseStudyClick(caseStudy.title, caseStudy.category)"
-          >
-            <div class="showcase-card-image">
-              <img :src="caseStudy.image" :alt="caseStudy.title" />
-            </div>
-            <div class="showcase-card-content">
-              <div class="showcase-card-category">{{ caseStudy.category }}</div>
-              <h3 class="showcase-card-title">{{ caseStudy.title }}</h3>
-              <p class="showcase-card-description">{{ caseStudy.description }}</p>
-            </div>
-          </div>
+            :case-study="caseStudy"
+            variant="showcase"
+            @click="(cs) => handleCaseStudyClick(cs.title, cs.category)"
+          />
         </div>
         
         <div class="showcase-header fade-in" :class="{ 'visible': solutionVisible }" style="margin-top: 4rem;">
@@ -143,25 +137,13 @@
           <router-link to="/blog" class="showcase-view-all">Lihat Semua →</router-link>
         </div>
         <div class="showcase-grid fade-in" :class="{ 'visible': solutionVisible }">
-          <article 
+          <BlogCard
             v-for="(post, index) in recentBlogPosts" 
             :key="index"
-            class="showcase-card blog-card"
-            @click="viewPost(post)"
-          >
-            <div class="showcase-card-image">
-              <img :src="post.image" :alt="post.title" />
-              <div class="showcase-card-category-overlay">{{ post.category }}</div>
-            </div>
-            <div class="showcase-card-content">
-              <div class="showcase-card-meta">
-                <span>{{ post.date }}</span>
-                <span>{{ post.readTime }}</span>
-              </div>
-              <h3 class="showcase-card-title">{{ post.title }}</h3>
-              <p class="showcase-card-description">{{ post.excerpt }}</p>
-            </div>
-          </article>
+            :post="post"
+            variant="showcase"
+            @click="viewPost"
+          />
         </div>
       </div>
     </section>
@@ -169,101 +151,35 @@
     <!-- Contact Section -->
     <section id="kontak" class="section contact">
       <div class="container">
-        <div class="contact-content">
-          <div class="contact-info fade-in" :class="{ 'visible': contactVisible }">
-            <h3>Realisasikan ide bisnis Anda dengan kami.</h3>
-            <p>Siap untuk mengembangkan bisnis Anda dengan website profesional? Hubungi tim Stratigo sekarang!</p>
-            <div class="collaboration-points">
-              <div class="collaboration-point">
-                <svg class="checkmark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M9 12l2 2 4-4"/>
-                  <circle cx="12" cy="12" r="10"/>
-                </svg>
-                <span>Booking Konsultasi gratis</span>
-              </div>
-              <div class="collaboration-point">
-                <svg class="checkmark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M9 12l2 2 4-4"/>
-                  <circle cx="12" cy="12" r="10"/>
-                </svg>
-                <span>Pertanyaan seputar jasa Stratigo</span>
-              </div>
+        <div class="contact-content fade-in" :class="{ 'visible': contactVisible }">
+          <h3>Realisasikan ide bisnis Anda dengan kami.</h3>
+          <p>Siap untuk mengembangkan bisnis Anda dengan website profesional? Hubungi tim Stratigo sekarang!</p>
+          <div class="contact-methods">
+            <div class="contact-method">
+              <strong>Email:</strong> info@stratigo.co.id
             </div>
-            <div class="contact-methods">
-              <div class="contact-method">
-                <strong>Email:</strong> info@stratigo.co.id
-              </div>
-              <div class="contact-method">
-                <strong>Telepon:</strong> +6287881332121
-              </div>
-              <div class="contact-method">
-                <strong>Alamat:</strong> Jakarta, Indonesia
-              </div>
+            <div class="contact-method">
+              <strong>Telepon:</strong> +6287881332121
+            </div>
+            <div class="contact-method">
+              <strong>Alamat:</strong> Jakarta, Indonesia
             </div>
           </div>
-          <div class="contact-form fade-in" :class="{ 'visible': contactVisible }">
-            <form @submit.prevent="submitForm">
-              <div class="form-group">
-                <input type="text" v-model="form.name" placeholder="Nama Lengkap" required>
-              </div>
-              <div class="form-group">
-                <input type="email" v-model="form.email" placeholder="Email" required>
-              </div>
-              <div class="form-group">
-                <input type="tel" v-model="form.phone" placeholder="Nomor Telepon">
-              </div>
-              <div class="form-group">
-                <input type="text" v-model="form.company" placeholder="Nama Perusahaan">
-              </div>
-              <div class="form-group">
-                <select v-model="form.service" required>
-                  <option value="" disabled>Pilih Layanan yang Diinginkan</option>
-                  <option value="custom-website">Custom Website</option>
-                  <option value="ai-chatbot">AI Chatbot</option>
-                  <option value="custom-software">Custom Software</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <textarea v-model="form.message" placeholder="Pesan Anda" rows="5" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Kirim Pesan</button>
-            </form>
-          </div>
+          <a 
+            href="https://wa.me/6287881332121" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn btn-primary"
+            @click="trackButtonClick('Konsultasi', 'contact')"
+          >
+            Konsultasi Sekarang
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-brand">
-            <h3>Stratigo</h3>
-            <p>Tingkatkan Identitas Bisnis Anda Dengan Website yang Profesional</p>
-          </div>
-          <div class="footer-links">
-            <div class="footer-section">
-              <h4>Layanan</h4>
-              <ul>
-                <li><a href="#layanan">Custom Website</a></li>
-                <li><a href="#layanan">AI Chatbot</a></li>
-                <li><a href="#layanan">Custom Software</a></li>
-              </ul>
-            </div>
-            <div class="footer-section">
-              <h4>Perusahaan</h4>
-              <ul>
-                <li><a href="#tentang">Tentang Kami</a></li>
-                <li><a href="#kontak">Kontak</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2024 Stratigo. Semua hak dilindungi.</p>
-        </div>
-      </div>
-    </footer>
+    <Footer />
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/6287881332121" target="_blank" rel="noopener noreferrer" 
@@ -281,6 +197,9 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import Navbar from '../components/Navbar.vue'
+import Footer from '../components/Footer.vue'
+import BlogCard from '../components/BlogCard.vue'
+import CaseStudyCard from '../components/CaseStudyCard.vue'
 import { caseStudies } from '../data/caseStudies.js'
 import { blogPosts } from '../data/blogPosts.js'
 import { useAnalytics } from '../composables/useAnalytics.js'
@@ -334,19 +253,11 @@ const typeText = () => {
 const solutionVisible = ref(false)
 const contactVisible = ref(false)
 
-const form = ref({
-  name: '',
-  email: '',
-  phone: '',
-  company: '',
-  service: '',
-  message: ''
-})
-
 import izyLogo from '../assets/logos/izy-logo.png'
 import enosLogo from '../assets/logos/enos-logo.png'
 import delyaLogo from '../assets/logos/delya-logo.png'
 import temuLogo from '../assets/logos/temu-logo-1.png'
+import patternImage from '../assets/pattern-2.png'
 
 const clientLogos = ref([
   {
@@ -379,12 +290,6 @@ const clientLogos = ref([
   }
 ])
 
-const techStack = ref([
-  'Vue.js', 'React', 'Python', 'Node.js', 'TypeScript', 'JavaScript', 'SQL', 'NoSQL'
-])
-
-const caseStudiesData = ref(caseStudies)
-const blogPostsData = ref(blogPosts)
 
 // Get 3 most recent case studies and blog posts
 const recentCaseStudies = computed(() => caseStudies.slice(0, 3))
@@ -451,58 +356,6 @@ const viewPost = (post) => {
     title: post.title
   })
   // Could navigate to detail page
-}
-
-const submitForm = () => {
-  // Validate form
-  if (!form.value.name || !form.value.email || !form.value.message) {
-    alert('Mohon lengkapi semua field yang wajib diisi.')
-    return
-  }
-  
-  // Track form submission
-  trackFormSubmission('contact_form', {
-    service: form.value.service,
-    has_company: !!form.value.company,
-    has_phone: !!form.value.phone
-  })
-  
-  // Create email content
-  const subject = `Inquiry dari ${form.value.name} - ${form.value.service || 'Layanan Umum'}`
-  const body = `Halo Tim Stratigo,
-
-Saya ${form.value.name} dari ${form.value.company || 'perusahaan'}.
-
-Layanan yang diminati: ${form.value.service || 'Belum ditentukan'}
-
-Pesan:
-${form.value.message}
-
-Kontak saya:
-Email: ${form.value.email}${form.value.phone ? `
-Telepon: ${form.value.phone}` : ''}
-
-Terima kasih,
-${form.value.name}`
-
-  // Create mailto URL
-  const mailtoUrl = `mailto:info@stratigo.co.id?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-  
-  // Open email client
-  window.location.href = mailtoUrl
-  
-  // Show success message
-  alert('Email client Anda akan terbuka dengan pesan yang sudah diisi. Silakan kirim email tersebut.')
-  
-  // Reset form
-  form.value = {
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    service: '',
-    message: ''
-  }
 }
 
 
@@ -616,7 +469,6 @@ onUnmounted(() => {
 
 .hero-visual {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   position: relative;
   min-width: 0;
@@ -634,22 +486,30 @@ onUnmounted(() => {
 
 .hero-word-large {
   font-family: 'League Spartan', sans-serif;
-  font-size: 8rem;
-  font-weight: 700;
+  font-size: 9rem;
+  font-weight: 500;
   color: var(--text-primary);
   line-height: 0.9;
-  letter-spacing: -0.02em;
-  white-space: nowrap;
-  opacity: 0.95;
+  opacity: 0.85;
   flex-shrink: 0;
 }
 
-.hero-word-large:first-child {
-  margin-right: -2rem;
+.hero-word-static {
+  white-space: nowrap;
 }
 
-.hero-word-large:last-child {
-  margin-left: -1rem;
+.hero-word-animated {
+  position: relative;
+  width: 100%;
+  min-width: 700px;
+  overflow: hidden;
+}
+
+.animated-text-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  min-width: 700px;
+  text-align: left;
 }
 
 .typing-cursor {
@@ -883,7 +743,6 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   padding: 0.5rem 1rem;
-  background: #1a1a1a;
   border-radius: 0;
   border: 1px solid transparent;
   min-width: 180px;
@@ -892,7 +751,7 @@ onUnmounted(() => {
 
 .client-logo img {
   max-width: 100%;
-  max-height: 60px;
+  max-height: 90px;
   object-fit: contain;
   filter: brightness(0) invert(1) opacity(0.4);
 }
@@ -922,7 +781,7 @@ onUnmounted(() => {
 
 .digital-presence-number {
   font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 12rem;
+  font-size: 16rem;
   font-weight: 400;
   color: #fff;
   line-height: 1;
@@ -1003,7 +862,6 @@ onUnmounted(() => {
 
 /* Solution Section */
 .solution-section {
-  background: var(--light-secondary);
   padding: 3rem 0 4rem;
   overflow: hidden;
 }
@@ -1055,7 +913,6 @@ onUnmounted(() => {
 .case-studies-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
 }
 
 .case-study-card {
@@ -1261,7 +1118,7 @@ onUnmounted(() => {
 .showcase-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .showcase-card {
@@ -1297,8 +1154,8 @@ onUnmounted(() => {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: var(--electric-blue);
-  color: white;
+  background: white;
+  color: black;
   padding: 0.5rem 1rem;
   border-radius: 0;
   font-size: 0.875rem;
@@ -1358,180 +1215,55 @@ onUnmounted(() => {
 }
 
 .contact-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  border-radius: 0;
 }
 
-.contact-info h3 {
+.contact-content h3 {
   font-family: 'League Spartan', sans-serif;
-  font-size: 1.8rem;
+  font-size: 3rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: var(--electric-blue);
+  color: white;
   letter-spacing: -0.02em;
 }
 
-.contact-info p {
-  color: var(--text-secondary);
+.contact-content p {
+  color: white;
   margin-bottom: 2rem;
   line-height: 1.8;
   letter-spacing: 0.02em;
-}
-
-.collaboration-points {
-  margin-bottom: 2rem;
-}
-
-.collaboration-point {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-  color: var(--text-secondary);
-}
-
-.collaboration-point:last-child {
-  margin-bottom: 0;
-}
-
-.collaboration-point .checkmark {
-  color: var(--electric-blue);
-  flex-shrink: 0;
-}
-
-.collaboration-point span {
-  font-size: 1rem;
-  line-height: 1.4;
 }
 
 .contact-methods {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-}
-
-.contact-method {
-  color: var(--text-secondary);
-}
-
-.contact-method strong {
-  color: var(--text-primary);
-}
-
-.contact-form {
-  background: var(--light-bg);
-  padding: 2rem;
-  border-radius: 0;
-  border: 1px solid var(--light-tertiary);
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-  width: 100%;
-  padding: 1rem;
-  background: var(--light-secondary);
-  border: 1px solid var(--light-tertiary);
-  border-radius: 0;
-  color: var(--text-primary);
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-  outline: none;
-  border-color: var(--primary-orange);
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: var(--text-muted);
-}
-
-.form-group select option {
-  background: var(--light-secondary);
-  color: var(--text-primary);
-}
-
-.form-group select option:disabled {
-  color: var(--text-muted);
-}
-
-/* Footer Styles */
-.footer {
-  background: var(--light-bg);
-  border-top: 1px solid var(--light-tertiary);
-  padding: 3rem 0 1rem;
-}
-
-.footer-content {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
   margin-bottom: 2rem;
 }
 
-.footer-brand h3 {
-  font-family: 'League Spartan', sans-serif;
-  color: var(--electric-blue);
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.02em;
+.contact-method {
+  color: white;
 }
 
-.footer-brand p {
-  color: var(--text-secondary);
+.contact-method strong {
+  color: white;
 }
 
-.footer-links {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+.contact-content .btn {
+  margin-top: 1rem;
 }
 
-.footer-section h4 {
-  font-family: 'League Spartan', sans-serif;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-
-.footer-section ul {
-  list-style: none;
-}
-
-.footer-section ul li {
-  margin-bottom: 0.5rem;
-}
-
-.footer-section ul li a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-section ul li a:hover {
-  color: var(--electric-blue);
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: 2rem;
-  border-top: 1px solid var(--light-tertiary);
-  color: var(--text-muted);
-}
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+  
+  .products-header {
+    text-align: center;
+  }
   
   .dropdown-card-button {
     width: 36px;
@@ -1587,6 +1319,14 @@ onUnmounted(() => {
   
   .hero-word-large {
     font-size: 4rem;
+  }
+  
+  .hero-word-animated {
+    min-width: 350px;
+  }
+  
+  .animated-text-wrapper {
+    min-width: 350px;
   }
   
   .hero-word-large:first-child {
@@ -1691,7 +1431,7 @@ onUnmounted(() => {
   
   .showcase-header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
   }
   
@@ -1707,19 +1447,7 @@ onUnmounted(() => {
     font-size: 1.1rem;
   }
   
-  .contact-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
   
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .footer-links {
-    grid-template-columns: 1fr;
-  }
   
   .carousel-track {
     gap: 2rem;
