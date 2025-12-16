@@ -4,6 +4,10 @@ import CaseStudies from '../pages/CaseStudies.vue'
 import CaseStudyDetail from '../pages/CaseStudyDetail.vue'
 import Blog from '../pages/Blog.vue'
 import BlogDetail from '../pages/BlogDetail.vue'
+import UniGo from '../pages/UniGo.vue'
+import Reservigo from '../pages/Reservigo.vue'
+import PortfolioWebsite from '../pages/PortfolioWebsite.vue'
+import Custom from '../pages/Custom.vue'
 
 const routes = [
   {
@@ -30,6 +34,26 @@ const routes = [
     path: '/blog/:id',
     name: 'BlogDetail',
     component: BlogDetail
+  },
+  {
+    path: '/unigo',
+    name: 'UniGo',
+    component: UniGo
+  },
+  {
+    path: '/reservigo',
+    name: 'Reservigo',
+    component: Reservigo
+  },
+  {
+    path: '/portfolio-website',
+    name: 'PortfolioWebsite',
+    component: PortfolioWebsite
+  },
+  {
+    path: '/custom',
+    name: 'Custom',
+    component: Custom
   }
 ]
 

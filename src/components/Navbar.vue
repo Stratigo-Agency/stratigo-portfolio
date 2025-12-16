@@ -21,38 +21,38 @@
           </a>
           <div class="dropdown-menu" v-if="showDropdown === 'layanan'">
             <div class="dropdown-grid">
-              <a href="#layanan" class="dropdown-card card-dark" @click="closeMobileMenu('layanan')">
+              <router-link to="/portfolio-website" class="dropdown-card card-dark" @click="closeMobileMenu()">
                 <span class="dropdown-card-text">Portfolio Website</span>
                 <div class="dropdown-card-button">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M6 4l4 4-4 4"/>
                   </svg>
                 </div>
-              </a>
-              <a href="#layanan" class="dropdown-card card-light" @click="closeMobileMenu('layanan')">
+              </router-link>
+              <router-link to="/unigo" class="dropdown-card card-light" @click="closeMobileMenu()">
                 <span class="dropdown-card-text">E-Learning Apps</span>
                 <div class="dropdown-card-button">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M6 4l4 4-4 4"/>
                   </svg>
                 </div>
-              </a>
-              <a href="#layanan" class="dropdown-card card-light" @click="closeMobileMenu('layanan')">
+              </router-link>
+              <router-link to="/reservigo" class="dropdown-card card-light" @click="closeMobileMenu()">
                 <span class="dropdown-card-text">Booking System</span>
                 <div class="dropdown-card-button">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M6 4l4 4-4 4"/>
                   </svg>
                 </div>
-              </a>
-              <a href="#layanan" class="dropdown-card card-dark" @click="closeMobileMenu('layanan')">
+              </router-link>
+              <router-link to="/custom" class="dropdown-card card-dark" @click="closeMobileMenu()">
                 <span class="dropdown-card-text">Custom Software</span>
                 <div class="dropdown-card-button">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M6 4l4 4-4 4"/>
                   </svg>
                 </div>
-              </a>
+              </router-link>
             </div>
           </div>
         </li>
@@ -124,24 +124,12 @@ const toggleDropdown = (dropdownName) => {
     } else {
       showDropdown.value = dropdownName
     }
-  } else {
-    // On desktop, navigate to section
-    closeMobileMenu(dropdownName)
   }
 }
 
-const closeMobileMenu = (section) => {
+const closeMobileMenu = () => {
   mobileMenuOpen.value = false
   showDropdown.value = null
-  if (section && router.currentRoute.value.path === '/') {
-    // Only scroll if we're on the home page
-    setTimeout(() => {
-      const element = document.querySelector(`#${section}`)
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' })
-      }
-    }, 100)
-  }
 }
 
 onMounted(() => {

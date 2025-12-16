@@ -51,7 +51,7 @@
 
 .footer-brand h3 {
   font-family: 'League Spartan', sans-serif;
-  color: var(--electric-blue);
+  color: var(--text-primary);
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;

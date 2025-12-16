@@ -35,7 +35,7 @@
           ( LAYANAN KAMI )
         </h2>
         <div class="products-grid fade-in" :class="{ 'visible': productsVisible }">
-          <a href="#layanan" class="product-card product-dark" @click="trackButtonClick('Portfolio Website', 'products')">
+          <router-link to="/portfolio-website" class="product-card product-dark" @click="trackButtonClick('Portfolio Website', 'products')">
             <div class="product-content">
               <h3 class="product-title">Portfolio Website</h3>
               <p class="product-description">Website profesional untuk menampilkan brand dan bisnis Anda dengan desain yang menarik dan modern. Dengan Stratigo, desain, keamanan, dan fungsionalitas website Anda menjadi prioritas utama. </p>
@@ -45,8 +45,8 @@
                 <path d="M7 5l6 5-6 5"/>
               </svg>
             </div>
-          </a>
-          <a href="#layanan" class="product-card product-light" @click="trackButtonClick('E-Learning Apps', 'products')">
+          </router-link>
+          <router-link to="/unigo" class="product-card product-light" @click="trackButtonClick('E-Learning Apps', 'products')">
             <div class="product-content">
               <h3 class="product-title">E-Learning Platform</h3>
               <p class="product-description">Dengan Employee Learning Management System (LMS) kami, UniGo, kamu dapat meluncurkan platform pembelajaran karyawan dengan efisien dan efektif. </p>
@@ -56,8 +56,8 @@
                 <path d="M7 5l6 5-6 5"/>
               </svg>
             </div>
-          </a>
-          <a href="#layanan" class="product-card product-dark" @click="trackButtonClick('Customer AI Chatbot', 'products')">
+          </router-link>
+          <router-link to="/reservigo" class="product-card product-dark" @click="trackButtonClick('Booking System', 'products')">
             <div class="product-content">
               <h3 class="product-title">Booking System</h3>
               <p class="product-description">Luncurkan sistem booking dalam hitungan jam dengan Reservigo. Pengunjung dapat melakukan booking dalam hitungan detik dan dilengkapi dengan fitur notifikasi dan dashboard. </p>
@@ -67,8 +67,8 @@
                 <path d="M7 5l6 5-6 5"/>
               </svg>
             </div>
-          </a>
-           <a href="#layanan" class="product-card product-light" @click="trackButtonClick('Customer AI Chatbot', 'products')">
+          </router-link>
+           <router-link to="/custom" class="product-card product-light" @click="trackButtonClick('Custom Software', 'products')">
             <div class="product-content">
               <h3 class="product-title">Custom Software</h3>
               <p class="product-description">Solusi khusus untuk kebutuhan bisnis Anda, kami membangun software yang dirancang khusus untuk memenuhi kebutuhan bisnis Anda.</p>
@@ -78,7 +78,7 @@
                 <path d="M7 5l6 5-6 5"/>
               </svg>
             </div>
-          </a>
+          </router-link>
         </div>
       </div>
     </section>
@@ -1109,6 +1109,11 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
+}
+
+.showcase-header .products-header {
+  margin-bottom: 0;
+  flex: 1;
 }
 
 .showcase-section-title {
