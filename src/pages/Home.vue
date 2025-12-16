@@ -1295,7 +1295,7 @@ onUnmounted(() => {
   
   .hero {
     min-height: auto;
-    padding-top: 80px;
+    padding-top: 120px;
     padding-bottom: 1rem;
   }
   
