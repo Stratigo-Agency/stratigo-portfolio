@@ -143,7 +143,11 @@ a.router-link-active,
 }
 
 a.router-link-active.router-link-exact-active {
-  border-bottom: 1px solid var(--electric-blue);
+  border-bottom: 1px solid white;
+}
+
+.logo a.router-link-active.router-link-exact-active {
+  border-bottom: none;
 }
 
 /* Header/Navbar Styles */
@@ -159,7 +163,9 @@ a.router-link-active.router-link-exact-active {
 }
 
 .header.scrolled {
-  background: transparent;
+  background: rgba(77, 76, 76, 0.3);
+  backdrop-filter: blur(5px) saturate(200%);
+  -webkit-backdrop-filter: blur(80px) saturate(200%);
   box-shadow: none;
 }
 
@@ -167,8 +173,24 @@ a.router-link-active.router-link-exact-active {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 8rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0;
+  padding-left: 8rem;
+  padding-right: 8rem;
   gap: 3rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
 }
 
 .logo h2 {
@@ -176,6 +198,10 @@ a.router-link-active.router-link-exact-active {
   font-size: 1.8rem;
   font-weight: 700;
   white-space: nowrap;
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
 .nav-links {
@@ -369,8 +395,8 @@ a.router-link-active.router-link-exact-active {
 
 .btn-nav-primary {
   padding: 0.75rem 1.5rem;
-  background: var(--electric-blue);
-  color: white;
+  background: white;
+  color: black;
   text-decoration: none;
   font-family: 'League Spartan', sans-serif;
   font-weight: 500;
@@ -380,7 +406,8 @@ a.router-link-active.router-link-exact-active {
 }
 
 .btn-nav-primary:hover {
-  background: var(--cyan-blue);
+  background: var(--light-tertiary);
+  color: white;
 }
 
 .mobile-menu-toggle {
@@ -393,7 +420,7 @@ a.router-link-active.router-link-exact-active {
 .mobile-menu-toggle span {
   width: 25px;
   height: 3px;
-  background: var(--electric-blue);
+  background: white;
   transition: all 0.3s ease;
 }
 
@@ -410,12 +437,28 @@ a.router-link-active.router-link-exact-active {
     font-size: 2rem;
   }
   
+  .header {
+    background: var(--light-bg) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  .header.scrolled {
+    background: var(--light-bg) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
   .nav {
     flex-wrap: nowrap;
     gap: 1rem;
     align-items: center;
-    padding: 1rem 0.75rem;
-    min-height: 60px;
+    padding-top: 0.75rem;
+    padding-bottom: 0;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    height: calc(0.75rem + 50px);
+    min-height: 50px;
   }
   
   .logo {
@@ -453,17 +496,18 @@ a.router-link-active.router-link-exact-active {
   .nav-links {
     display: none;
     position: fixed;
-    top: 70px;
+    top: calc(0.75rem + 50px);
     left: 0;
     right: 0;
     background: var(--light-bg);
     flex-direction: column;
     padding: 2rem;
+    padding-top: 0;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     gap: 0;
     align-items: stretch;
-    max-height: calc(100vh - 70px);
+    max-height: calc(100vh - 0.75rem - 50px);
     overflow-y: auto;
   }
   

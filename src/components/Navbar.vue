@@ -21,7 +21,7 @@
           </a>
           <div class="dropdown-menu" v-if="showDropdown === 'layanan'">
             <div class="dropdown-grid">
-              <a href="#layanan" class="dropdown-card card-blue" @click="closeMobileMenu('layanan')">
+              <a href="#layanan" class="dropdown-card card-dark" @click="closeMobileMenu('layanan')">
                 <span class="dropdown-card-text">Portfolio Website</span>
                 <div class="dropdown-card-button">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
@@ -37,16 +37,16 @@
                   </svg>
                 </div>
               </a>
-              <a href="#layanan" class="dropdown-card card-dark" @click="closeMobileMenu('layanan')">
-                <span class="dropdown-card-text">Custom Software</span>
+              <a href="#layanan" class="dropdown-card card-light" @click="closeMobileMenu('layanan')">
+                <span class="dropdown-card-text">Booking System</span>
                 <div class="dropdown-card-button">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M6 4l4 4-4 4"/>
                   </svg>
                 </div>
               </a>
-              <a href="#layanan" class="dropdown-card card-white" @click="closeMobileMenu('layanan')">
-                <span class="dropdown-card-text">AI Chatbot</span>
+              <a href="#layanan" class="dropdown-card card-dark" @click="closeMobileMenu('layanan')">
+                <span class="dropdown-card-text">Custom Software</span>
                 <div class="dropdown-card-button">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M6 4l4 4-4 4"/>
@@ -63,19 +63,9 @@
           <router-link to="/blog" @click="closeMobileMenu()">Blog</router-link>
         </li>
        
-        <li class="mobile-nav-buttons">
-          <a href="#kontak" class="btn-nav-secondary" @click="closeMobileMenu('kontak')">Hubungi Kami</a>
-          <a href="https://wa.me/6287881332121" target="_blank" rel="noopener noreferrer" class="btn-nav-primary" @click="trackButtonClick('Konsultasi Sekarang', 'navbar'); closeMobileMenu()">
-            Konsultasi Sekarang
-          </a>
-        </li>
+    
       </ul>
-      <div class="nav-cta">
-        <a href="#kontak" class="btn-nav-secondary">Hubungi Kami</a>
-        <a href="https://wa.me/6287881332121" target="_blank" rel="noopener noreferrer" class="btn-nav-primary" @click="trackButtonClick('Konsultasi Sekarang', 'navbar')">
-          Konsultasi Sekarang
-        </a>
-      </div>
+     
       <div class="mobile-menu-toggle" @click="toggleMobileMenu">
         <span></span>
         <span></span>
@@ -167,3 +157,4 @@ onUnmounted(() => {
 <style scoped>
 /* Navbar styles are in Home.vue - they'll be shared via global styles */
 </style>
+

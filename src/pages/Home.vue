@@ -35,10 +35,10 @@
           ( LAYANAN KAMI )
         </h2>
         <div class="products-grid fade-in" :class="{ 'visible': productsVisible }">
-          <a href="#layanan" class="product-card product-blue" @click="trackButtonClick('Portfolio Website', 'products')">
+          <a href="#layanan" class="product-card product-dark" @click="trackButtonClick('Portfolio Website', 'products')">
             <div class="product-content">
               <h3 class="product-title">Portfolio Website</h3>
-              <p class="product-description">Website profesional untuk menampilkan karya dan portofolio Anda dengan desain yang menarik dan modern.</p>
+              <p class="product-description">Website profesional untuk menampilkan brand dan bisnis Anda dengan desain yang menarik dan modern. Dengan Stratigo, desain, keamanan, dan fungsionalitas website Anda menjadi prioritas utama. </p>
             </div>
             <div class="product-button">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
@@ -48,8 +48,8 @@
           </a>
           <a href="#layanan" class="product-card product-light" @click="trackButtonClick('E-Learning Apps', 'products')">
             <div class="product-content">
-              <h3 class="product-title">E-Learning Apps</h3>
-              <p class="product-description">Aplikasi pembelajaran online yang interaktif dan mudah digunakan untuk berbagai kebutuhan edukasi.</p>
+              <h3 class="product-title">E-Learning Platform</h3>
+              <p class="product-description">Dengan Employee Learning Management System (LMS) kami, UniGo, kamu dapat meluncurkan platform pembelajaran karyawan dengan efisien dan efektif. </p>
             </div>
             <div class="product-button">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
@@ -59,8 +59,19 @@
           </a>
           <a href="#layanan" class="product-card product-dark" @click="trackButtonClick('Customer AI Chatbot', 'products')">
             <div class="product-content">
-              <h3 class="product-title">Customer AI Chatbot</h3>
-              <p class="product-description">Chatbot AI cerdas untuk customer service yang dapat menjawab pertanyaan pelanggan 24/7 secara otomatis.</p>
+              <h3 class="product-title">Booking System</h3>
+              <p class="product-description">Luncurkan sistem booking dalam hitungan jam dengan Reservigo. Pengunjung dapat melakukan booking dalam hitungan detik dan dilengkapi dengan fitur notifikasi dan dashboard. </p>
+            </div>
+            <div class="product-button">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 5l6 5-6 5"/>
+              </svg>
+            </div>
+          </a>
+           <a href="#layanan" class="product-card product-light" @click="trackButtonClick('Customer AI Chatbot', 'products')">
+            <div class="product-content">
+              <h3 class="product-title">Custom Software</h3>
+              <p class="product-description">Solusi khusus untuk kebutuhan bisnis Anda, kami membangun software yang dirancang khusus untuk memenuhi kebutuhan bisnis Anda.</p>
             </div>
             <div class="product-button">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
@@ -153,7 +164,7 @@
       <div class="container">
         <div class="contact-content fade-in" :class="{ 'visible': contactVisible }">
           <h3>Realisasikan ide bisnis Anda dengan kami.</h3>
-          <p>Siap untuk mengembangkan bisnis Anda dengan website profesional? Hubungi tim Stratigo sekarang!</p>
+          <p>Konsultasi dengan kami untuk mendapatkan solusi digital yang tepat untuk bisnis Anda.</p>
           <div class="contact-methods">
             <div class="contact-method">
               <strong>Email:</strong> info@stratigo.co.id
@@ -216,7 +227,7 @@ const digitalPresenceVisible = ref(false)
 
 // Typing animation for hero text
 const animatedText = ref('Websites.')
-const typingWords = ['Websites.', 'Software.']
+const typingWords = ['Websites.', 'Softwares.']
 let typingTimeout = null
 let currentWordIndex = 0
 let isDeleting = false
@@ -287,7 +298,11 @@ const clientLogos = ref([
   {
     name: 'Temu',
     logo: temuLogo
-  }
+  },
+  {
+    name: 'DELYA',
+    logo: delyaLogo
+  },
 ])
 
 
@@ -1105,7 +1120,7 @@ onUnmounted(() => {
 }
 
 .showcase-view-all {
-  color: var(--electric-blue);
+  color: var(--text-primary);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
@@ -1279,12 +1294,14 @@ onUnmounted(() => {
   }
   
   .hero {
+    min-height: auto;
     padding-top: 80px;
+    padding-bottom: 1rem;
   }
   
   .hero-content {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
   }
   
   .hero-clients {
@@ -1313,8 +1330,17 @@ onUnmounted(() => {
     flex-wrap: wrap;
   }
   
+  .hero-text {
+    order: 2;
+  }
+  
   .hero-visual {
-    justify-content: center;
+    order: 1;
+    justify-content: flex-start;
+  }
+  
+  .hero-typography {
+    align-items: flex-start;
   }
   
   .hero-word-large {

@@ -102,3 +102,4 @@ const viewPost = (post) => {
   }
 }
 </style>
+

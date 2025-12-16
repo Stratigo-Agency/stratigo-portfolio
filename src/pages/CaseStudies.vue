@@ -101,3 +101,4 @@ const viewCaseStudy = (caseStudy) => {
   }
 }
 </style>
+
