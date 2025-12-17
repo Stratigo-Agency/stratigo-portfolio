@@ -241,7 +241,7 @@
             rel="noopener noreferrer" 
             class="btn btn-primary"
           >
-            Konsultasi Gratis Sekarang <span class="btn-arrow">></span>
+            Konsultasi Gratis Sekarang
           </a>
         </div>
       </div>
@@ -947,19 +947,19 @@ onUnmounted(() => {
 @media (max-width: 968px) {
   .feature-content {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
   }
 
   .feature-content.reverse {
     direction: ltr;
   }
 
-  .cms-visual {
-    order: -1;
+  .feature-content.reverse .feature-visual-analytics {
+    order: 2;
   }
 
-  .feature-visual-analytics {
-    order: -1;
+  .feature-content.reverse .feature-text {
+    order: 1;
   }
 
   .empowerment-grid {

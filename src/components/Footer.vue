@@ -3,7 +3,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <h3>Stratigo</h3>
+          <img :src="strategoLogo" alt="Stratigo" class="footer-logo" />
           <p>Tingkatkan Identitas Bisnis Anda Dengan Website yang Profesional</p>
         </div>
         <div class="footer-links">
@@ -33,7 +33,7 @@
 </template>
 
 <script setup>
-// Footer component - no props needed
+import strategoLogo from '../assets/logos/stratigo-logo-white.webp'
 </script>
 
 <style scoped>
@@ -57,6 +57,13 @@
   font-weight: 700;
   margin-bottom: 0.5rem;
   letter-spacing: -0.02em;
+}
+
+.footer-logo {
+  height: 30px;
+  width: auto;
+  margin-bottom: 1rem;
+  display: block;
 }
 
 .footer-brand p {

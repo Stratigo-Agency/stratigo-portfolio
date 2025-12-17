@@ -204,6 +204,12 @@ a.router-link-active.router-link-exact-active {
   align-items: center;
 }
 
+.logo-img {
+  height: 30px;
+  width: auto;
+  display: block;
+}
+
 .nav-links {
   display: flex;
   list-style: none;
@@ -596,7 +602,7 @@ a.router-link-active.router-link-exact-active {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.075;
+  opacity: 0.055;
   pointer-events: none;
   z-index: 0;
 } 

@@ -3,7 +3,7 @@
     <nav class="nav container">
       <div class="logo">
         <router-link to="/" style="text-decoration: none; color: inherit;">
-          <h2>Stratigo</h2>
+          <img :src="strategoLogo" alt="Stratigo" class="logo-img" />
         </router-link>
       </div>
       <ul class="nav-links" :class="{ 'active': mobileMenuOpen }">
@@ -79,6 +79,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAnalytics } from '../composables/useAnalytics.js'
+import strategoLogo from '../assets/logos/stratigo-logo-white.webp'
 
 const router = useRouter()
 const { trackButtonClick } = useAnalytics()

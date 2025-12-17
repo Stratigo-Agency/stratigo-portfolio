@@ -41,6 +41,7 @@
               <p class="product-description">Website profesional untuk menampilkan brand dan bisnis Anda dengan desain yang menarik dan modern. Dengan Stratigo, desain, keamanan, dan fungsionalitas website Anda menjadi prioritas utama. </p>
             </div>
             <div class="product-button">
+              <span class="button-text">Lihat Detail</span>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M7 5l6 5-6 5"/>
               </svg>
@@ -52,6 +53,7 @@
               <p class="product-description">Dengan Employee Learning Management System (LMS) kami, UniGo, kamu dapat meluncurkan platform pembelajaran karyawan dengan efisien dan efektif. </p>
             </div>
             <div class="product-button">
+              <span class="button-text">Lihat Detail</span>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M7 5l6 5-6 5"/>
               </svg>
@@ -63,6 +65,7 @@
               <p class="product-description">Luncurkan sistem booking dalam hitungan jam dengan Reservigo. Pengunjung dapat melakukan booking dalam hitungan detik dan dilengkapi dengan fitur notifikasi dan dashboard. </p>
             </div>
             <div class="product-button">
+              <span class="button-text">Lihat Detail</span>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M7 5l6 5-6 5"/>
               </svg>
@@ -74,6 +77,7 @@
               <p class="product-description">Solusi khusus untuk kebutuhan bisnis Anda, kami membangun software yang dirancang khusus untuk memenuhi kebutuhan bisnis Anda.</p>
             </div>
             <div class="product-button">
+              <span class="button-text">Lihat Detail</span>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M7 5l6 5-6 5"/>
               </svg>
@@ -670,13 +674,24 @@ onUnmounted(() => {
   position: absolute;
   bottom: 2rem;
   right: 2rem;
-  width: 50px;
   height: 50px;
-  border-radius: 50%;
+  padding: 0 1.5rem;
+  border-radius: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.75rem;
   transition: all 0.3s ease;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.button-text {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 .product-blue .product-button {
@@ -695,7 +710,15 @@ onUnmounted(() => {
 }
 
 .product-card:hover .product-button {
+  background: black;
+  color: white;
   transform: translateX(4px);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.product-card:hover .product-button svg {
+  stroke: white;
 }
 
 /* Packages Header */
@@ -1401,10 +1424,7 @@ onUnmounted(() => {
   }
   
   .product-button {
-    width: 44px;
-    height: 44px;
-    bottom: 1.5rem;
-    right: 1.5rem;
+    display: none !important;
   }
   
   

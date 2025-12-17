@@ -83,7 +83,8 @@ watch(() => route.params.id, () => {
 
 .blog-detail-category {
   display: inline-block;
-  color: white;
+  background: white;
+  color: black;
   padding: 0.5rem 1rem;
   border-radius: 0;
   font-size: 0.875rem;

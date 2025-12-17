@@ -106,8 +106,8 @@ watch(() => route.params.id, () => {
 
 .case-study-detail-category {
   display: inline-block;
-  background: var(--electric-blue);
-  color: white;
+  background: white;
+  color: black;
   padding: 0.5rem 1rem;
   border-radius: 0;
   font-size: 0.875rem;
@@ -198,7 +198,7 @@ watch(() => route.params.id, () => {
   font-family: 'League Spartan', sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--electric-blue);
+  color: white;
   margin-bottom: 0.5rem;
 }
 
