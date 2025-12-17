@@ -2,10 +2,23 @@
   <div class="custom-page">
     <Navbar />
     
-    <section class="page-hero">
+    <!-- CTA Section -->
+    <section class="section cta-section">
       <div class="container">
-        <h1 class="page-title">Custom Software</h1>
-        <p class="coming-soon">Coming Soon</p>
+        <div class="cta-content">
+          <h2 class="cta-title">Butuh Solusi Software Khusus?</h2>
+          <p class="cta-text">
+            Hubungi kami untuk mendiskusikan kebutuhan bisnis Anda. Kami siap membantu mewujudkan solusi software yang dirancang khusus untuk tantangan unik bisnis Anda.
+          </p>
+          <a 
+            href="https://wa.me/6287881332121" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn btn-primary"
+          >
+            Konsultasi Gratis <span class="btn-arrow">></span>
+          </a>
+        </div>
       </div>
     </section>
     
@@ -19,45 +32,96 @@ import Footer from '../components/Footer.vue'
 </script>
 
 <style scoped>
-.page-hero {
-  padding: 8rem 0 2rem 0;
+/* CTA Section */
+.cta-section {
+  background: var(--light-secondary);
+  padding: 10rem 0 5rem 0;
   min-height: 70vh;
   display: flex;
   align-items: center;
-  background: var(--light-bg);
+}
+
+.cta-content {
   text-align: center;
+  padding: 3rem 2rem;
+  background: white;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.page-title {
+.cta-title {
   font-family: 'League Spartan', sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: black;
   letter-spacing: -0.02em;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
 }
 
-.coming-soon {
-  font-family: 'League Spartan', sans-serif;
+.cta-text {
   font-size: 1.2rem;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-weight: 300;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 0;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.btn-primary {
+  background: black;
+  color: white;
+  border: 2px solid black;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: black;
+  border-color: black;
+}
+
+.btn-arrow {
+  margin-left: 0.5rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover .btn-arrow {
+  transform: translateX(4px);
 }
 
 @media (max-width: 768px) {
-  .page-hero {
-    padding: 120px 0 2rem 0;
-    min-height: auto;
+  .cta-section {
+    padding: 8rem 0 3rem 0;
   }
-  
-  .page-title {
+
+  .cta-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .cta-title {
     font-size: 2rem;
   }
 
-  .coming-soon {
-    font-size: 1rem;
+  .cta-text {
+    font-size: 1.05rem;
   }
 }
 </style>
