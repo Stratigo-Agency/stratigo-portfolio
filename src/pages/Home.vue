@@ -1416,7 +1416,56 @@ onUnmounted(() => {
   }
   
   .product-button {
-    display: none !important;
+    display: flex !important;
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0;
+  }
+  
+  .product-button .button-text {
+    display: none;
+  }
+  
+  .product-button svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .product-light .product-button {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-dark .product-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .product-button:hover {
+    background: black;
+    color: white;
+    transform: translateX(4px);
+  }
+  
+  .product-light .product-button:hover {
+    background: black;
+    color: white;
+  }
+  
+  .product-dark .product-button:hover {
+    background: white;
+    color: black;
   }
   
   
