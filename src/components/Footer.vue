@@ -13,7 +13,7 @@
               <li><router-link to="/portfolio-website">Portfolio Website</router-link></li>
               <li><router-link to="/unigo">E-Learning Apps</router-link></li>
               <li><router-link to="/reservigo">Booking System</router-link></li>
-              <li><router-link to="/custom">Custom Software</router-link></li>
+              <li><router-link to="/custom">Custom Software & AI</router-link></li>
             </ul>
           </div>
           <div class="footer-section">

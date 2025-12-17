@@ -444,15 +444,15 @@ a.router-link-active.router-link-exact-active {
   }
   
   .header {
-    background: var(--light-bg) !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
+    background: rgba(77, 76, 76, 0.3) !important;
+    backdrop-filter: blur(5px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(80px) saturate(200%) !important;
   }
   
   .header.scrolled {
-    background: var(--light-bg) !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
+    background: rgba(77, 76, 76, 0.3) !important;
+    backdrop-filter: blur(5px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(80px) saturate(200%) !important;
   }
   
   .nav {
@@ -505,7 +505,9 @@ a.router-link-active.router-link-exact-active {
     top: calc(0.75rem + 50px);
     left: 0;
     right: 0;
-    background: var(--light-bg);
+    background: rgba(77, 76, 76, 0.8);
+    backdrop-filter: blur(5px) saturate(200%);
+    -webkit-backdrop-filter: blur(80px) saturate(200%);
     flex-direction: column;
     padding: 2rem;
     padding-top: 0;
@@ -567,10 +569,12 @@ a.router-link-active.router-link-exact-active {
     margin-top: 0.5rem;
     width: 100%;
     min-width: auto;
-    background: transparent;
-    backdrop-filter: none;
+    background: rgba(77, 76, 76, 0.6);
+    backdrop-filter: blur(5px) saturate(200%);
+    -webkit-backdrop-filter: blur(80px) saturate(200%);
     padding: 0;
     box-shadow: none;
+    border-radius: 0;
   }
   
   .dropdown-grid {

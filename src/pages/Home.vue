@@ -4,35 +4,58 @@
     <Navbar />
 
     <!-- Hero Section -->
-    <section id="beranda" class="hero pattern-bg">
+    <section id="beranda" class="hero">
+      <video 
+        ref="heroVideoRef"
+        class="hero-video" 
+        autoplay 
+        muted 
+        playsinline
+        @ended="handleVideoEnd"
+      >
+        <source :src="heroVideo" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
       <div class="hero-content container">
-        <div class="hero-text fade-in" :class="{ 'visible': heroVisible }">
-          <p class="hero-content-text ">
-            Realisasikan ide bisnis anda dengan website dan software yang profesional. Stratigo menyediakan solusi digital yang dirancang secara custom untuk kebutuhan bisnis Anda.
-          </p>
-       
-          <div class="hero-buttons">
-            <a href="https://wa.me/6287881332121" target="_blank" rel="noopener noreferrer" class="btn btn-primary" @click="trackButtonClick('Konsultasi Sekarang', 'hero')">
-              Konsultasi Sekarang <span class="btn-arrow">></span>
-            </a>
-          </div>
-        </div>
-        <div class="hero-visual fade-in" :class="{ 'visible': heroVisible }">
-          <div class="hero-typography">
-            <div class="hero-word-large hero-word-static">We build</div>
-            <div class="hero-word-large hero-word-animated">
-              <span class="animated-text-wrapper">{{ animatedText }}<span class="typing-cursor">|</span></span>
-            </div>
-          </div>
+        <div class="hero-simple fade-in" :class="{ 'visible': heroVisible }">
+          <img :src="strategoLogo" alt="Stratigo" class="hero-logo" />
+          <h1 class="hero-title-large">Launch Your Digital Ideas</h1>
+          <p class="hero-description">Stratigo menyediakan solusi digital untuk mengembangkan bisnis Anda.</p>
+          <a 
+            href="https://wa.me/6287881332121" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn btn-primary hero-cta"
+            @click="trackButtonClick('Konsultasi Sekarang', 'hero')"
+          >
+            Konsultasi Gratis
+          </a>
         </div>
       </div>
     </section>
 
+
+    <!-- Digital Presence Section -->
+    <section class="section digital-presence">
+      <div class="container">
+        <div class="digital-presence-content fade-in" :class="{ 'visible': digitalPresenceVisible }">
+          <div class="digital-presence-number">7+</div>
+          <div class="digital-presence-text">
+            <p class="digital-presence-main-text">
+              <strong>Jam dihabiskan oleh masyarakat Indonesia setiap harinya di internet</strong>. Website bukan hanya pelengkap, melainkan <strong>kebutuhan vital</strong> bagi bisnis yang ingin berkembang.
+            </p>
+            <p class="digital-presence-sub-text">
+              Stratigo dilengkapi dengan keahlian dan tools yang memastikan bisnis Anda kuat bersaing di era digital, mulai dari keahlian website, software, Artificial Intelligence (AI), dan juga tools yang dikembangkan oleh tim internal kami untuk menyelesaikan masalah bisnis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Products Section -->
     <section class="section products">
       <div class="container">
         <h2 class="products-header fade-in" :class="{ 'visible': productsVisible }">
-          ( LAYANAN KAMI )
+          ( KEAHLIAN KAMI )
         </h2>
         <div class="products-grid fade-in" :class="{ 'visible': productsVisible }">
           <router-link to="/portfolio-website" class="product-card product-dark" @click="trackButtonClick('Portfolio Website', 'products')">
@@ -71,7 +94,7 @@
               </svg>
             </div>
           </router-link>
-           <router-link to="/custom" class="product-card product-light" @click="trackButtonClick('Custom Software', 'products')">
+           <router-link to="/custom" class="product-card product-light" @click="trackButtonClick('Custom Software & AI', 'products')">
             <div class="product-content">
               <h3 class="product-title">Custom Software</h3>
               <p class="product-description">Solusi khusus untuk kebutuhan bisnis Anda, kami membangun software yang dirancang khusus untuk memenuhi kebutuhan bisnis Anda.</p>
@@ -86,21 +109,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Digital Presence Section -->
-    <section class="section digital-presence">
-      <div class="container">
-        <div class="digital-presence-content fade-in" :class="{ 'visible': digitalPresenceVisible }">
-          <div class="digital-presence-number">7+</div>
-          <div class="digital-presence-text">
-            <p class="digital-presence-main-text">
-              <strong>Jam dihabiskan oleh masyarakat Indonesia setiap harinya di internet</strong>. Website bukan hanya pelengkap, melainkan <strong>kebutuhan vital</strong> bagi bisnis yang ingin berkembang.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Solution Section -->
     <section class="section solution-section">
       <div class="container">
@@ -246,49 +254,25 @@ const servicesVisible = ref(false)
 const trustedByVisible = ref(false)
 const digitalPresenceVisible = ref(false)
 
-// Typing animation for hero text
-const animatedText = ref('Websites.')
-const typingWords = ['Websites.', 'Softwares.']
-let typingTimeout = null
-let currentWordIndex = 0
-let isDeleting = false
-let currentCharIndex = 0
-
-const typeText = () => {
-  const currentWord = typingWords[currentWordIndex]
-  
-  if (isDeleting) {
-    // Delete characters
-    if (currentCharIndex > 0) {
-      animatedText.value = currentWord.substring(0, currentCharIndex - 1)
-      currentCharIndex--
-      typingTimeout = setTimeout(typeText, 30) // Faster deletion
-    } else {
-      // Finished deleting, move to next word
-      isDeleting = false
-      currentWordIndex = (currentWordIndex + 1) % typingWords.length
-      typingTimeout = setTimeout(typeText, 300) // Pause before typing next word
-    }
-  } else {
-    // Type characters
-    if (currentCharIndex < currentWord.length) {
-      animatedText.value = currentWord.substring(0, currentCharIndex + 1)
-      currentCharIndex++
-      typingTimeout = setTimeout(typeText, 60) // Typing speed
-    } else {
-      // Finished typing, wait then start deleting
-      isDeleting = true
-      typingTimeout = setTimeout(typeText, 1000) // Pause before deleting
-    }
-  }
-}
 const solutionVisible = ref(false)
 const contactVisible = ref(false)
+
+// Video ref
+const heroVideoRef = ref(null)
+
+// Handle video end - pause on last frame
+const handleVideoEnd = () => {
+  if (heroVideoRef.value) {
+    heroVideoRef.value.pause()
+  }
+}
 
 import izyLogo from '../assets/logos/izy-logo.webp'
 import enosLogo from '../assets/logos/enos-logo.webp'
 import delyaLogo from '../assets/logos/delya-logo.webp'
 import temuLogo from '../assets/logos/temu-logo-1.webp'
+import strategoLogo from '../assets/icon/white-cross.webp'
+import heroVideo from '../assets/hero.mp4'
 
 const clientLogos = ref([
   {
@@ -419,168 +403,93 @@ const viewPost = (post) => {
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
   handleScroll() // Initial check
-  
-  // Start typing animation after a delay
-  setTimeout(() => {
-    typeText()
-  }, 1000) // Wait 1 second before starting animation
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
-  
-  // Clean up typing animation
-  if (typingTimeout) {
-    clearTimeout(typingTimeout)
-  }
 })
 </script>
 
 <style scoped>
 /* Hero Styles */
 .hero {
-  min-height: 70vh;
+  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   background: var(--light-bg);
   position: relative;
   overflow: hidden;
-  padding: 8rem 0 2rem 0;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
 .hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 6rem;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-  flex: 1;
-}
-
-.hero-content > * {
-  min-width: 0;
-}
-
-.hero-text {
-  min-width: 0;
-  overflow: hidden;
-}
-
-.hero-clients {
   width: 100%;
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 2;
 }
 
-.hero-clients .carousel-container {
-  margin-top: 0;
+.hero-simple {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
 }
 
-.hero-content-text {
-  font-size: 1.2rem;
-  font-weight: 300;
-  line-height: 1.9;
-  margin-bottom: 3rem;
-  color: white;
-  letter-spacing: 0.02em;
-  max-width: 65%;
+.hero-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
 }
 
-.hero-subtitle {
-  font-size: 1.2rem;
+.hero-title-large {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 8rem;
   font-weight: 400;
-  line-height: 1.9;
-  margin-bottom: 2rem;
   color: var(--text-primary);
-  letter-spacing: 0.02em;
-  max-width: 90%;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0;
 }
 
 .hero-description {
-  font-size: 1.2rem;
-  color: var(--text-secondary);
-  margin-bottom: 3rem;
-  line-height: 1.9;
-  letter-spacing: 0.02em;
-  max-width: 90%;
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 1.5rem 0 0 0;
+  font-weight: 300;
+  max-width: 700px;
 }
 
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
-}
-
-.btn-arrow {
-  margin-left: 0.5rem;
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.btn-primary:hover .btn-arrow {
-  transform: translateX(4px);
-}
-
-.hero-visual {
-  display: flex;
-  align-items: center;
-  position: relative;
-  min-width: 0;
-  overflow: visible;
-}
-
-.hero-typography {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0;
-  min-width: 0;
-  overflow: visible;
-}
-
-.hero-word-large {
-  font-family: 'League Spartan', sans-serif;
-  font-size: 9rem;
-  font-weight: 500;
-  color: var(--text-primary);
-  line-height: 0.9;
-  opacity: 0.85;
-  flex-shrink: 0;
-}
-
-.hero-word-static {
-  white-space: nowrap;
-}
-
-.hero-word-animated {
-  position: relative;
-  width: 100%;
-  min-width: 700px;
-  overflow: hidden;
-}
-
-.animated-text-wrapper {
-  display: inline-block;
-  white-space: nowrap;
-  min-width: 700px;
-  text-align: left;
-}
-
-.typing-cursor {
-  display: inline-block;
-  animation: blink 1s infinite;
-  margin-left: 2px;
-}
-
-@keyframes blink {
-  0%, 50% {
-    opacity: 1;
-  }
-  51%, 100% {
-    opacity: 0;
-  }
+.hero-cta {
+  margin-top: 3rem;
 }
 
 /* Products Section */
@@ -967,8 +876,9 @@ onUnmounted(() => {
 }
 
 .digital-presence-sub-text {
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 1.3rem;
+  opacity: 0.8;
+  font-weight: 300;
   line-height: 1.6;
   color: #fff;
   margin: 0;
@@ -1442,73 +1352,31 @@ onUnmounted(() => {
   }
   
   .hero {
-    min-height: auto;
-    padding-top: 120px;
-    padding-bottom: 1rem;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0 1.5rem;
   }
   
-  .hero-content {
-    grid-template-columns: 1fr;
+  .hero-simple {
     gap: 2rem;
   }
   
-  .hero-clients {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
+  .hero-logo {
+    height: 40px;
   }
   
-  .hero-content-text {
-    font-size: 1.1rem;
-    text-align: left;
-    max-width: 100%;
+  .hero-title-large {
+    font-size: 2.5rem;
+    line-height: 1.2;
   }
-  
-  .hero-subtitle {
-    font-size: 1.1rem;
-    text-align: left;
-  }
-  
+
   .hero-description {
-    max-width: 100%;
-    text-align: left;
+    font-size: 1.1rem;
+    margin: 1rem 0 0 0;
   }
-  
-  .hero-buttons {
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
-  
-  .hero-text {
-    order: 2;
-  }
-  
-  .hero-visual {
-    order: 1;
-    justify-content: flex-start;
-  }
-  
-  .hero-typography {
-    align-items: flex-start;
-  }
-  
-  .hero-word-large {
-    font-size: 4rem;
-  }
-  
-  .hero-word-animated {
-    min-width: 350px;
-  }
-  
-  .animated-text-wrapper {
-    min-width: 350px;
-  }
-  
-  .hero-word-large:first-child {
-    margin-right: 0;
-  }
-  
-  .hero-word-large:last-child {
-    margin-left: 0;
+
+  .hero-cta {
+    margin-top: 2rem;
   }
   
   .products-grid {
