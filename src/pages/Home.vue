@@ -92,9 +92,6 @@
             <p class="digital-presence-main-text">
               <strong>Jam dihabiskan oleh masyarakat Indonesia setiap harinya di internet</strong>. Website bukan hanya pelengkap, melainkan <strong>kebutuhan vital</strong> bagi bisnis yang ingin berkembang.
             </p>
-            <p class="digital-presence-sub-text">
-              Website adalah etalase digital bisnis Anda. Tanpa website profesional, bisnis Anda sulit ditemukan dan terlihat kurang kredibel.
-            </p>
           </div>
         </div>
       </div>
