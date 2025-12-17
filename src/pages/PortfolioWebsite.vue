@@ -5,9 +5,9 @@
     <!-- Hero Section -->
     <section class="page-hero">
       <div class="container">
-        <h1 class="page-title fade-in" :class="{ 'visible': heroVisible }">Portfolio Website</h1>
+        <h1 class="page-title fade-in" :class="{ 'visible': heroVisible }">Ciptakan Website yang Bekerja untuk Bisnis Anda.</h1>
         <p class="page-subtitle fade-in" :class="{ 'visible': heroVisible }">
-          Website yang dirancang khusus untuk brand Anda. Tanpa batasan template, tanpa kompromi kualitas.
+          Dirancang khusus untuk brand Anda. Tanpa batasan template, tanpa kompromi kualitas.
         </p>
       </div>
     </section>
