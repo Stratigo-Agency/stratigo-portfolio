@@ -10,9 +10,10 @@
           <div class="footer-section">
             <h4>Layanan</h4>
             <ul>
-              <li><a href="#layanan">Custom Website</a></li>
-              <li><a href="#layanan">AI Chatbot</a></li>
-              <li><a href="#layanan">Custom Software</a></li>
+              <li><router-link to="/portfolio-website">Portfolio Website</router-link></li>
+              <li><router-link to="/unigo">E-Learning Apps</router-link></li>
+              <li><router-link to="/reservigo">Booking System</router-link></li>
+              <li><router-link to="/custom">Custom Software</router-link></li>
             </ul>
           </div>
           <div class="footer-section">
@@ -91,7 +92,7 @@
 }
 
 .footer-section ul li a:hover {
-  color: var(--electric-blue);
+  color: white;
 }
 
 .footer-bottom {
