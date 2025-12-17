@@ -4,7 +4,7 @@
     <Navbar />
 
     <!-- Hero Section -->
-    <section id="beranda" class="hero">
+    <section id="beranda" class="hero pattern-bg">
       <div class="hero-content container">
         <div class="hero-text fade-in" :class="{ 'visible': heroVisible }">
           <p class="hero-content-text ">
@@ -261,11 +261,10 @@ const typeText = () => {
 const solutionVisible = ref(false)
 const contactVisible = ref(false)
 
-import izyLogo from '../assets/logos/izy-logo.png'
-import enosLogo from '../assets/logos/enos-logo.png'
-import delyaLogo from '../assets/logos/delya-logo.png'
-import temuLogo from '../assets/logos/temu-logo-1.png'
-import patternImage from '../assets/pattern-2.png'
+import izyLogo from '../assets/logos/izy-logo.webp'
+import enosLogo from '../assets/logos/enos-logo.webp'
+import delyaLogo from '../assets/logos/delya-logo.webp'
+import temuLogo from '../assets/logos/temu-logo-1.webp'
 
 const clientLogos = ref([
   {

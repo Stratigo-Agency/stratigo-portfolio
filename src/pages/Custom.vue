@@ -3,7 +3,7 @@
     <Navbar />
     
     <!-- CTA Section -->
-    <section class="section cta-section">
+    <section class="section cta-section pattern-bg">
       <div class="container">
         <div class="cta-content">
           <h2 class="cta-title">Butuh Solusi Software Khusus?</h2>
@@ -39,6 +39,7 @@ import Footer from '../components/Footer.vue'
   min-height: 70vh;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .cta-content {
@@ -47,6 +48,8 @@ import Footer from '../components/Footer.vue'
   background: white;
   max-width: 900px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .cta-title {
