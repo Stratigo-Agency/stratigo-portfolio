@@ -137,7 +137,7 @@ const handleClick = () => {
 .blog-title {
   font-family: 'League Spartan', sans-serif;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--text-primary);
   margin-bottom: 1rem;
   line-height: 1.3;
@@ -194,7 +194,7 @@ const handleClick = () => {
 .showcase-card-title {
   font-family: 'League Spartan', sans-serif;
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--text-primary);
   margin-bottom: 0.75rem;
   line-height: 1.3;

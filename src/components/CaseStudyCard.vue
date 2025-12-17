@@ -154,7 +154,7 @@ const handleClick = () => {
 .result-value {
   font-family: 'League Spartan', sans-serif;
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--electric-blue);
   margin-bottom: 0.25rem;
 }

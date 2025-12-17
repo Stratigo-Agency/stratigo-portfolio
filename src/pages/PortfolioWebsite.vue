@@ -18,15 +18,32 @@
         <div class="feature-content fade-in" :class="{ 'visible': customVisible }">
           <div class="feature-text">
             <div class="feature-label">( DESAIN CUSTOM )</div>
-            <h2 class="feature-title">Dibuat Khusus untuk Brand Anda</h2>
+            <h3 class="feature-title">Dibuat Khusus untuk Brand Anda</h3>
             <p class="feature-description">
-              Website Anda dibangun dari nol, sepenuhnya disesuaikan dengan identitas brand dan kebutuhan bisnis Anda. Tidak seperti platform builder yang terikat template, kami memberikan <strong>kebebasan penuh dalam desain dan fungsionalitas</strong>.
-            </p>
-            <p class="feature-description">
-              Hasilnya? Website yang <strong>lebih cepat, lebih efisien</strong>, dan mencerminkan keunikan brand Anda. Tanpa bloatware dari software pihak ketiga yang memperlambat performa.
+              Website dibangun dari nol, sepenuhnya custom untuk brand Anda. <strong>Tanpa batasan template</strong>, tanpa kompromi kualitas. Dengan membangun website secara custom, Stratigo memastikan website terproteksi, bisa diakses dengan cepat, mobile-friendly, dan rentan terhadap error.
             </p>
             <div class="feature-highlight">
-              <span>Manajemen konten tetap mudah dengan <strong>Headless CMS</strong>. Update website Anda kapan saja tanpa perlu coding</span>
+              <span>Manajemen konten mudah dengan <strong>Headless CMS</strong>. Update kapan saja tanpa coding.</span>
+            </div>
+            <div class="tools-section">
+              <p class="tools-label">Tools we use</p>
+              <div class="tools-logo">
+                <svg width="452" height="160" viewBox="0 0 452 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_2001_20)">
+                  <path d="M46.6255 54.491C34.7181 45.5113 22.6571 38.5467 22.6571 28.4122C22.6571 22.3314 28.032 16.0975 35.4387 16.0975C48.799 16.0975 56.6428 30.0031 64.3448 47.3968H69.1408V7.40063H35.734C8.13908 7.40063 0 24.0637 0 37.109C0 54.2082 14.0928 64.3545 30.0638 76.2332C41.2506 84.494 50.6891 92.1774 50.6891 101.016C50.6891 110.585 44.1566 116.088 35.8757 116.088C27.0161 116.088 13.9392 104.492 4.79603 80.4402H0V124.785H38.2029C61.7341 124.785 73.4998 106.236 73.9368 91.3054C74.5157 73.9117 59.5606 64.2131 46.6255 54.5028V54.491Z" fill="#0B0B0B"/>
+                  <path d="M150.626 111.009V64.2014C150.626 43.9087 137.986 38.5586 119.688 38.5586H87.1555L87.2972 71.602H92.6721C98.3423 57.5432 106.47 47.2555 115.187 47.2555C122.736 47.2555 126.079 53.7722 126.079 60.5836V66.9589C113.876 74.2063 81.3435 80.2871 81.3435 102.312C81.3435 115.063 90.2032 125.645 103.127 125.645C114.313 125.645 122.015 118.398 125.937 109.854C126.658 116.96 131.312 124.785 141.92 124.785H158.623V118.41C153.249 118.41 150.638 114.792 150.638 111.021L150.626 111.009ZM125.642 103.762C123.315 107.097 119.688 110.868 115.329 110.868C109.234 110.868 105.312 106.236 105.312 96.962C105.312 86.3796 119.546 79.5682 125.654 74.5009V103.773L125.642 103.762Z" fill="#0B0B0B"/>
+                  <path d="M280.627 29.567C289.924 29.567 295.736 23.0502 295.736 14.6362C295.736 6.22216 289.924 0 280.627 0C271.33 0 265.377 6.23394 265.377 14.6362C265.377 23.0385 271.626 29.567 280.627 29.567Z" fill="#0B0B0B"/>
+                  <path d="M425.016 38.5467V44.9221C434.171 44.9221 436.782 49.7065 432.281 62.5986L421.389 92.0124L407.45 56.2233C404.249 49.2705 405.997 44.9221 412.683 44.9221V38.5467H343.401V9.56891H336.868C334.978 19.4207 324.665 38.5467 307.088 38.5467V44.9221H318.416V104.48C318.416 114.473 321.759 125.786 341.227 125.786H371.444V93.0377H366.07C363.896 100.721 359.384 116.076 349.65 116.076C344.275 116.076 343.401 110.137 343.401 105.352V47.6796H371.149C374.492 47.6796 377.977 48.1156 379.714 52.1694L409.198 124.914C403.528 137.807 393.806 139.845 376.37 134.483V159.985C380.871 159.985 392.495 160.126 394.527 159.549C405.997 156.214 413.841 133.753 417.042 125.056L442.026 57.6727C444.791 50.2839 447.106 44.9221 451.902 44.9221V38.5467H425.028H425.016Z" fill="#0B0B0B"/>
+                  <path d="M246.925 111.009V61.5969C246.925 46.0887 239.518 36.8144 224.846 36.8144C211.923 36.8144 204.434 45.7587 198.705 54.0785V38.5585H165.581V44.9338C171.251 44.9338 173.72 48.4102 173.72 52.464V111.009C173.72 114.921 170.814 118.398 165.581 118.398V124.773H206.832V118.398C201.599 118.398 198.693 114.921 198.693 111.009V61.9858C202.036 57.5431 205.899 52.7587 212.348 52.7587C218.444 52.7587 221.94 57.6845 221.94 63.6239V111.009C221.94 114.921 219.035 118.398 213.801 118.398V124.773H255.052V118.398C249.819 118.398 246.913 114.921 246.913 111.009H246.925Z" fill="#0B0B0B"/>
+                  <path d="M295.157 111.009V38.5586H262.033V44.9339C267.704 44.9339 270.173 48.4103 270.173 52.4642V111.009C270.173 114.921 267.267 118.398 262.033 118.398V124.773H303.284V118.398C298.051 118.398 295.145 114.921 295.145 111.009H295.157Z" fill="#0B0B0B"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_2001_20">
+                  <rect width="452" height="160" fill="white"/>
+                  </clipPath>
+                  </defs>
+                </svg>
+              </div>
             </div>
           </div>
           <div class="cms-visual">
@@ -110,34 +127,17 @@
             <div class="feature-label">( ANALITIK REAL-TIME )</div>
             <h2 class="feature-title">Pantau Performa Website Setiap Saat</h2>
             <p class="feature-description">
-              Setiap website yang kami buat dilengkapi dengan <strong>Google Analytics yang dikonfigurasi khusus</strong> sesuai tujuan bisnis Anda - apakah itu untuk meningkatkan penjualan, mengumpulkan leads, atau membangun brand awareness.
+              Setiap website dilengkapi <strong>Google Analytics yang dikonfigurasi khusus</strong> sesuai tujuan bisnis Anda.
             </p>
-            <p class="feature-description">
-              Anda mendapatkan akses penuh ke dashboard analytics untuk memantau:
-            </p>
-            <ul class="feature-list">
-              <li>
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M7 10l3 3 7-7"/>
-                </svg>
-                Jumlah pengunjung dan perilaku mereka
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M7 10l3 3 7-7"/>
-                </svg>
-                Konversi dan ROI dari setiap halaman
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M7 10l3 3 7-7"/>
-                </svg>
-                Sumber traffic terbaik untuk bisnis Anda
-              </li>
-            </ul>
             <p class="feature-emphasis">
-              Dengan data yang jelas, Anda bisa membuat keputusan yang tepat untuk mengoptimalkan website dan mencapai tujuan bisnis.
+              Akses penuh ke dashboard analytics untuk memantau pengunjung, konversi, dan sumber traffic terbaik.
             </p>
+            <div class="tools-section">
+              <p class="tools-label">Tools we use</p>
+              <div class="tools-logo">
+                <img :src="googleAnalyticsLogo" alt="Google Analytics" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -156,19 +156,19 @@
             <div class="empowerment-card">
               <div class="empowerment-number">01</div>
               <h3>Pelatihan Lengkap</h3>
-              <p>Kami melatih Anda cara mengelola website - dari update konten hingga monitoring performa. Tidak perlu bergantung pada agensi selamanya.</p>
+              <p>Kami melatih Anda mengelola website. Tidak perlu bergantung pada agensi selamanya.</p>
             </div>
             
             <div class="empowerment-card highlight">
               <div class="empowerment-number">02</div>
               <h3>Bebas Biaya Maintenance Bulanan</h3>
-              <p>Setelah 6 bulan, Anda punya pilihan: kelola sendiri atau lanjut dengan layanan kami. Tidak ada biaya maintenance wajib yang menguras kas Anda setiap bulan.</p>
+              <p>Setelah 6 bulan, kelola sendiri atau lanjut dengan layanan kami. Tidak ada biaya wajib.</p>
             </div>
             
             <div class="empowerment-card">
               <div class="empowerment-number">03</div>
               <h3>Full Ownership</h3>
-              <p>Semua akses, tools, dan dokumentasi diserahkan ke Anda. Website adalah aset Anda, bukan ketergantungan kepada kami.</p>
+              <p>Semua akses, tools, dan dokumentasi diserahkan ke Anda. Website adalah aset Anda.</p>
             </div>
           </div>
         </div>
@@ -255,6 +255,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import Navbar from '../components/Navbar.vue'
 import Footer from '../components/Footer.vue'
+import googleAnalyticsLogo from '../assets/logos/google-analytics.png'
 
 // Animation visibility refs
 const heroVisible = ref(false)
@@ -310,18 +311,18 @@ onUnmounted(() => {
 
 .page-title {
   font-family: 'League Spartan', sans-serif;
-  font-size: 4.5rem;
+  font-size: 4rem;
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: -0.03em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   line-height: 1.1;
 }
 
 .page-subtitle {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   color: var(--text-secondary);
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
   line-height: 1.7;
   font-weight: 300;
@@ -368,8 +369,8 @@ onUnmounted(() => {
 
 .feature-title {
   font-family: 'League Spartan', sans-serif;
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 400;
   color: var(--text-primary);
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -377,10 +378,10 @@ onUnmounted(() => {
 }
 
 .feature-description {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: var(--text-secondary);
   line-height: 1.8;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .feature-description strong {
@@ -405,13 +406,47 @@ onUnmounted(() => {
 }
 
 .feature-highlight span {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: var(--text-secondary);
   line-height: 1.7;
 }
 
 .feature-highlight strong {
   color: var(--text-primary);
+}
+
+.tools-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--light-tertiary);
+}
+
+.tools-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.tools-logo {
+  display: flex;
+  align-items: center;
+}
+
+.tools-logo svg,
+.tools-logo img {
+  max-width: 120px;
+  max-height: 96px;
+  filter: brightness(0) invert(1) opacity(0.4);
+  transition: opacity 0.3s ease;
+  object-fit: contain;
+}
+
+.tools-logo svg:hover,
+.tools-logo img:hover {
+  opacity: 0.6;
 }
 
 /* CMS Visualization */
@@ -461,6 +496,7 @@ onUnmounted(() => {
   display: grid;
   grid-template-columns: 120px 1fr;
   min-height: 300px;
+  
 }
 
 .cms-sidebar {
@@ -469,6 +505,7 @@ onUnmounted(() => {
   padding: 1rem 0.75rem;
   display: flex;
   flex-direction: column;
+  
   gap: 0.75rem;
 }
 
@@ -628,7 +665,7 @@ onUnmounted(() => {
 .stat-number {
   font-family: 'League Spartan', sans-serif;
   font-size: 3.5rem;
-  font-weight: 700;
+  font-weight: 400;
   color: white;
   margin-bottom: 0.5rem;
   line-height: 1;
@@ -688,9 +725,9 @@ onUnmounted(() => {
   padding: 1.5rem;
   background: var(--light-secondary);
   border-left: 3px solid white;
-  font-size: 1.05rem;
+  font-size: 1.3rem;
   color: var(--text-primary);
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.7;
 }
 
@@ -712,8 +749,8 @@ onUnmounted(() => {
 
 .empowerment-title {
   font-family: 'League Spartan', sans-serif;
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 400;
   color: var(--text-primary);
   letter-spacing: -0.02em;
   line-height: 1.3;
@@ -759,7 +796,7 @@ onUnmounted(() => {
 
 .empowerment-card h3 {
   font-family: 'League Spartan', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 1rem;
@@ -767,7 +804,7 @@ onUnmounted(() => {
 }
 
 .empowerment-card p {
-  font-size: 1rem;
+  font-size: 1.15rem;
   color: var(--text-secondary);
   line-height: 1.7;
   margin: 0;
@@ -783,7 +820,7 @@ onUnmounted(() => {
 }
 
 .cta-text {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 2rem;
@@ -857,7 +894,7 @@ onUnmounted(() => {
 .process-title {
   font-family: 'League Spartan', sans-serif;
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--text-primary);
   letter-spacing: -0.02em;
   line-height: 1.3;
@@ -896,7 +933,7 @@ onUnmounted(() => {
 
 .process-step h3 {
   font-family: 'League Spartan', sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
@@ -905,7 +942,7 @@ onUnmounted(() => {
 }
 
 .process-step p {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--text-secondary);
   line-height: 1.5;
   margin: 0;
@@ -993,11 +1030,11 @@ onUnmounted(() => {
   }
   
   .page-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   .page-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 
   .feature-section {
@@ -1005,11 +1042,11 @@ onUnmounted(() => {
   }
 
   .feature-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .feature-description {
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
 
   .cms-mockup {
@@ -1052,7 +1089,7 @@ onUnmounted(() => {
   }
 
   .empowerment-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .empowerment-header {
@@ -1064,7 +1101,7 @@ onUnmounted(() => {
   }
 
   .cta-text {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
   }
 
   .cta-section {
@@ -1080,7 +1117,7 @@ onUnmounted(() => {
   }
 
   .process-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .process-timeline {

@@ -120,6 +120,56 @@
             </div>
           </div>
         </div>
+        
+        <!-- Testimonials Section -->
+        <div class="testimonials-section fade-in" :class="{ 'visible': solutionVisible }">
+          <div class="testimonials-grid">
+            <div class="testimonial-card" v-for="(testimonial, index) in testimonials" :key="index">
+              <div class="testimonial-content">
+                <p class="testimonial-text">"{{ testimonial.text }}"</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar" v-if="testimonial.avatar">
+                  <img :src="testimonial.avatar" :alt="testimonial.name" />
+                </div>
+                <div class="author-info">
+                  <div class="author-name">{{ testimonial.name }}</div>
+                  <div class="author-role">{{ testimonial.role }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="section contact">
+      <div class="container">
+        <div class="contact-content fade-in" :class="{ 'visible': contactVisible }">
+          <h3>Realisasikan ide bisnis Anda dengan kami.</h3>
+          <p>Konsultasi dengan kami untuk mendapatkan solusi digital yang tepat untuk bisnis Anda.</p>
+          <div class="contact-methods">
+            <div class="contact-method">
+              <strong>Email:</strong> info@stratigo.co.id
+            </div>
+            <div class="contact-method">
+              <strong>Telepon:</strong> +6287881332121
+            </div>
+            <div class="contact-method">
+              <strong>Alamat:</strong> Jakarta, Indonesia
+            </div>
+          </div>
+          <a 
+            href="https://wa.me/6287881332121" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn btn-primary"
+            @click="trackButtonClick('Konsultasi', 'contact')"
+          >
+            Konsultasi Sekarang
+          </a>
+        </div>
       </div>
     </section>
 
@@ -156,36 +206,6 @@
             variant="showcase"
             @click="viewPost"
           />
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="kontak" class="section contact">
-      <div class="container">
-        <div class="contact-content fade-in" :class="{ 'visible': contactVisible }">
-          <h3>Realisasikan ide bisnis Anda dengan kami.</h3>
-          <p>Konsultasi dengan kami untuk mendapatkan solusi digital yang tepat untuk bisnis Anda.</p>
-          <div class="contact-methods">
-            <div class="contact-method">
-              <strong>Email:</strong> info@stratigo.co.id
-            </div>
-            <div class="contact-method">
-              <strong>Telepon:</strong> +6287881332121
-            </div>
-            <div class="contact-method">
-              <strong>Alamat:</strong> Jakarta, Indonesia
-            </div>
-          </div>
-          <a 
-            href="https://wa.me/6287881332121" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="btn btn-primary"
-            @click="trackButtonClick('Konsultasi', 'contact')"
-          >
-            Konsultasi Sekarang
-          </a>
         </div>
       </div>
     </section>
@@ -305,6 +325,27 @@ const clientLogos = ref([
   },
 ])
 
+// Testimonials data
+const testimonials = ref([
+  {
+    text: 'Stratigo membantu kami membangun website yang profesional dan mudah dikelola. Tim mereka sangat responsif dan memahami kebutuhan bisnis kami.',
+    name: 'Theresa Winona',
+    role: 'Delya Travel',
+    avatar: null // Add image path here, e.g., '/src/assets/testimonials/john-doe.jpg'
+  },
+  {
+    text: 'Website yang dibuat Stratigo tidak hanya menarik secara visual, tapi juga sangat cepat dan mobile-friendly. Hasilnya melebihi ekspektasi kami.',
+    name: 'Jeremy',
+    role: 'Izy Automotive',
+    avatar: null // Add image path here, e.g., '/src/assets/testimonials/jane-smith.jpg'
+  },
+  {
+    text: 'Website cepat selesai dan profesional, lengkap dengan dashboard untuk mengelola sendiri. Sangat puas.',
+    name: 'Jovian Alvin',
+    role: 'Temu Bisnis',
+    avatar: null // Add image path here, e.g., '/src/assets/testimonials/michael-johnson.jpg'
+  }
+])
 
 // Get 3 most recent case studies and blog posts
 const recentCaseStudies = computed(() => caseStudies.slice(0, 3))
@@ -799,6 +840,89 @@ onUnmounted(() => {
   }
 }
 
+/* Testimonials Section */
+.testimonials-section {
+  margin-top: 5rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.testimonial-card {
+  background: var(--light-secondary);
+  border: 1px solid var(--light-tertiary);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 250px;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  border-color: white;
+  transform: translateY(-4px);
+}
+
+.testimonial-content {
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin: 0;
+  font-style: italic;
+}
+
+.testimonial-author {
+  border-top: 1px solid var(--light-tertiary);
+  padding-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--light-tertiary);
+  border: 1px solid var(--light-tertiary);
+}
+
+.author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-info {
+  flex: 1;
+}
+
+.author-name {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
+}
+
+.author-role {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
 
 /* Digital Presence Section */
 .digital-presence {
@@ -1508,6 +1632,29 @@ onUnmounted(() => {
   
   .client-logo img {
     max-height: 50px;
+  }
+
+  .testimonials-section {
+    margin-top: 3rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .testimonial-card {
+    padding: 2rem 1.5rem;
+    min-height: auto;
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+  }
+
+  .author-avatar {
+    width: 50px;
+    height: 50px;
   }
   
   .whatsapp-float {
