@@ -268,6 +268,7 @@ const handleVideoEnd = () => {
 }
 
 import izyLogo from '../assets/logos/izy-logo.webp'
+import johnLogo from '../assets/logos/john-logo.png'
 import enosLogo from '../assets/logos/enos-logo.webp'
 import delyaLogo from '../assets/logos/delya-logo.webp'
 import temuLogo from '../assets/logos/temu-logo-1.webp'
@@ -292,21 +293,9 @@ const clientLogos = ref([
     logo: temuLogo
   },
   {
-    name: 'IZY',
-    logo: izyLogo
-  },
-  {
-    name: 'ENOS',
-    logo: enosLogo
-  },
-  {
-    name: 'Temu',
-    logo: temuLogo
-  },
-  {
-    name: 'DELYA',
-    logo: delyaLogo
-  },
+    name: 'John',
+    logo: johnLogo
+  }
 ])
 
 // Testimonials data
