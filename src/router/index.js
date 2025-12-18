@@ -8,6 +8,7 @@ import UniGo from '../pages/UniGo.vue'
 import Reservigo from '../pages/Reservigo.vue'
 import PortfolioWebsite from '../pages/PortfolioWebsite.vue'
 import Custom from '../pages/Custom.vue'
+import FormCompletion from '../pages/FormCompletion.vue'
 
 const routes = [
   {
@@ -54,6 +55,11 @@ const routes = [
     path: '/custom',
     name: 'Custom',
     component: Custom
+  },
+  {
+    path: '/form-completion',
+    name: 'FormCompletion',
+    component: FormCompletion
   }
 ]
 
