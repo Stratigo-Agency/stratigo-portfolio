@@ -236,10 +236,11 @@
             Anda mendapatkan pengetahuan dan aset digital yang mendukung pertumbuhan bisnis Anda dalam jangka panjang.
           </p>
           <a 
-            href="https://wa.me/6287881332121" 
+            href="#" 
             target="_blank" 
             rel="noopener noreferrer" 
             class="btn btn-primary"
+            @click.prevent="handleWhatsAppClick('https://wa.me/6287881332121')"
           >
             Konsultasi Gratis Sekarang
           </a>
@@ -295,6 +296,16 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
+
+const handleWhatsAppClick = (url) => {
+  // Report conversion and redirect
+  if (typeof window.gtag_report_conversion === 'function') {
+    window.gtag_report_conversion(url)
+  } else {
+    // Fallback if function not loaded
+    window.open(url, '_blank', 'noopener,noreferrer')
+  }
+}
 </script>
 
 <style scoped>

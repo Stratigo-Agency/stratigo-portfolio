@@ -11,10 +11,11 @@
             Hubungi kami untuk mendiskusikan kebutuhan bisnis Anda. Kami siap membantu mewujudkan solusi software yang dirancang khusus untuk tantangan unik bisnis Anda.
           </p>
           <a 
-            href="https://wa.me/6287881332121" 
+            href="#" 
             target="_blank" 
             rel="noopener noreferrer" 
             class="btn btn-primary"
+            @click.prevent="handleWhatsAppClick('https://wa.me/6287881332121')"
           >
             Konsultasi Gratis <span class="btn-arrow">></span>
           </a>
@@ -29,6 +30,16 @@
 <script setup>
 import Navbar from '../components/Navbar.vue'
 import Footer from '../components/Footer.vue'
+
+const handleWhatsAppClick = (url) => {
+  // Report conversion and redirect
+  if (typeof window.gtag_report_conversion === 'function') {
+    window.gtag_report_conversion(url)
+  } else {
+    // Fallback if function not loaded
+    window.open(url, '_blank', 'noopener,noreferrer')
+  }
+}
 </script>
 
 <style scoped>

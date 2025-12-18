@@ -22,11 +22,11 @@
           <h1 class="hero-title-large">Launch Your Digital Ideas</h1>
           <p class="hero-description">Stratigo menyediakan solusi digital untuk mengembangkan bisnis Anda.</p>
           <a 
-            href="https://wa.me/6287881332121" 
+            href="#" 
             target="_blank" 
             rel="noopener noreferrer" 
             class="btn btn-primary hero-cta"
-            @click="trackButtonClick('Konsultasi Sekarang', 'hero')"
+            @click.prevent="handleWhatsAppClick('https://wa.me/6287881332121', 'Konsultasi Sekarang', 'hero')"
           >
             Konsultasi Gratis
           </a>
@@ -169,11 +169,11 @@
             </div>
           </div>
           <a 
-            href="https://wa.me/6287881332121" 
+            href="#" 
             target="_blank" 
             rel="noopener noreferrer" 
             class="btn btn-primary"
-            @click="trackButtonClick('Konsultasi', 'contact')"
+            @click.prevent="handleWhatsAppClick('https://wa.me/6287881332121', 'Konsultasi', 'contact')"
           >
             Konsultasi Sekarang
           </a>
@@ -222,9 +222,9 @@
     <Footer />
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/6287881332121" target="_blank" rel="noopener noreferrer" 
+    <a href="#" target="_blank" rel="noopener noreferrer" 
        class="whatsapp-float" 
-       @click="trackButtonClick('WhatsApp', 'floating_button')"
+       @click.prevent="handleWhatsAppClick('https://wa.me/6287881332121', 'WhatsApp', 'floating_button')"
        aria-label="Chat on WhatsApp">
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M16 0C7.164 0 0 7.164 0 16c0 2.832.744 5.604 2.154 8.048L.036 31.64l7.876-2.064A15.954 15.954 0 0 0 16 32c8.836 0 16-7.164 16-16S24.836 0 16 0z" fill="#25D366"/>
@@ -385,6 +385,18 @@ const viewPost = (post) => {
     title: post.title
   })
   // Could navigate to detail page
+}
+
+const handleWhatsAppClick = (url, buttonName, section) => {
+  // Track button click
+  trackButtonClick(buttonName, section)
+  // Report conversion and redirect
+  if (typeof window.gtag_report_conversion === 'function') {
+    window.gtag_report_conversion(url)
+  } else {
+    // Fallback if function not loaded
+    window.open(url, '_blank', 'noopener,noreferrer')
+  }
 }
 
 
