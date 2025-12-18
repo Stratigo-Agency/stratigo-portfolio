@@ -45,14 +45,6 @@
                   </svg>
                 </div>
               </router-link>
-              <router-link to="/custom" class="dropdown-card card-dark" @click="closeMobileMenu()">
-                <span class="dropdown-card-text">Custom Software</span>
-                <div class="dropdown-card-button">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M6 4l4 4-4 4"/>
-                  </svg>
-                </div>
-              </router-link>
             </div>
           </div>
         </li>

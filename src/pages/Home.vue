@@ -94,18 +94,6 @@
               </svg>
             </div>
           </router-link>
-           <router-link to="/custom" class="product-card product-light" @click="trackButtonClick('Custom Software & AI', 'products')">
-            <div class="product-content">
-              <h3 class="product-title">Custom Software</h3>
-              <p class="product-description">Solusi khusus untuk kebutuhan bisnis Anda, kami membangun software yang dirancang khusus untuk memenuhi kebutuhan bisnis Anda.</p>
-            </div>
-            <div class="product-button">
-              <span class="button-text">Lihat Detail</span>
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M7 5l6 5-6 5"/>
-              </svg>
-            </div>
-          </router-link>
         </div>
       </div>
     </section>
