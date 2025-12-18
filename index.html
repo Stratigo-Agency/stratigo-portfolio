@@ -26,7 +26,8 @@
 
       gtag('config', 'AW-17742899384');
     </script>
-  <!-- Event snippet for Contact conversion page -->
+  <!-- Event snippet for Outbound click conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
   <script>
     function gtag_report_conversion(url) {
       var callback = function () {
@@ -35,7 +36,7 @@
         }
       };
       gtag('event', 'conversion', {
-          'send_to': 'AW-17742899384/lMXqCOe2tNMbELjRvIxC',
+          'send_to': 'AW-17742899384/tptRCMeItdMbELjRvIxC',
           'value': 1.0,
           'currency': 'IDR',
           'event_callback': callback
