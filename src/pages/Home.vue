@@ -351,7 +351,8 @@ const handleScroll = () => {
 
 const isInViewport = (element) => {
   const rect = element.getBoundingClientRect()
-  return rect.top < window.innerHeight && rect.bottom > 0
+  // Trigger animation when element is 20% visible from bottom
+  return rect.top < window.innerHeight * 0.8 && rect.bottom > 0
 }
 
 const handleServiceClick = (serviceName) => {
@@ -393,8 +394,45 @@ const handleWhatsAppClick = (url, buttonName, section) => {
 
 // Lifecycle
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-  handleScroll() // Initial check
+  // Use Intersection Observer for better performance and smoother animations
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2 // Trigger when 20% of element is visible
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const target = entry.target
+        if (target.classList.contains('hero')) {
+          heroVisible.value = true
+        } else if (target.classList.contains('digital-presence')) {
+          digitalPresenceVisible.value = true
+        } else if (target.classList.contains('features-section')) {
+          featuresVisible.value = true
+        } else if (target.classList.contains('solution-section')) {
+          solutionVisible.value = true
+        } else if (target.classList.contains('contact')) {
+          contactVisible.value = true
+        }
+        // Unobserve after animation triggers to improve performance
+        observer.unobserve(target)
+      }
+    })
+  }, observerOptions)
+
+  // Observe all sections
+  const sections = document.querySelectorAll('.hero, .digital-presence, .features-section, .solution-section, .contact')
+  sections.forEach(section => {
+    if (section) {
+      observer.observe(section)
+    }
+  })
+
+  // Fallback to scroll handler for initial check and any elements not using Intersection Observer
+  handleScroll()
+  window.addEventListener('scroll', handleScroll, { passive: true })
 })
 
 onUnmounted(() => {
@@ -720,6 +758,10 @@ onUnmounted(() => {
   flex-direction: column;
   gap: 2rem;
   padding-top: 1rem;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 .carousel-container {
@@ -727,20 +769,26 @@ onUnmounted(() => {
   overflow: hidden;
   position: relative;
   padding: 10px 0;
-  mask: linear-gradient(
+  mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 10%,
-    black 90%,
+    black 8%,
+    black 92%,
     transparent 100%
   );
-  -webkit-mask: linear-gradient(
+  -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 10%,
-    black 90%,
+    black 8%,
+    black 92%,
     transparent 100%
   );
+  mask-size: 100%;
+  -webkit-mask-size: 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
 }
 
 .carousel-track {
