@@ -1,4 +1,6 @@
 import previewImage from '../assets/preview.jpg'
+import delyaImage from '../assets/case-studies/delya.png'
+import izyImage from '../assets/case-studies/izy.png'
 
 export const caseStudies = [
   {
@@ -6,7 +8,7 @@ export const caseStudies = [
     title: 'Travel Agency Website',
     category: 'Custom Website',
     description: 'Membangun website modern untuk travel agency yang menampilkan paket wisata, booking system, dan galeri destinasi.',
-    image: previewImage,
+    image: delyaImage,
     technologies: ['Vue.js', 'TypeScript', 'API'],
     results: [
       { value: '50+', label: 'Paket Wisata' },
@@ -48,7 +50,7 @@ export const caseStudies = [
     title: 'Company Website untuk Brand Otomotif',
     category: 'Custom Website',
     description: 'Membangun website perusahaan untuk brand otomotif yang menjual berbagai produk kendaraan.',
-    image: previewImage,
+    image: izyImage,
     technologies: ['Vue.js', 'TypeScript'],
     results: [
       { value: '20+', label: 'Foto produk' },
