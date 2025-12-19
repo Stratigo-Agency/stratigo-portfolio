@@ -6,8 +6,8 @@
     <!-- Case Studies Section -->
     <section class="case-studies-hero">
       <div class="container">
-        <h1 class="page-title">Case Studies</h1>
-        <p class="page-subtitle">Lihat proyek-proyek yang telah kami selesaikan untuk klien kami</p>
+        <h1 class="page-title">{{ $t('caseStudies.title') }}</h1>
+        <p class="page-subtitle">{{ $t('caseStudies.subtitle') }}</p>
       </div>
     </section>
 

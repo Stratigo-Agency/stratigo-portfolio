@@ -6,9 +6,9 @@
     <section class="section cta-section pattern-bg">
       <div class="container">
         <div class="cta-content">
-          <h2 class="cta-title">Butuh Solusi Software Khusus?</h2>
+          <h2 class="cta-title">{{ $t('custom.title') }}</h2>
           <p class="cta-text">
-            Hubungi kami untuk mendiskusikan kebutuhan bisnis Anda. Kami siap membantu mewujudkan solusi software yang dirancang khusus untuk tantangan unik bisnis Anda.
+            {{ $t('custom.description') }}
           </p>
           <a 
             href="#" 
@@ -17,7 +17,7 @@
             class="btn btn-primary"
             @click.prevent="handleWhatsAppClick('https://wa.me/6287881332121')"
           >
-            Konsultasi Gratis <span class="btn-arrow">></span>
+            {{ $t('custom.consultation') }} <span class="btn-arrow">></span>
           </a>
         </div>
       </div>

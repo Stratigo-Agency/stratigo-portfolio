@@ -11,13 +11,13 @@
               <path d="M25 40L35 50L55 30" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h1 class="completion-title">Terima Kasih!</h1>
+          <h1 class="completion-title">{{ $t('formCompletion.title') }}</h1>
           <p class="completion-message">
-            Terima kasih telah mengisi formulir. Tim kami akan segera menghubungi Anda.
+            {{ $t('formCompletion.message') }}
           </p>
           <div class="completion-actions">
             <router-link to="/" class="btn btn-primary">
-              Kembali ke Beranda
+              {{ $t('common.backToHome') }}
             </router-link>
           </div>
         </div>

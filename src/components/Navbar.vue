@@ -8,13 +8,13 @@
       </div>
       <ul class="nav-links" :class="{ 'active': mobileMenuOpen }">
         <li>
-          <router-link to="/" @click="closeMobileMenu()">Beranda</router-link>
+          <router-link to="/" @click="closeMobileMenu()">{{ $t('nav.home') }}</router-link>
         </li>
         <li class="nav-item-dropdown" 
             @mouseenter="handleMouseEnter"
             @mouseleave="handleMouseLeave">
           <a href="#layanan" @click.prevent="toggleDropdown('layanan')">
-            Layanan
+            {{ $t('nav.services') }}
             <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M3 4.5l3 3 3-3"/>
             </svg>
@@ -22,7 +22,7 @@
           <div class="dropdown-menu" v-if="showDropdown === 'layanan'">
             <div class="dropdown-grid">
               <router-link to="/portfolio-website" class="dropdown-card card-dark" @click="closeMobileMenu()">
-                <span class="dropdown-card-text">Portfolio Website</span>
+                <span class="dropdown-card-text">{{ $t('nav.portfolioWebsite') }}</span>
                 <div class="dropdown-card-button">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M6 4l4 4-4 4"/>
@@ -30,7 +30,7 @@
                 </div>
               </router-link>
               <router-link to="/unigo" class="dropdown-card card-light" @click="closeMobileMenu()">
-                <span class="dropdown-card-text">E-Learning Apps</span>
+                <span class="dropdown-card-text">{{ $t('nav.eLearningApps') }}</span>
                 <div class="dropdown-card-button">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M6 4l4 4-4 4"/>
@@ -38,7 +38,7 @@
                 </div>
               </router-link>
               <router-link to="/reservigo" class="dropdown-card card-light" @click="closeMobileMenu()">
-                <span class="dropdown-card-text">Booking System</span>
+                <span class="dropdown-card-text">{{ $t('nav.bookingSystem') }}</span>
                 <div class="dropdown-card-button">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M6 4l4 4-4 4"/>
@@ -49,14 +49,15 @@
           </div>
         </li>
         <li>
-          <router-link to="/case-studies" @click="closeMobileMenu()">Case Studies</router-link>
+          <router-link to="/case-studies" @click="closeMobileMenu()">{{ $t('nav.caseStudies') }}</router-link>
         </li>
         <li>
-          <router-link to="/blog" @click="closeMobileMenu()">Blog</router-link>
+          <router-link to="/blog" @click="closeMobileMenu()">{{ $t('nav.blog') }}</router-link>
         </li>
        
     
       </ul>
+      <LanguageSwitcher />
      
       <div class="mobile-menu-toggle" @click="toggleMobileMenu">
         <span></span>
@@ -71,6 +72,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAnalytics } from '../composables/useAnalytics.js'
+import LanguageSwitcher from './LanguageSwitcher.vue'
 import strategoLogo from '../assets/logos/stratigo-logo-white.webp'
 
 const router = useRouter()
@@ -86,6 +88,12 @@ const handleScroll = () => {
 
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value
+  // Prevent body scroll when menu is open
+  if (mobileMenuOpen.value) {
+    document.body.style.overflow = 'hidden'
+  } else {
+    document.body.style.overflow = ''
+  }
   // Close dropdown when mobile menu is closed
   if (!mobileMenuOpen.value) {
     showDropdown.value = null
@@ -123,6 +131,7 @@ const toggleDropdown = (dropdownName) => {
 const closeMobileMenu = () => {
   mobileMenuOpen.value = false
   showDropdown.value = null
+  document.body.style.overflow = ''
 }
 
 onMounted(() => {

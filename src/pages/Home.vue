@@ -19,8 +19,8 @@
       <div class="hero-content container">
         <div class="hero-simple fade-in" :class="{ 'visible': heroVisible }">
           <img :src="strategoLogo" alt="Stratigo" class="hero-logo" />
-          <h1 class="hero-title-large">Launch Your Digital Ideas</h1>
-          <p class="hero-description">Stratigo menyediakan solusi digital untuk mengembangkan bisnis Anda.</p>
+          <h1 class="hero-title-large">{{ $t('home.heroTitle') }}</h1>
+          <p class="hero-description">{{ $t('home.heroDescription') }}</p>
           <a 
             href="#" 
             target="_blank" 
@@ -28,7 +28,7 @@
             class="btn btn-primary hero-cta"
             @click.prevent="handleWhatsAppClick('https://wa.me/6287881332121', 'Konsultasi Sekarang', 'hero')"
           >
-            Konsultasi Gratis
+            {{ $t('home.consultationFree') }}
           </a>
         </div>
       </div>
@@ -39,80 +39,77 @@
     <section class="section digital-presence">
       <div class="container">
         <div class="digital-presence-content fade-in" :class="{ 'visible': digitalPresenceVisible }">
-          <div class="digital-presence-number">7+</div>
+          <div class="digital-presence-number">Stand Out.</div>
           <div class="digital-presence-text">
-            <p class="digital-presence-main-text">
-              <strong>Jam dihabiskan oleh masyarakat Indonesia setiap harinya di internet</strong>. Website bukan hanya pelengkap, melainkan <strong>kebutuhan vital</strong> bagi bisnis yang ingin berkembang.
+            <p class="digital-presence-main-text" v-html="$t('home.digitalPresence.mainText')">
             </p>
             <p class="digital-presence-sub-text">
-              Stratigo dilengkapi dengan keahlian dan tools yang memastikan bisnis Anda kuat bersaing di era digital, mulai dari keahlian website, software, Artificial Intelligence (AI), dan juga tools yang dikembangkan oleh tim internal kami untuk menyelesaikan masalah bisnis.
+              {{ $t('home.digitalPresence.subText') }}
             </p>
           </div>
         </div>
       </div>
     </section>
-    <!-- Products Section -->
-    <section class="section products">
+
+    <!-- Features Section -->
+    <section class="section features-section">
       <div class="container">
-        <h2 class="products-header fade-in" :class="{ 'visible': productsVisible }">
-          ( KEAHLIAN KAMI )
+        <h2 class="features-header fade-in" :class="{ 'visible': featuresVisible }">
+          {{ $t('home.features.title') }}
         </h2>
-        <div class="products-grid fade-in" :class="{ 'visible': productsVisible }">
-          <router-link to="/portfolio-website" class="product-card product-dark" @click="trackButtonClick('Portfolio Website', 'products')">
-            <div class="product-content">
-              <h3 class="product-title">Portfolio Website</h3>
-              <p class="product-description">Website profesional untuk menampilkan brand dan bisnis Anda dengan desain yang menarik dan modern. Dengan Stratigo, desain, keamanan, dan fungsionalitas website Anda menjadi prioritas utama. </p>
+        <div class="features-grid fade-in" :class="{ 'visible': featuresVisible }">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img :src="whiteCrossIcon" alt="Custom" />
             </div>
-            <div class="product-button">
-              <span class="button-text">Lihat Detail</span>
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M7 5l6 5-6 5"/>
-              </svg>
+            <h3 class="feature-card-title">{{ $t('home.features.customCrafted.title') }}</h3>
+            <p class="feature-card-description">{{ $t('home.features.customCrafted.description') }}</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img :src="whiteExploreIcon" alt="Analytics" />
             </div>
-          </router-link>
-          <router-link to="/unigo" class="product-card product-light" @click="trackButtonClick('E-Learning Apps', 'products')">
-            <div class="product-content">
-              <h3 class="product-title">E-Learning Platform</h3>
-              <p class="product-description">Dengan Employee Learning Management System (LMS) kami, UniGo, kamu dapat meluncurkan platform pembelajaran karyawan dengan efisien dan efektif. </p>
+            <h3 class="feature-card-title">{{ $t('home.features.analytics.title') }}</h3>
+            <p class="feature-card-description">{{ $t('home.features.analytics.description') }}</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img :src="whiteProtectIcon" alt="Content Ownership" />
             </div>
-            <div class="product-button">
-              <span class="button-text">Lihat Detail</span>
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M7 5l6 5-6 5"/>
-              </svg>
+            <h3 class="feature-card-title">{{ $t('home.features.contentOwnership.title') }}</h3>
+            <p class="feature-card-description">{{ $t('home.features.contentOwnership.description') }}</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img :src="whitePartnerIcon" alt="Maintenance & Education" />
             </div>
-          </router-link>
-          <router-link to="/reservigo" class="product-card product-dark" @click="trackButtonClick('Booking System', 'products')">
-            <div class="product-content">
-              <h3 class="product-title">Booking System</h3>
-              <p class="product-description">Luncurkan sistem booking dalam hitungan jam dengan Reservigo. Pengunjung dapat melakukan booking dalam hitungan detik dan dilengkapi dengan fitur notifikasi dan dashboard. </p>
-            </div>
-            <div class="product-button">
-              <span class="button-text">Lihat Detail</span>
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M7 5l6 5-6 5"/>
-              </svg>
-            </div>
-          </router-link>
+            <h3 class="feature-card-title">{{ $t('home.features.maintenance.title') }}</h3>
+            <p class="feature-card-description">{{ $t('home.features.maintenance.description') }}</p>
+          </div>
         </div>
       </div>
     </section>
+
     <!-- Solution Section -->
     <section class="section solution-section">
       <div class="container">
         <div class="solution-content fade-in" :class="{ 'visible': solutionVisible }">
-        
+          <h2 class="trusted-by-title">{{ $t('home.trustedBy') }}</h2>
         </div>
       </div>
       <div class="container">
-        <h2 class="products-header fade-in" :class="{ 'visible': productsVisible }">
-          ( DIPERCAYA OLEH )
-        </h2>
-        <div class="carousel-container">
-          <div class="carousel-track">
-            <div class="client-logo" v-for="(client, index) in [...clientLogos, ...clientLogos]" :key="`${client.name}-${index}`"
-                 @click="handleClientLogoClick(client.name)">
-              <img :src="client.logo" :alt="client.name" />
+        <div class="trusted-by-content fade-in" :class="{ 'visible': solutionVisible }">        
+          <div class="trusted-by-carousel-wrapper">
+            <div class="carousel-container">
+              <div class="carousel-track">
+                <div class="client-logo" v-for="(client, index) in [...clientLogos, ...clientLogos]" :key="`${client.name}-${index}`"
+                     @click="handleClientLogoClick(client.name)">
+                  <img :src="client.logo" :alt="client.name" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -143,17 +140,17 @@
     <section id="kontak" class="section contact">
       <div class="container">
         <div class="contact-content fade-in" :class="{ 'visible': contactVisible }">
-          <h3>Realisasikan ide bisnis Anda dengan kami.</h3>
-          <p>Konsultasi dengan kami untuk mendapatkan solusi digital yang tepat untuk bisnis Anda.</p>
+          <h3>{{ $t('home.contact.title') }}</h3>
+          <p>{{ $t('home.contact.description') }}</p>
           <div class="contact-methods">
             <div class="contact-method">
-              <strong>Email:</strong> info@stratigo.co.id
+              <strong>{{ $t('home.contact.email') }}</strong> info@stratigo.co.id
             </div>
             <div class="contact-method">
-              <strong>Telepon:</strong> +6287881332121
+              <strong>{{ $t('home.contact.phone') }}</strong> +6287881332121
             </div>
             <div class="contact-method">
-              <strong>Alamat:</strong> Jakarta, Indonesia
+              <strong>{{ $t('home.contact.address') }}</strong> {{ $t('home.contact.addressValue') }}
             </div>
           </div>
           <a 
@@ -163,7 +160,7 @@
             class="btn btn-primary"
             @click.prevent="handleWhatsAppClick('https://wa.me/6287881332121', 'Konsultasi', 'contact')"
           >
-            Konsultasi Sekarang
+            {{ $t('home.consultationNow') }}
           </a>
         </div>
       </div>
@@ -174,9 +171,9 @@
       <div class="container">
         <div class="showcase-header fade-in" :class="{ 'visible': solutionVisible }">
           <h2 class="products-header fade-in" :class="{ 'visible': productsVisible }">
-          ( Case studies )
+          {{ $t('home.showcase.caseStudies') }}
         </h2>
-          <router-link to="/case-studies" class="showcase-view-all">Lihat Semua →</router-link>
+          <router-link to="/case-studies" class="showcase-view-all">{{ $t('home.showcase.viewAll') }}</router-link>
         </div>
         <div class="showcase-grid fade-in" :class="{ 'visible': solutionVisible }">
           <CaseStudyCard
@@ -190,9 +187,9 @@
         
         <div class="showcase-header fade-in" :class="{ 'visible': solutionVisible }" style="margin-top: 4rem;">
           <h2 class="products-header fade-in" :class="{ 'visible': productsVisible }">
-          ( Blog )
+          {{ $t('home.showcase.blog') }}
         </h2>
-          <router-link to="/blog" class="showcase-view-all">Lihat Semua →</router-link>
+          <router-link to="/blog" class="showcase-view-all">{{ $t('home.showcase.viewAll') }}</router-link>
         </div>
         <div class="showcase-grid fade-in" :class="{ 'visible': solutionVisible }">
           <BlogCard
@@ -224,6 +221,7 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import Navbar from '../components/Navbar.vue'
 import Footer from '../components/Footer.vue'
 import BlogCard from '../components/BlogCard.vue'
@@ -237,10 +235,10 @@ const { trackEvent, trackFormSubmission, trackButtonClick, trackServiceInterest,
 
 // Reactive data
 const heroVisible = ref(false)
-const productsVisible = ref(false)
 const servicesVisible = ref(false)
 const trustedByVisible = ref(false)
 const digitalPresenceVisible = ref(false)
+const featuresVisible = ref(false)
 
 const solutionVisible = ref(false)
 const contactVisible = ref(false)
@@ -262,6 +260,10 @@ import delyaLogo from '../assets/logos/delya-logo.webp'
 import temuLogo from '../assets/logos/temu-logo-1.webp'
 import strategoLogo from '../assets/icon/white-cross.webp'
 import heroVideo from '../assets/hero.mp4'
+import whiteCrossIcon from '../assets/icon/white-cross.webp'
+import whiteExploreIcon from '../assets/icon/white-explore.webp'
+import whiteProtectIcon from '../assets/icon/white-protect.webp'
+import whitePartnerIcon from '../assets/icon/white-partner.webp'
 
 const clientLogos = ref([
   {
@@ -286,25 +288,26 @@ const clientLogos = ref([
   }
 ])
 
-// Testimonials data
-const testimonials = ref([
+// Testimonials data - will be populated from i18n
+const { t } = useI18n()
+const testimonials = computed(() => [
   {
-    text: 'Stratigo membantu kami membangun website yang profesional dan mudah dikelola. Tim mereka sangat responsif dan memahami kebutuhan bisnis kami.',
-    name: 'Theresa Winona',
-    role: 'Delya Travel',
-    avatar: null // Add image path here, e.g., '/src/assets/testimonials/john-doe.jpg'
+    text: t('home.testimonials.delya.text'),
+    name: t('home.testimonials.delya.name'),
+    role: t('home.testimonials.delya.role'),
+    avatar: null
   },
   {
-    text: 'Website yang dibuat Stratigo tidak hanya menarik secara visual, tapi juga sangat cepat dan mobile-friendly. Hasilnya melebihi ekspektasi kami.',
-    name: 'Jeremy',
-    role: 'Izy Automotive',
-    avatar: null // Add image path here, e.g., '/src/assets/testimonials/jane-smith.jpg'
+    text: t('home.testimonials.izy.text'),
+    name: t('home.testimonials.izy.name'),
+    role: t('home.testimonials.izy.role'),
+    avatar: null
   },
   {
-    text: 'Website cepat selesai dan profesional, lengkap dengan dashboard untuk mengelola sendiri. Sangat puas.',
-    name: 'Jovian Alvin',
-    role: 'Temu Bisnis',
-    avatar: null // Add image path here, e.g., '/src/assets/testimonials/michael-johnson.jpg'
+    text: t('home.testimonials.temu.text'),
+    name: t('home.testimonials.temu.name'),
+    role: t('home.testimonials.temu.role'),
+    avatar: null
   }
 ])
 
@@ -316,7 +319,6 @@ const recentBlogPosts = computed(() => blogPosts.slice(0, 3))
 const handleScroll = () => {
   // Intersection observer for animations
   const heroSection = document.querySelector('.hero')
-  const productsSection = document.querySelector('.products')
   const servicesSection = document.querySelector('.services')
   const trustedBySection = document.querySelector('.trusted-by-header')
   const digitalPresenceSection = document.querySelector('.digital-presence')
@@ -326,9 +328,6 @@ const handleScroll = () => {
   if (heroSection && isInViewport(heroSection)) {
     heroVisible.value = true
   }
-  if (productsSection && isInViewport(productsSection)) {
-    productsVisible.value = true
-  }
   if (servicesSection && isInViewport(servicesSection)) {
     servicesVisible.value = true
   }
@@ -337,6 +336,10 @@ const handleScroll = () => {
   }
   if (digitalPresenceSection && isInViewport(digitalPresenceSection)) {
     digitalPresenceVisible.value = true
+  }
+  const featuresSection = document.querySelector('.features-section')
+  if (featuresSection && isInViewport(featuresSection)) {
+    featuresVisible.value = true
   }
   if (solutionSection && isInViewport(solutionSection)) {
     solutionVisible.value = true
@@ -469,11 +472,12 @@ onUnmounted(() => {
 }
 
 .hero-description {
-  font-size: 1.4rem;
-  color: var(--text-muted);
+  font-size: 1.8rem;
+  color: white;
+  opacity: 0.6;
   line-height: 1.6;
   margin: 1.5rem 0 0 0;
-  font-weight: 300;
+  font-weight: 400;
   max-width: 700px;
 }
 
@@ -682,6 +686,42 @@ onUnmounted(() => {
   margin-right: auto;
 }
 
+.trusted-by-content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-top: 8rem;
+  gap: 4rem;
+  align-items: start;
+}
+
+.trusted-by-title {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.trusted-by-number {
+  color: white;
+  text-align: left;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.trusted-by-carousel-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
 .carousel-container {
   width: 100%;
   overflow: hidden;
@@ -828,6 +868,96 @@ onUnmounted(() => {
   padding: 5rem 0;
 }
 
+/* Features Section */
+.features-section {
+  background: var(--light-bg);
+  padding: 5rem 0;
+}
+
+.features-header {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.feature-card {
+  background: var(--light-secondary);
+  border: 1px solid var(--light-tertiary);
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.feature-card:nth-child(1) {
+  margin-top: 0;
+}
+
+.feature-card:nth-child(2) {
+  margin-top: 3rem;
+}
+
+.feature-card:nth-child(3) {
+  margin-top: 6rem;
+}
+
+.feature-card:nth-child(4) {
+  margin-top: 9rem;
+}
+
+.feature-card:hover {
+  border-color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.feature-card-title {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.feature-card-description {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+  flex: 1;
+}
+
 .digital-presence-content {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -836,8 +966,7 @@ onUnmounted(() => {
 }
 
 .digital-presence-number {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 16rem;
+  font-size: 12rem;
   font-weight: 400;
   color: #fff;
   line-height: 1;
@@ -852,7 +981,7 @@ onUnmounted(() => {
 }
 
 .digital-presence-main-text {
-  font-size: 1.5rem;
+  font-size: 3.5rem;
   font-weight: 400;
   line-height: 1.6;
   color: #fff;
@@ -925,7 +1054,6 @@ onUnmounted(() => {
 
 .solution-content {
   text-align: center;
-  margin-bottom: 3rem;
 }
 
 .solution-title {
@@ -1482,15 +1610,71 @@ onUnmounted(() => {
   }
   
   .digital-presence-number {
-    font-size: 6rem;
+    font-size: 4rem;
+  }
+
+  .solution-section {
+    padding: 2rem 0 3rem;
+  }
+
+  .trusted-by-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    justify-items: center;
+    padding: 1rem 0;
+  }
+
+  .trusted-by-title {
+    text-align: center;
+    width: 100%;
+  }
+
+  .trusted-by-number {
+    text-align: center;
+    width: 100%;
   }
   
   .digital-presence-main-text {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    line-height: 1.4;
   }
   
   .digital-presence-sub-text {
-    font-size: 0.9rem;
+    font-size: 1rem;
+  }
+
+  .trusted-by-carousel-wrapper {
+    padding-top: 0;
+  }
+
+  .features-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .feature-card {
+    padding: 2rem 1.5rem;
+    min-height: auto;
+    margin-top: 0 !important;
+  }
+
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-card-title {
+    font-size: 1.25rem;
+  }
+
+  .feature-card-description {
+    font-size: 0.95rem;
   }
   
   .solution-title {
@@ -1558,9 +1742,41 @@ onUnmounted(() => {
     font-size: 1rem;
   }
 
+  .author-name {
+    font-size: 0.9rem;
+  }
+
+  .author-role {
+    font-size: 0.8rem;
+  }
+
   .author-avatar {
     width: 50px;
     height: 50px;
+  }
+
+  .contact-content h3 {
+    font-size: 2rem;
+  }
+
+  .contact-content p {
+    font-size: 1rem;
+  }
+
+  .contact-method {
+    font-size: 0.9rem;
+  }
+
+  .showcase-card-description {
+    font-size: 0.85rem;
+  }
+
+  .products-header {
+    font-size: 0.9rem;
+  }
+
+  .features-header {
+    font-size: 0.9rem;
   }
   
   .whatsapp-float {

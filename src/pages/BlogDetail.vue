@@ -25,8 +25,8 @@
         </div>
         
         <div v-else class="blog-not-found">
-          <h2>Blog post tidak ditemukan</h2>
-          <router-link to="/blog" class="btn btn-primary">Kembali ke Blog</router-link>
+          <h2>{{ $t('blog.notFound') }}</h2>
+          <router-link to="/blog" class="btn btn-primary">{{ $t('blog.backToBlog') }}</router-link>
         </div>
       </div>
     </article>

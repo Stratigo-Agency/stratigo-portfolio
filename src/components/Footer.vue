@@ -4,28 +4,28 @@
       <div class="footer-content">
         <div class="footer-brand">
           <img :src="strategoLogo" alt="Stratigo" class="footer-logo" />
-          <p>Tingkatkan Identitas Bisnis Anda Dengan Website yang Profesional</p>
+          <p>{{ $t('footer.tagline') }}</p>
         </div>
         <div class="footer-links">
           <div class="footer-section">
-            <h4>Layanan</h4>
+            <h4>{{ $t('footer.services') }}</h4>
             <ul>
-              <li><router-link to="/portfolio-website">Portfolio Website</router-link></li>
-              <li><router-link to="/unigo">E-Learning Apps</router-link></li>
-              <li><router-link to="/reservigo">Booking System</router-link></li>
+              <li><router-link to="/portfolio-website">{{ $t('nav.portfolioWebsite') }}</router-link></li>
+              <li><router-link to="/unigo">{{ $t('nav.eLearningApps') }}</router-link></li>
+              <li><router-link to="/reservigo">{{ $t('nav.bookingSystem') }}</router-link></li>
             </ul>
           </div>
           <div class="footer-section">
-            <h4>Resources</h4>
+            <h4>{{ $t('footer.resources') }}</h4>
             <ul>
-              <li><router-link to="/case-studies">Case Studies</router-link></li>
-              <li><router-link to="/blog">Blog</router-link></li>
+              <li><router-link to="/case-studies">{{ $t('nav.caseStudies') }}</router-link></li>
+              <li><router-link to="/blog">{{ $t('nav.blog') }}</router-link></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2024 Stratigo. Semua hak dilindungi.</p>
+        <p>{{ $t('footer.copyright') }}</p>
       </div>
     </div>
   </footer>

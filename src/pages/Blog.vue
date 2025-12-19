@@ -6,8 +6,8 @@
     <!-- Blog Hero Section -->
     <section class="blog-hero">
       <div class="container">
-        <h1 class="page-title">Blog</h1>
-        <p class="page-subtitle">Artikel dan tips tentang website, software, dan teknologi digital</p>
+        <h1 class="page-title">{{ $t('blog.title') }}</h1>
+        <p class="page-subtitle">{{ $t('blog.subtitle') }}</p>
       </div>
     </section>
 

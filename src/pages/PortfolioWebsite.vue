@@ -5,9 +5,9 @@
     <!-- Hero Section -->
     <section class="page-hero">
       <div class="container">
-        <h1 class="page-title fade-in" :class="{ 'visible': heroVisible }">Ciptakan Website yang Bekerja untuk Bisnis Anda.</h1>
+        <h1 class="page-title fade-in" :class="{ 'visible': heroVisible }">{{ $t('portfolioWebsite.hero.title') }}</h1>
         <p class="page-subtitle fade-in" :class="{ 'visible': heroVisible }">
-          Dirancang khusus untuk brand Anda. Tanpa batasan template, tanpa kompromi kualitas.
+          {{ $t('portfolioWebsite.hero.subtitle') }}
         </p>
       </div>
     </section>
@@ -17,16 +17,15 @@
       <div class="container">
         <div class="feature-content fade-in" :class="{ 'visible': customVisible }">
           <div class="feature-text">
-            <div class="feature-label">( DESAIN CUSTOM )</div>
-            <h3 class="feature-title">Dibuat Khusus untuk Brand Anda</h3>
-            <p class="feature-description">
-              Website dibangun dari nol, sepenuhnya custom untuk brand Anda. <strong>Tanpa batasan template</strong>, tanpa kompromi kualitas. Dengan membangun website secara custom, Stratigo memastikan website terproteksi, bisa diakses dengan cepat, mobile-friendly, dan rentan terhadap error.
+            <div class="feature-label">{{ $t('portfolioWebsite.customDesign.label') }}</div>
+            <h3 class="feature-title">{{ $t('portfolioWebsite.customDesign.title') }}</h3>
+            <p class="feature-description" v-html="$t('portfolioWebsite.customDesign.description')">
             </p>
             <div class="feature-highlight">
-              <span>Manajemen konten mudah dengan <strong>Headless CMS</strong>. Update kapan saja tanpa coding.</span>
+              <span v-html="$t('portfolioWebsite.customDesign.highlight')"></span>
             </div>
             <div class="tools-section">
-              <p class="tools-label">Tools we use</p>
+              <p class="tools-label">{{ $t('portfolioWebsite.customDesign.toolsLabel') }}</p>
               <div class="tools-logo">
                 <svg width="452" height="160" viewBox="0 0 452 160" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_2001_20)">
@@ -54,7 +53,7 @@
                   <span></span>
                   <span></span>
                 </div>
-                <div class="cms-title">Content Management</div>
+                <div class="cms-title">{{ $t('portfolioWebsite.cms.title') }}</div>
               </div>
               <div class="cms-content">
                 <div class="cms-sidebar">
@@ -90,7 +89,7 @@
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M8 1v14M1 8h14"/>
                 </svg>
-                Edit Anytime
+                {{ $t('portfolioWebsite.cms.editAnytime') }}
               </div>
             </div>
           </div>
@@ -112,7 +111,7 @@
               <div class="mockup-content">
                 <div class="analytics-stat">
                   <div class="stat-number">+247%</div>
-                  <div class="stat-label">Peningkatan Traffic</div>
+                  <div class="stat-label">{{ $t('portfolioWebsite.analytics.trafficIncrease') }}</div>
                 </div>
                 <div class="analytics-chart">
                   <div class="chart-bar" style="height: 40%"></div>
@@ -124,16 +123,15 @@
             </div>
           </div>
           <div class="feature-text">
-            <div class="feature-label">( ANALITIK REAL-TIME )</div>
-            <h2 class="feature-title">Pantau Performa Website Setiap Saat</h2>
-            <p class="feature-description">
-              Setiap website dilengkapi <strong>Google Analytics yang dikonfigurasi khusus</strong> sesuai tujuan bisnis Anda.
+            <div class="feature-label">{{ $t('portfolioWebsite.analytics.label') }}</div>
+            <h2 class="feature-title">{{ $t('portfolioWebsite.analytics.title') }}</h2>
+            <p class="feature-description" v-html="$t('portfolioWebsite.analytics.description')">
             </p>
             <p class="feature-emphasis">
-              Akses penuh ke dashboard analytics untuk memantau pengunjung, konversi, dan sumber traffic terbaik.
+              {{ $t('portfolioWebsite.analytics.emphasis') }}
             </p>
             <div class="tools-section">
-              <p class="tools-label">Tools we use</p>
+              <p class="tools-label">{{ $t('portfolioWebsite.analytics.toolsLabel') }}</p>
               <div class="tools-logo">
                 <img :src="googleAnalyticsLogo" alt="Google Analytics" />
               </div>
@@ -148,27 +146,27 @@
       <div class="container">
         <div class="empowerment-content fade-in" :class="{ 'visible': empowermentVisible }">
           <div class="empowerment-header">
-            <div class="feature-label">( PEMBERDAYAAN PENUH )</div>
-            <h2 class="empowerment-title">Maintenance Opsional.<br>Website Anda, Kendali Anda.</h2>
+            <div class="feature-label">{{ $t('portfolioWebsite.empowerment.label') }}</div>
+            <h2 class="empowerment-title" v-html="$t('portfolioWebsite.empowerment.title')"></h2>
           </div>
           
           <div class="empowerment-grid">
             <div class="empowerment-card">
-              <div class="empowerment-number">01</div>
-              <h3>Pelatihan Lengkap</h3>
-              <p>Kami melatih Anda mengelola website. Tidak perlu bergantung pada agensi selamanya.</p>
+              <div class="empowerment-number">{{ $t('portfolioWebsite.empowerment.cards.training.number') }}</div>
+              <h3>{{ $t('portfolioWebsite.empowerment.cards.training.title') }}</h3>
+              <p>{{ $t('portfolioWebsite.empowerment.cards.training.description') }}</p>
             </div>
             
             <div class="empowerment-card highlight">
-              <div class="empowerment-number">02</div>
-              <h3>Bebas Biaya Maintenance Bulanan</h3>
-              <p>Setelah 6 bulan, kelola sendiri atau lanjut dengan layanan kami. Tidak ada biaya wajib.</p>
+              <div class="empowerment-number">{{ $t('portfolioWebsite.empowerment.cards.maintenance.number') }}</div>
+              <h3>{{ $t('portfolioWebsite.empowerment.cards.maintenance.title') }}</h3>
+              <p>{{ $t('portfolioWebsite.empowerment.cards.maintenance.description') }}</p>
             </div>
             
             <div class="empowerment-card">
-              <div class="empowerment-number">03</div>
-              <h3>Full Ownership</h3>
-              <p>Semua akses, tools, dan dokumentasi diserahkan ke Anda. Website adalah aset Anda.</p>
+              <div class="empowerment-number">{{ $t('portfolioWebsite.empowerment.cards.ownership.number') }}</div>
+              <h3>{{ $t('portfolioWebsite.empowerment.cards.ownership.title') }}</h3>
+              <p>{{ $t('portfolioWebsite.empowerment.cards.ownership.description') }}</p>
             </div>
           </div>
         </div>
@@ -180,47 +178,47 @@
       <div class="container">
         <div class="process-content fade-in" :class="{ 'visible': processVisible }">
           <div class="process-header">
-            <div class="feature-label">( PROSES KERJA )</div>
-            <h2 class="process-title">Proses Sederhana, Hasil Profesional</h2>
+            <div class="feature-label">{{ $t('portfolioWebsite.process.label') }}</div>
+            <h2 class="process-title">{{ $t('portfolioWebsite.process.title') }}</h2>
           </div>
           
           <div class="process-timeline">
             <div class="process-step">
-              <div class="step-number">01</div>
-              <h3>Isi Formulir Awal</h3>
-              <p>Berikan informasi kebutuhan dasar Anda.</p>
+              <div class="step-number">{{ $t('portfolioWebsite.process.steps.form.number') }}</div>
+              <h3>{{ $t('portfolioWebsite.process.steps.form.title') }}</h3>
+              <p>{{ $t('portfolioWebsite.process.steps.form.description') }}</p>
             </div>
             
             <div class="process-connector"></div>
             
             <div class="process-step">
-              <div class="step-number">02</div>
-              <h3>Meeting Konsultasi</h3>
-              <p>Diskusi solusi terbaik, scope, dan budget.</p>
+              <div class="step-number">{{ $t('portfolioWebsite.process.steps.meeting.number') }}</div>
+              <h3>{{ $t('portfolioWebsite.process.steps.meeting.title') }}</h3>
+              <p>{{ $t('portfolioWebsite.process.steps.meeting.description') }}</p>
             </div>
             
             <div class="process-connector"></div>
             
             <div class="process-step">
-              <div class="step-number">03</div>
-              <h3>Proposal</h3>
-              <p>Kami kirimkan proposal detail untuk Anda.</p>
+              <div class="step-number">{{ $t('portfolioWebsite.process.steps.proposal.number') }}</div>
+              <h3>{{ $t('portfolioWebsite.process.steps.proposal.title') }}</h3>
+              <p>{{ $t('portfolioWebsite.process.steps.proposal.description') }}</p>
             </div>
             
             <div class="process-connector"></div>
             
             <div class="process-step">
-              <div class="step-number">04</div>
-              <h3>Finalisasi</h3>
-              <p>Konfirmasi kesepakatan dan detail proyek.</p>
+              <div class="step-number">{{ $t('portfolioWebsite.process.steps.finalization.number') }}</div>
+              <h3>{{ $t('portfolioWebsite.process.steps.finalization.title') }}</h3>
+              <p>{{ $t('portfolioWebsite.process.steps.finalization.description') }}</p>
             </div>
             
             <div class="process-connector"></div>
             
             <div class="process-step">
-              <div class="step-number">05</div>
-              <h3>Pembayaran & Mulai</h3>
-              <p>Payment untuk memulai pengerjaan proyek.</p>
+              <div class="step-number">{{ $t('portfolioWebsite.process.steps.payment.number') }}</div>
+              <h3>{{ $t('portfolioWebsite.process.steps.payment.title') }}</h3>
+              <p>{{ $t('portfolioWebsite.process.steps.payment.description') }}</p>
             </div>
           </div>
         </div>
@@ -231,9 +229,7 @@
     <section class="section cta-section">
       <div class="container">
         <div class="empowerment-cta fade-in" :class="{ 'visible': ctaVisible }">
-          <p class="cta-text">
-            <strong>Dengan Stratigo, Anda tidak hanya mendapatkan website.</strong><br>
-            Anda mendapatkan pengetahuan dan aset digital yang mendukung pertumbuhan bisnis Anda dalam jangka panjang.
+          <p class="cta-text" v-html="$t('portfolioWebsite.cta.text')">
           </p>
           <a 
             href="#" 
@@ -242,7 +238,7 @@
             class="btn btn-primary"
             @click.prevent="handleWhatsAppClick('https://wa.me/6287881332121')"
           >
-            Konsultasi Gratis Sekarang
+            {{ $t('portfolioWebsite.cta.button') }}
           </a>
         </div>
       </div>

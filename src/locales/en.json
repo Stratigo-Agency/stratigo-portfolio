@@ -1,0 +1,196 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "caseStudies": "Case Studies",
+    "blog": "Blog",
+    "portfolioWebsite": "Portfolio Website",
+    "eLearningApps": "E-Learning Apps",
+    "bookingSystem": "Booking System"
+  },
+  "home": {
+    "heroTitle": "Launch Your Digital Ideas",
+    "heroDescription": "We develop websites that turn visitors into customers.",
+    "consultationFree": "Free Consultation",
+    "consultationNow": "Consult Now",
+    "digitalPresence": {
+      "mainText": "A Professional Website Converts Visitors into Customers",
+      "subText": "By developing a custom-crafted website suited to your business needs, we ensure your website is fast, secure, and reflects your brand's identity. These enables your business to stand out in the digital world."
+    },
+    "features": {
+      "title": "( WHAT WE PROVIDE )",
+      "customCrafted": {
+        "title": "Custom",
+        "description": "Not using template-based solutions enables your website to be fast, free of bloatware, and perfectly crafted for your needs"
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Our websites are equipped with real-time reports that allows you to track the website's performance."
+      },
+      "contentOwnership": {
+        "title": "Content Ownership",
+        "description": "Make real changes to your site in minutes using Sanity's Content Management System."
+      },
+      "maintenance": {
+        "title": "Maintenance",
+        "description": "We educate you on how to utilize your website as a business asset, while providing full maintenance. After 3 months, you can decide to continue with us or takeover the website management"
+      }
+    },
+    "expertise": {
+      "label": "( OUR EXPERTISE )",
+      "portfolioWebsite": {
+        "title": "Portfolio Website",
+        "description": "Professional website to showcase your brand and business with attractive and modern design. With Stratigo, design, security, and website functionality are our top priorities."
+      },
+      "eLearning": {
+        "title": "E-Learning Platform",
+        "description": "With our Employee Learning Management System (LMS), UniGo, you can launch an employee learning platform efficiently and effectively."
+      },
+      "bookingSystem": {
+        "title": "Booking System",
+        "description": "Launch a booking system in hours with Reservigo. Visitors can make bookings in seconds and it comes with notification features and dashboard."
+      },
+      "viewDetails": "View Details"
+    },
+    "trustedBy": "( TRUSTED BY )",
+    "testimonials": {
+      "delya": {
+        "text": "Stratigo helped us build a professional and easy-to-manage website. Their team is very responsive and understands our business needs.",
+        "name": "Theresa Winona",
+        "role": "Delya Travel"
+      },
+      "izy": {
+        "text": "The website created by Stratigo is not only visually appealing, but also very fast and mobile-friendly. The results exceeded our expectations.",
+        "name": "Jeremy",
+        "role": "Izy Automotive"
+      },
+      "temu": {
+        "text": "Website completed quickly and professionally, complete with dashboard to manage independently. Very satisfied.",
+        "name": "Jovian Alvin",
+        "role": "Temu Bisnis"
+      }
+    },
+    "contact": {
+      "title": "Realize your business ideas with us.",
+      "description": "Consult with us to get the right digital solution for your business.",
+      "email": "Email:",
+      "phone": "Phone:",
+      "address": "Address:",
+      "addressValue": "Jakarta, Indonesia"
+    },
+    "showcase": {
+      "caseStudies": "( Case studies )",
+      "blog": "( Blog )",
+      "viewAll": "View All →"
+    }
+  },
+  "footer": {
+    "tagline": "Enhance Your Business Identity With A Professional Website",
+    "services": "Services",
+    "resources": "Resources",
+    "copyright": "© 2024 Stratigo. All rights reserved."
+  },
+  "portfolioWebsite": {
+    "hero": {
+      "title": "Create a Website That Works for Your Business.",
+      "subtitle": "Designed specifically for your brand. No template limitations, no quality compromises."
+    },
+    "customDesign": {
+      "label": "( CUSTOM DESIGN )",
+      "title": "Made Specifically for Your Brand",
+      "description": "Website built from scratch, fully custom for your brand. <strong>No template limitations</strong>, no quality compromises. By building a custom website, Stratigo ensures the website is protected, accessible quickly, mobile-friendly, and resistant to errors.",
+      "highlight": "Easy content management with <strong>Headless CMS</strong>. Update anytime without coding.",
+      "toolsLabel": "Tools we use"
+    },
+    "analytics": {
+      "label": "( REAL-TIME ANALYTICS )",
+      "title": "Monitor Website Performance Anytime",
+      "description": "Every website comes with <strong>specially configured Google Analytics</strong> according to your business goals.",
+      "emphasis": "Full access to analytics dashboard to monitor visitors, conversions, and best traffic sources.",
+      "toolsLabel": "Tools we use",
+      "trafficIncrease": "Traffic Increase"
+    },
+    "empowerment": {
+      "label": "( FULL EMPOWERMENT )",
+      "title": "Optional Maintenance.<br>Your Website, Your Control.",
+      "cards": {
+        "training": {
+          "number": "01",
+          "title": "Complete Training",
+          "description": "We train you to manage the website. No need to depend on an agency forever."
+        },
+        "maintenance": {
+          "number": "02",
+          "title": "No Monthly Maintenance Fees",
+          "description": "After 6 months, manage it yourself or continue with our services. No mandatory fees."
+        },
+        "ownership": {
+          "number": "03",
+          "title": "Full Ownership",
+          "description": "All access, tools, and documentation are handed over to you. The website is your asset."
+        }
+      }
+    },
+    "process": {
+      "label": "( WORK PROCESS )",
+      "title": "Simple Process, Professional Results",
+      "steps": {
+        "form": {
+          "number": "01",
+          "title": "Fill Initial Form",
+          "description": "Provide your basic needs information."
+        },
+        "meeting": {
+          "number": "02",
+          "title": "Consultation Meeting",
+          "description": "Discuss the best solution, scope, and budget."
+        },
+        "proposal": {
+          "number": "03",
+          "title": "Proposal",
+          "description": "We send you a detailed proposal."
+        },
+        "finalization": {
+          "number": "04",
+          "title": "Finalization",
+          "description": "Confirm agreement and project details."
+        },
+        "payment": {
+          "number": "05",
+          "title": "Payment & Start",
+          "description": "Payment to start the project."
+        }
+      }
+    },
+    "cta": {
+      "text": "<strong>With Stratigo, you don't just get a website.</strong><br>You get knowledge and digital assets that support your business growth in the long term.",
+      "button": "Free Consultation Now"
+    },
+    "cms": {
+      "title": "Content Management",
+      "editAnytime": "Edit Anytime"
+    }
+  },
+  "caseStudies": {
+    "title": "Case Studies",
+    "subtitle": "See the projects we have completed for our clients"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Articles and tips about websites, software, and digital technology",
+    "notFound": "Blog post not found",
+    "backToBlog": "Back to Blog"
+  },
+  "common": {
+    "backToHome": "Back to Home"
+  },
+  "formCompletion": {
+    "title": "Thank You!",
+    "message": "Thank you for filling out the form. Our team will contact you soon."
+  },
+  "custom": {
+    "title": "Need Custom Software Solutions?",
+    "description": "Contact us to discuss your business needs. We are ready to help realize software solutions designed specifically for your unique business challenges.",
+    "consultation": "Free Consultation"
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "services": "Layanan",
+    "caseStudies": "Case Studies",
+    "blog": "Blog",
+    "portfolioWebsite": "Portfolio Website",
+    "eLearningApps": "E-Learning Apps",
+    "bookingSystem": "Booking System"
+  },
+  "home": {
+    "heroTitle": "Launch Your Digital Ideas",
+    "heroDescription": "Kami mengembangkan website yang mengubah pengunjung menjadi pelanggan.",
+    "consultationFree": "Konsultasi Gratis",
+    "consultationNow": "Konsultasi Sekarang",
+    "digitalPresence": {
+      "mainText": "Website Profesional Mengubah Pengunjung Menjadi Pelanggan",
+      "subText": "Dengan mengembangkan website yang dibuat khusus sesuai kebutuhan bisnis Anda, kami memastikan website Anda cepat, aman, dan mencerminkan identitas brand Anda. Hal ini memungkinkan bisnis Anda menonjol di dunia digital."
+    },
+    "features": {
+      "title": "( KEUNGGULAN KAMI )",
+      "customCrafted": {
+        "title": "Custom",
+        "description": "Tidak menggunakan solusi berbasis template memungkinkan website Anda menjadi cepat, bebas dari bloatware, dan dibuat sempurna sesuai kebutuhan Anda"
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Website kami dilengkapi dengan laporan real-time yang memungkinkan Anda melacak performa website."
+      },
+      "contentOwnership": {
+        "title": "Content Ownership",
+        "description": "Buat perubahan nyata pada situs Anda dalam hitungan menit menggunakan Sanity's Content Management System."
+      },
+      "maintenance": {
+        "title": "Maintenance",
+        "description": "Kami mendidik Anda tentang cara memanfaatkan website sebagai aset bisnis, sambil menyediakan maintenance penuh. Setelah 3 bulan, Anda dapat memutuskan untuk melanjutkan dengan kami atau mengambil alih manajemen website"
+      }
+    },
+    "expertise": {
+      "label": "( KEAHLIAN KAMI )",
+      "portfolioWebsite": {
+        "title": "Portfolio Website",
+        "description": "Website profesional untuk menampilkan brand dan bisnis Anda dengan desain yang menarik dan modern. Dengan Stratigo, desain, keamanan, dan fungsionalitas website Anda menjadi prioritas utama."
+      },
+      "eLearning": {
+        "title": "E-Learning Platform",
+        "description": "Dengan Employee Learning Management System (LMS) kami, UniGo, kamu dapat meluncurkan platform pembelajaran karyawan dengan efisien dan efektif."
+      },
+      "bookingSystem": {
+        "title": "Booking System",
+        "description": "Luncurkan sistem booking dalam hitungan jam dengan Reservigo. Pengunjung dapat melakukan booking dalam hitungan detik dan dilengkapi dengan fitur notifikasi dan dashboard."
+      },
+      "viewDetails": "Lihat Detail"
+    },
+    "trustedBy": "( DIPERCAYA OLEH )",
+    "testimonials": {
+      "delya": {
+        "text": "Stratigo membantu kami membangun website yang profesional dan mudah dikelola. Tim mereka sangat responsif dan memahami kebutuhan bisnis kami.",
+        "name": "Theresa Winona",
+        "role": "Delya Travel"
+      },
+      "izy": {
+        "text": "Website yang dibuat Stratigo tidak hanya menarik secara visual, tapi juga sangat cepat dan mobile-friendly. Hasilnya melebihi ekspektasi kami.",
+        "name": "Jeremy",
+        "role": "Izy Automotive"
+      },
+      "temu": {
+        "text": "Website cepat selesai dan profesional, lengkap dengan dashboard untuk mengelola sendiri. Sangat puas.",
+        "name": "Jovian Alvin",
+        "role": "Temu Bisnis"
+      }
+    },
+    "contact": {
+      "title": "Realisasikan ide bisnis Anda dengan kami.",
+      "description": "Konsultasi dengan kami untuk mendapatkan solusi digital yang tepat untuk bisnis Anda.",
+      "email": "Email:",
+      "phone": "Telepon:",
+      "address": "Alamat:",
+      "addressValue": "Jakarta, Indonesia"
+    },
+    "showcase": {
+      "caseStudies": "( Case studies )",
+      "blog": "( Blog )",
+      "viewAll": "Lihat Semua →"
+    }
+  },
+  "footer": {
+    "tagline": "Tingkatkan Identitas Bisnis Anda Dengan Website yang Profesional",
+    "services": "Layanan",
+    "resources": "Resources",
+    "copyright": "© 2024 Stratigo. Semua hak dilindungi."
+  },
+  "portfolioWebsite": {
+    "hero": {
+      "title": "Ciptakan Website yang Bekerja untuk Bisnis Anda.",
+      "subtitle": "Dirancang khusus untuk brand Anda. Tanpa batasan template, tanpa kompromi kualitas."
+    },
+    "customDesign": {
+      "label": "( DESAIN CUSTOM )",
+      "title": "Dibuat Khusus untuk Brand Anda",
+      "description": "Website dibangun dari nol, sepenuhnya custom untuk brand Anda. <strong>Tanpa batasan template</strong>, tanpa kompromi kualitas. Dengan membangun website secara custom, Stratigo memastikan website terproteksi, bisa diakses dengan cepat, mobile-friendly, dan rentan terhadap error.",
+      "highlight": "Manajemen konten mudah dengan <strong>Headless CMS</strong>. Update kapan saja tanpa coding.",
+      "toolsLabel": "Tools we use"
+    },
+    "analytics": {
+      "label": "( ANALITIK REAL-TIME )",
+      "title": "Pantau Performa Website Setiap Saat",
+      "description": "Setiap website dilengkapi <strong>Google Analytics yang dikonfigurasi khusus</strong> sesuai tujuan bisnis Anda.",
+      "emphasis": "Akses penuh ke dashboard analytics untuk memantau pengunjung, konversi, dan sumber traffic terbaik.",
+      "toolsLabel": "Tools we use",
+      "trafficIncrease": "Peningkatan Traffic"
+    },
+    "empowerment": {
+      "label": "( PEMBERDAYAAN PENUH )",
+      "title": "Maintenance Opsional.<br>Website Anda, Kendali Anda.",
+      "cards": {
+        "training": {
+          "number": "01",
+          "title": "Pelatihan Lengkap",
+          "description": "Kami melatih Anda mengelola website. Tidak perlu bergantung pada agensi selamanya."
+        },
+        "maintenance": {
+          "number": "02",
+          "title": "Bebas Biaya Maintenance Bulanan",
+          "description": "Setelah 6 bulan, kelola sendiri atau lanjut dengan layanan kami. Tidak ada biaya wajib."
+        },
+        "ownership": {
+          "number": "03",
+          "title": "Full Ownership",
+          "description": "Semua akses, tools, dan dokumentasi diserahkan ke Anda. Website adalah aset Anda."
+        }
+      }
+    },
+    "process": {
+      "label": "( PROSES KERJA )",
+      "title": "Proses Sederhana, Hasil Profesional",
+      "steps": {
+        "form": {
+          "number": "01",
+          "title": "Isi Formulir Awal",
+          "description": "Berikan informasi kebutuhan dasar Anda."
+        },
+        "meeting": {
+          "number": "02",
+          "title": "Meeting Konsultasi",
+          "description": "Diskusi solusi terbaik, scope, dan budget."
+        },
+        "proposal": {
+          "number": "03",
+          "title": "Proposal",
+          "description": "Kami kirimkan proposal detail untuk Anda."
+        },
+        "finalization": {
+          "number": "04",
+          "title": "Finalisasi",
+          "description": "Konfirmasi kesepakatan dan detail proyek."
+        },
+        "payment": {
+          "number": "05",
+          "title": "Pembayaran & Mulai",
+          "description": "Payment untuk memulai pengerjaan proyek."
+        }
+      }
+    },
+    "cta": {
+      "text": "<strong>Dengan Stratigo, Anda tidak hanya mendapatkan website.</strong><br>Anda mendapatkan pengetahuan dan aset digital yang mendukung pertumbuhan bisnis Anda dalam jangka panjang.",
+      "button": "Konsultasi Gratis Sekarang"
+    },
+    "cms": {
+      "title": "Content Management",
+      "editAnytime": "Edit Anytime"
+    }
+  },
+  "caseStudies": {
+    "title": "Case Studies",
+    "subtitle": "Lihat proyek-proyek yang telah kami selesaikan untuk klien kami"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Artikel dan tips tentang website, software, dan teknologi digital",
+    "notFound": "Blog post tidak ditemukan",
+    "backToBlog": "Kembali ke Blog"
+  },
+  "common": {
+    "backToHome": "Kembali ke Beranda"
+  },
+  "formCompletion": {
+    "title": "Terima Kasih!",
+    "message": "Terima kasih telah mengisi formulir. Tim kami akan segera menghubungi Anda."
+  },
+  "custom": {
+    "title": "Butuh Solusi Software Khusus?",
+    "description": "Hubungi kami untuk mendiskusikan kebutuhan bisnis Anda. Kami siap membantu mewujudkan solusi software yang dirancang khusus untuk tantangan unik bisnis Anda.",
+    "consultation": "Konsultasi Gratis"
+  }
+}
