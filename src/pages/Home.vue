@@ -39,46 +39,7 @@
     <DigitalPresence />
 
     <!-- Features Section -->
-    <section class="section features-section">
-      <div class="container">
-        <h2 class="features-header fade-in" :class="{ 'visible': featuresVisible }">
-          {{ $t('home.features.title') }}
-        </h2>
-        <div class="features-grid fade-in" :class="{ 'visible': featuresVisible }">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <img :src="whiteCrossIcon" alt="Custom" />
-            </div>
-            <h3 class="feature-card-title">{{ $t('home.features.customCrafted.title') }}</h3>
-            <p class="feature-card-description">{{ $t('home.features.customCrafted.description') }}</p>
-          </div>
-          
-          <div class="feature-card">
-            <div class="feature-icon">
-              <img :src="whiteExploreIcon" alt="Analytics" />
-            </div>
-            <h3 class="feature-card-title">{{ $t('home.features.analytics.title') }}</h3>
-            <p class="feature-card-description">{{ $t('home.features.analytics.description') }}</p>
-          </div>
-          
-          <div class="feature-card">
-            <div class="feature-icon">
-              <img :src="whiteProtectIcon" alt="Content Ownership" />
-            </div>
-            <h3 class="feature-card-title">{{ $t('home.features.contentOwnership.title') }}</h3>
-            <p class="feature-card-description">{{ $t('home.features.contentOwnership.description') }}</p>
-          </div>
-          
-          <div class="feature-card">
-            <div class="feature-icon">
-              <img :src="whitePartnerIcon" alt="Maintenance & Education" />
-            </div>
-            <h3 class="feature-card-title">{{ $t('home.features.maintenance.title') }}</h3>
-            <p class="feature-card-description">{{ $t('home.features.maintenance.description') }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <Features />
 
     <!-- Solution Section -->
     <section class="section solution-section">
@@ -103,7 +64,7 @@
         
         <!-- Testimonials Section -->
         <div class="testimonials-section fade-in" :class="{ 'visible': solutionVisible }">
-          <div class="testimonials-grid">
+          <div class="testimonials-grid" ref="testimonialsGrid" @scroll="handleTestimonialScroll">
             <div class="testimonial-card" v-for="(testimonial, index) in testimonials" :key="index">
               <div class="testimonial-content">
                 <p class="testimonial-text">"{{ testimonial.text }}"</p>
@@ -118,6 +79,15 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="testimonial-indicators">
+            <div 
+              class="indicator" 
+              v-for="(testimonial, index) in testimonials" 
+              :key="index"
+              :class="{ 'active': currentTestimonialIndex === index }"
+              @click="scrollToTestimonial(index)"
+            ></div>
           </div>
         </div>
       </div>
@@ -157,7 +127,7 @@
     <section class="section showcase-section">
       <div class="container">
         <div class="showcase-header fade-in" :class="{ 'visible': solutionVisible }">
-          <h2 class="products-header fade-in" :class="{ 'visible': productsVisible }">
+          <h2 class="products-header">
           {{ $t('home.showcase.caseStudies') }}
         </h2>
           <router-link to="/case-studies" class="showcase-view-all">{{ $t('home.showcase.viewAll') }}</router-link>
@@ -173,7 +143,7 @@
         </div>
         
         <div class="showcase-header fade-in" :class="{ 'visible': solutionVisible }" style="margin-top: 4rem;">
-          <h2 class="products-header fade-in" :class="{ 'visible': productsVisible }">
+          <h2 class="products-header">
           {{ $t('home.showcase.blog') }}
         </h2>
           <router-link to="/blog" class="showcase-view-all">{{ $t('home.showcase.viewAll') }}</router-link>
@@ -214,6 +184,7 @@ import Footer from '../components/Footer.vue'
 import BlogCard from '../components/BlogCard.vue'
 import CaseStudyCard from '../components/CaseStudyCard.vue'
 import DigitalPresence from '../components/DigitalPresence.vue'
+import Features from '../components/Features.vue'
 import { caseStudies } from '../data/caseStudies.js'
 import { blogPosts } from '../data/blogPosts.js'
 import { useAnalytics } from '../composables/useAnalytics.js'
@@ -225,10 +196,11 @@ const { trackEvent, trackFormSubmission, trackButtonClick, trackServiceInterest,
 const heroVisible = ref(false)
 const servicesVisible = ref(false)
 const trustedByVisible = ref(false)
-const featuresVisible = ref(false)
 
 const solutionVisible = ref(false)
 const contactVisible = ref(false)
+const currentTestimonialIndex = ref(0)
+const testimonialsGrid = ref(null)
 
 // Video ref
 const heroVideoRef = ref(null)
@@ -247,10 +219,6 @@ import delyaLogo from '../assets/logos/delya-logo.webp'
 import temuLogo from '../assets/logos/temu-logo-1.webp'
 import strategoLogo from '../assets/icon/white-cross.webp'
 import heroVideo from '../assets/hero.mp4'
-import whiteCrossIcon from '../assets/icon/white-cross.webp'
-import whiteExploreIcon from '../assets/icon/white-explore.webp'
-import whiteProtectIcon from '../assets/icon/white-protect.webp'
-import whitePartnerIcon from '../assets/icon/white-partner.webp'
 
 const clientLogos = ref([
   {
@@ -320,10 +288,6 @@ const handleScroll = () => {
   if (trustedBySection && isInViewport(trustedBySection)) {
     trustedByVisible.value = true
   }
-  const featuresSection = document.querySelector('.features-section')
-  if (featuresSection && isInViewport(featuresSection)) {
-    featuresVisible.value = true
-  }
   if (solutionSection && isInViewport(solutionSection)) {
     solutionVisible.value = true
   }
@@ -362,6 +326,30 @@ const viewPost = (post) => {
   // Could navigate to detail page
 }
 
+const handleTestimonialScroll = () => {
+  if (!testimonialsGrid.value) return
+  
+  const scrollLeft = testimonialsGrid.value.scrollLeft
+  const cardWidth = testimonialsGrid.value.querySelector('.testimonial-card')?.offsetWidth || 0
+  const gap = 24 // 1.5rem gap
+  const index = Math.round(scrollLeft / (cardWidth + gap))
+  
+  currentTestimonialIndex.value = Math.min(index, testimonials.value.length - 1)
+}
+
+const scrollToTestimonial = (index) => {
+  if (!testimonialsGrid.value) return
+  
+  const cardWidth = testimonialsGrid.value.querySelector('.testimonial-card')?.offsetWidth || 0
+  const gap = 24 // 1.5rem gap
+  const scrollPosition = index * (cardWidth + gap)
+  
+  testimonialsGrid.value.scrollTo({
+    left: scrollPosition,
+    behavior: 'smooth'
+  })
+}
+
 const handleWhatsAppClick = (url, buttonName, section) => {
   // Track button click
   trackButtonClick(buttonName, section)
@@ -390,8 +378,6 @@ onMounted(() => {
         const target = entry.target
         if (target.classList.contains('hero')) {
           heroVisible.value = true
-        } else if (target.classList.contains('features-section')) {
-          featuresVisible.value = true
         } else if (target.classList.contains('solution-section')) {
           solutionVisible.value = true
         } else if (target.classList.contains('contact')) {
@@ -404,7 +390,7 @@ onMounted(() => {
   }, observerOptions)
 
   // Observe all sections
-  const sections = document.querySelectorAll('.hero, .features-section, .solution-section, .contact')
+  const sections = document.querySelectorAll('.hero, .solution-section, .contact')
   sections.forEach(section => {
     if (section) {
       observer.observe(section)
@@ -890,97 +876,6 @@ onUnmounted(() => {
   color: var(--text-muted);
   font-weight: 400;
 }
-
-/* Features Section */
-.features-section {
-  background: var(--light-bg);
-  padding: 5rem 0;
-}
-
-.features-header {
-  font-family: 'League Spartan', sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--text-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 3rem;
-  text-align: left;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  align-items: stretch;
-}
-
-.feature-card {
-  background: var(--light-secondary);
-  border: 1px solid var(--light-tertiary);
-  padding: 3rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  transition: all 0.3s ease;
-  height: 100%;
-}
-
-.feature-card:nth-child(1) {
-  margin-top: 0;
-}
-
-.feature-card:nth-child(2) {
-  margin-top: 3rem;
-}
-
-.feature-card:nth-child(3) {
-  margin-top: 6rem;
-}
-
-.feature-card:nth-child(4) {
-  margin-top: 9rem;
-}
-
-.feature-card:hover {
-  border-color: white;
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-}
-
-.feature-icon {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.feature-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-}
-
-.feature-card-title {
-  font-family: 'League Spartan', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 400;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-  letter-spacing: -0.02em;
-}
-
-.feature-card-description {
-  font-size: 1.3rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
-  margin: 0;
-  flex: 1;
-}
-
 
 .source-text {
   font-weight: 600;
@@ -1609,36 +1504,6 @@ onUnmounted(() => {
     padding-top: 0;
   }
 
-  .features-header {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .feature-card {
-    padding: 2rem 1.5rem;
-    min-height: auto;
-    margin-top: 0 !important;
-  }
-
-  .feature-icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 1.5rem;
-  }
-
-  .feature-card-title {
-    font-size: 1.25rem;
-  }
-
-  .feature-card-description {
-    font-size: 0.95rem;
-  }
-  
   .solution-title {
     font-size: 1.8rem;
   }
@@ -1691,13 +1556,54 @@ onUnmounted(() => {
   }
 
   .testimonials-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
     gap: 1.5rem;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 1.5rem;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  .testimonials-grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
   }
 
   .testimonial-card {
     padding: 2rem 1.5rem;
     min-height: auto;
+    min-width: calc(100% - 3rem);
+    width: calc(100% - 3rem);
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+
+  .testimonial-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  .indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--light-tertiary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .indicator.active {
+    background: var(--text-primary);
+    width: 24px;
+    border-radius: 4px;
   }
 
   .testimonial-text {
@@ -1737,10 +1643,6 @@ onUnmounted(() => {
     font-size: 0.9rem;
   }
 
-  .features-header {
-    font-size: 0.9rem;
-  }
-  
   .whatsapp-float {
     bottom: 20px;
     right: 20px;

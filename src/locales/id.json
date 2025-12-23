@@ -9,14 +9,14 @@
     "bookingSystem": "Booking System"
   },
   "home": {
-    "heroTitle": "Launch Your Digital Ideas",
+    "heroTitle": "Launch Your Business Website",
     "heroDescription": "Kami mengembangkan website yang mengubah pengunjung menjadi pelanggan.",
     "consultationFree": "Konsultasi Gratis",
     "consultationNow": "Konsultasi Sekarang",
     "digitalPresence": {
       "strengths": {
         "professional": {
-          "title": "Desain Luar Biasa",
+          "title": "Desain Profesional",
           "description": "Website yang dirancang secara profesional memungkinkan situs Anda menarik pelanggan."
         },
         "customSecure": {
@@ -30,22 +30,26 @@
       }
     },
     "features": {
-      "title": "( KEUNGGULAN KAMI )",
-      "customCrafted": {
-        "title": "Custom",
-        "description": "Tidak menggunakan solusi berbasis template memungkinkan website Anda menjadi cepat, bebas dari bloatware, dan dibuat sempurna sesuai kebutuhan Anda"
+      "title": "( CARA KAMI BEKERJA )",
+      "consultation": {
+        "title": "Konsultasi",
+        "description": "Diskusikan kebutuhan dan deskripsi bisnis, dan berkolaborasi dengan kami untuk merancang website yang sesuai dengan kebutuhan bisnis Anda"
       },
-      "analytics": {
-        "title": "Analytics",
-        "description": "Website kami dilengkapi dengan laporan real-time yang memungkinkan Anda melacak performa website."
+      "planning": {
+        "title": "Perencanaan",
+        "description": "Stratigo merancang layout website dan konten awal untuk Anda"
       },
-      "contentOwnership": {
-        "title": "Content Ownership",
-        "description": "Buat perubahan nyata pada situs Anda dalam hitungan menit menggunakan Sanity's Content Management System."
+      "collaboration": {
+        "title": "Kolaborasi",
+        "description": "Anda memiliki opsi untuk menyediakan logo bisnis dan konten yang ada seperti gambar dan video yang mungkin Anda miliki. Jika tidak, Stratigo menggunakan gambar/video stok yang dapat Anda ubah nanti."
       },
-      "maintenance": {
-        "title": "Maintenance",
-        "description": "Kami mendidik Anda tentang cara memanfaatkan website sebagai aset bisnis, sambil menyediakan maintenance penuh. Setelah 3 bulan, Anda dapat memutuskan untuk melanjutkan dengan kami atau mengambil alih manajemen website"
+      "development": {
+        "title": "Pengembangan",
+        "description": "Stratigo mengembangkan website dan menjaga Anda tetap terinformasi tentang kemajuan proyek."
+      },
+      "shipment": {
+        "title": "Pengiriman",
+        "description": "Setelah kesepakatan tentang website, Stratigo menghosting dan mendeploy website untuk Anda, dan Anda memiliki opsi untuk memilih program maintenance kami"
       }
     },
     "expertise": {

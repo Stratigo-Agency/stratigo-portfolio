@@ -108,11 +108,6 @@ onMounted(() => {
   pointer-events: none;
 }
 
-.strength-card:hover {
-  border-color: white;
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-}
 
 .strength-title {
   font-family: 'League Spartan', sans-serif;

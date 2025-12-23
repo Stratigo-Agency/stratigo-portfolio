@@ -30,22 +30,26 @@
       }
     },
     "features": {
-      "title": "( WHAT WE PROVIDE )",
-      "customCrafted": {
-        "title": "Custom",
-        "description": "Not using template-based solutions enables your website to be fast, free of bloatware, and perfectly crafted for your needs"
+      "title": "( HOW WE WORK )",
+      "consultation": {
+        "title": "Consultation",
+        "description": "Discuss requirements and business descriptions, and collaborate with us to design a web that suits your business needs"
       },
-      "analytics": {
-        "title": "Analytics",
-        "description": "Our websites are equipped with real-time reports that allows you to track the website's performance."
+      "planning": {
+        "title": "Planning",
+        "description": "Stratigo designs the website layout and initial content for you"
       },
-      "contentOwnership": {
-        "title": "Content Ownership",
-        "description": "Make real changes to your site in minutes using Sanity's Content Management System."
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "You have the option to provide your business logo and existing content such as pictures and videos that you may have. If not, Stratigo uses stock images/videos that you can change later."
       },
-      "maintenance": {
-        "title": "Maintenance",
-        "description": "We educate you on how to utilize your website as a business asset, while providing full maintenance. After 6 months, you can decide to continue with us or takeover the website management"
+      "development": {
+        "title": "Development",
+        "description": "Stratigo develops the website and keeps you updated on the progress."
+      },
+      "shipment": {
+        "title": "Shipment",
+        "description": "After agreement on website, Stratigo hosts and deploys the website for you, and you have an option to opt with our maintenance program"
       }
     },
     "expertise": {
