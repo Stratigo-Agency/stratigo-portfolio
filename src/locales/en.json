@@ -9,13 +9,25 @@
     "bookingSystem": "Booking System"
   },
   "home": {
-    "heroTitle": "Launch Your Digital Ideas",
+    "heroTitle": "Launch Your Business Website",
     "heroDescription": "We develop websites that turn visitors into customers.",
     "consultationFree": "Free Consultation",
     "consultationNow": "Consult Now",
     "digitalPresence": {
-      "mainText": "A Professional Website Converts Visitors into Customers",
-      "subText": "By developing a custom-crafted website suited to your business needs, we ensure your website is fast, secure, and reflects your brand's identity. These enables your business to stand out in the digital world."
+      "strengths": {
+        "professional": {
+          "title": "Exceptional Design",
+          "description": "Professionally designed website allow your site to attract customers."
+        },
+        "customSecure": {
+          "title": "Fast",
+          "description": "More than 30% of visitors leave on long website loading time. Ensure your site is fast."
+        },
+        "customizable": {
+          "title": "Secure",
+          "description": "SSL encryption and custom code enable your site to be robust and safe."
+        }
+      }
     },
     "features": {
       "title": "( WHAT WE PROVIDE )",

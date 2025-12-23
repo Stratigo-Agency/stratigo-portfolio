@@ -14,8 +14,20 @@
     "consultationFree": "Konsultasi Gratis",
     "consultationNow": "Konsultasi Sekarang",
     "digitalPresence": {
-      "mainText": "Website Profesional Mengubah Pengunjung Menjadi Pelanggan",
-      "subText": "Dengan mengembangkan website yang dibuat khusus sesuai kebutuhan bisnis Anda, kami memastikan website Anda cepat, aman, dan mencerminkan identitas brand Anda. Hal ini memungkinkan bisnis Anda menonjol di dunia digital."
+      "strengths": {
+        "professional": {
+          "title": "Desain Luar Biasa",
+          "description": "Website yang dirancang secara profesional memungkinkan situs Anda menarik pelanggan."
+        },
+        "customSecure": {
+          "title": "Cepat",
+          "description": "Lebih dari 30% pengunjung meninggalkan situs dengan waktu loading yang lama. Pastikan situs Anda cepat."
+        },
+        "customizable": {
+          "title": "Aman",
+          "description": "Enkripsi SSL dan kode custom memungkinkan situs Anda menjadi kuat dan aman."
+        }
+      }
     },
     "features": {
       "title": "( KEUNGGULAN KAMI )",

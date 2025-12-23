@@ -36,20 +36,7 @@
 
 
     <!-- Digital Presence Section -->
-    <section class="section digital-presence">
-      <div class="container">
-        <div class="digital-presence-content fade-in" :class="{ 'visible': digitalPresenceVisible }">
-          <div class="digital-presence-number">Stand Out.</div>
-          <div class="digital-presence-text">
-            <p class="digital-presence-main-text" v-html="$t('home.digitalPresence.mainText')">
-            </p>
-            <p class="digital-presence-sub-text">
-              {{ $t('home.digitalPresence.subText') }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <DigitalPresence />
 
     <!-- Features Section -->
     <section class="section features-section">
@@ -226,6 +213,7 @@ import Navbar from '../components/Navbar.vue'
 import Footer from '../components/Footer.vue'
 import BlogCard from '../components/BlogCard.vue'
 import CaseStudyCard from '../components/CaseStudyCard.vue'
+import DigitalPresence from '../components/DigitalPresence.vue'
 import { caseStudies } from '../data/caseStudies.js'
 import { blogPosts } from '../data/blogPosts.js'
 import { useAnalytics } from '../composables/useAnalytics.js'
@@ -237,7 +225,6 @@ const { trackEvent, trackFormSubmission, trackButtonClick, trackServiceInterest,
 const heroVisible = ref(false)
 const servicesVisible = ref(false)
 const trustedByVisible = ref(false)
-const digitalPresenceVisible = ref(false)
 const featuresVisible = ref(false)
 
 const solutionVisible = ref(false)
@@ -321,7 +308,6 @@ const handleScroll = () => {
   const heroSection = document.querySelector('.hero')
   const servicesSection = document.querySelector('.services')
   const trustedBySection = document.querySelector('.trusted-by-header')
-  const digitalPresenceSection = document.querySelector('.digital-presence')
   const solutionSection = document.querySelector('.solution-section')
   const contactSection = document.querySelector('.contact')
   
@@ -333,9 +319,6 @@ const handleScroll = () => {
   }
   if (trustedBySection && isInViewport(trustedBySection)) {
     trustedByVisible.value = true
-  }
-  if (digitalPresenceSection && isInViewport(digitalPresenceSection)) {
-    digitalPresenceVisible.value = true
   }
   const featuresSection = document.querySelector('.features-section')
   if (featuresSection && isInViewport(featuresSection)) {
@@ -407,8 +390,6 @@ onMounted(() => {
         const target = entry.target
         if (target.classList.contains('hero')) {
           heroVisible.value = true
-        } else if (target.classList.contains('digital-presence')) {
-          digitalPresenceVisible.value = true
         } else if (target.classList.contains('features-section')) {
           featuresVisible.value = true
         } else if (target.classList.contains('solution-section')) {
@@ -423,7 +404,7 @@ onMounted(() => {
   }, observerOptions)
 
   // Observe all sections
-  const sections = document.querySelectorAll('.hero, .digital-presence, .features-section, .solution-section, .contact')
+  const sections = document.querySelectorAll('.hero, .features-section, .solution-section, .contact')
   sections.forEach(section => {
     if (section) {
       observer.observe(section)
@@ -501,7 +482,7 @@ onUnmounted(() => {
 
 .hero-title-large {
   font-family: 'League Spartan', sans-serif;
-  font-size: 8rem;
+  font-size: 6rem;
   font-weight: 400;
   color: var(--text-primary);
   letter-spacing: -0.03em;
@@ -910,12 +891,6 @@ onUnmounted(() => {
   font-weight: 400;
 }
 
-/* Digital Presence Section */
-.digital-presence {
-  background: #000;
-  padding: 5rem 0;
-}
-
 /* Features Section */
 .features-section {
   background: var(--light-bg);
@@ -1006,49 +981,6 @@ onUnmounted(() => {
   flex: 1;
 }
 
-.digital-presence-content {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 4rem;
-  align-items: start;
-}
-
-.digital-presence-number {
-  font-size: 12rem;
-  font-weight: 400;
-  color: #fff;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-.digital-presence-text {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding-top: 1rem;
-}
-
-.digital-presence-main-text {
-  font-size: 3.5rem;
-  font-weight: 400;
-  line-height: 1.6;
-  color: #fff;
-  margin: 0;
-}
-
-.digital-presence-main-text strong {
-  font-weight: 600;
-  color: #fff;
-}
-
-.digital-presence-sub-text {
-  font-size: 1.3rem;
-  opacity: 0.8;
-  font-weight: 300;
-  line-height: 1.6;
-  color: #fff;
-  margin: 0;
-}
 
 .source-text {
   font-weight: 600;
@@ -1652,15 +1584,6 @@ onUnmounted(() => {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  .digital-presence-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .digital-presence-number {
-    font-size: 4rem;
-  }
-
   .solution-section {
     padding: 2rem 0 3rem;
   }
@@ -1682,15 +1605,6 @@ onUnmounted(() => {
     width: 100%;
   }
   
-  .digital-presence-main-text {
-    font-size: 1.5rem;
-    line-height: 1.4;
-  }
-  
-  .digital-presence-sub-text {
-    font-size: 1rem;
-  }
-
   .trusted-by-carousel-wrapper {
     padding-top: 0;
   }
