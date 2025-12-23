@@ -71,6 +71,13 @@ onMounted(() => {
   align-items: start;
 }
 
+
+@media (max-width: 768px) {
+  .digital-presence-number {
+    font-size: 1rem;
+  }
+}
+
 .digital-presence-number {
   font-size: 6rem;
   font-weight: 400;
@@ -79,6 +86,7 @@ onMounted(() => {
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
+
 
 .digital-presence-strengths {
   display: flex;
