@@ -1,10 +1,10 @@
 <template>
   <section class="section features-section">
     <div class="container">
-      <h2 class="features-header fade-in" :class="{ 'visible': visible }">
+      <h2 class="features-header">
         {{ $t('home.features.title') }}
       </h2>
-      <div class="features-grid fade-in" :class="{ 'visible': visible }">
+      <div class="features-grid">
         <div class="feature-card" :style="{ backgroundImage: `url(${consultationImage})` }">
           <div class="feature-icon">
             <img :src="whiteCrossIcon" alt="Consultation" />
@@ -50,7 +50,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
 import whiteCrossIcon from '../assets/icon/white-cross.webp'
 import whiteExploreIcon from '../assets/icon/white-explore.webp'
 import whiteProtectIcon from '../assets/icon/white-protect.webp'
@@ -60,31 +59,6 @@ import designImage from '../assets/features/design.jpg'
 import developmentImage from '../assets/features/development.jpg'
 import agreementImage from '../assets/features/agreement.jpg'
 import collaborationImage from '../assets/features/collaboration.jpg'
-
-const visible = ref(false)
-
-onMounted(() => {
-  // Use Intersection Observer for animation
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.2
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        visible.value = true
-        observer.unobserve(entry.target)
-      }
-    })
-  }, observerOptions)
-
-  const section = document.querySelector('.features-section')
-  if (section) {
-    observer.observe(section)
-  }
-})
 </script>
 
 <style scoped>
@@ -209,17 +183,6 @@ onMounted(() => {
   flex: 1;
 }
 
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 @media (max-width: 768px) {
   .features-section {
     padding: 3rem 0;
@@ -255,3 +218,4 @@ onMounted(() => {
   }
 }
 </style>
+
